@@ -7,6 +7,8 @@
     "start": "node dist/server/index.js",
     "devStart": "tsx watch index.ts",
     "build": "tsc",
+    "migrate": "node dist/server/migrate.js",
+    "migrate:dev": "tsx migrate.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

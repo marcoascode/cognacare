@@ -42,6 +42,7 @@ import agentService from './services/agentService';
 import poolPromise from './config/pgPoolPromise';
 import { iniciarAgendamentos } from './queues/agentQueue';
 import { verificarTokenAcesso } from './utils/jwtTokens';
+import { migrate } from './migrate';
 
 // =========================================================================
 // IMPORTAÇÕES DAS ROTAS
@@ -299,6 +300,15 @@ iniciarAgendamentos().catch((err: any) => {
 const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 5000;
 
-server.listen(Number(PORT), HOST, () => {
-    console.log(`✅ Servidor ouvindo na porta ${PORT}`);
-});
+// Aplica as migrations pendentes (server/migrations/*.sql) ANTES de aceitar requisições.
+// Se uma migration falhar, o servidor não sobe: rodar com schema inconsistente é pior que parar.
+migrate()
+  .then(() => {
+    server.listen(Number(PORT), HOST, () => {
+      console.log(`✅ Servidor ouvindo na porta ${PORT}`);
+    });
+  })
+  .catch((err: any) => {
+    console.error('❌ [BOOT] Falha ao aplicar migrations. Servidor não iniciado.', err);
+    process.exit(1);
+  });

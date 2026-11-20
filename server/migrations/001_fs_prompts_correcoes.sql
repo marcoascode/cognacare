@@ -1,7 +1,7 @@
 -- =============================================================================
 -- Sprint 0 — Correções mecânicas em fs_prompts (sem alteração de conteúdo clínico)
--- Reversível: ver 001_fs_prompts_correcoes.down.sql
--- Executar dentro de uma transação:  psql -v ON_ERROR_STOP=1 -1 -f <arquivo>
+-- Aplicada automaticamente pelo migrate.ts (boot ou `npm run migrate`), em transação.
+-- Idempotente. Reversão manual: migrations/down/001_fs_prompts_correcoes.down.sql
 -- =============================================================================
 
 -- Backup integral da tabela antes da alteração (permite comparar/restaurar).
