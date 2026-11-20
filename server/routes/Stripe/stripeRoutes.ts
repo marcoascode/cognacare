@@ -146,7 +146,7 @@ const processarEntregaBeneficios = async (
         sqlUpdateUser += `, plano_ativo = $3, tipo_plano = 'assinatura', assinatura_expira_em = GREATEST(COALESCE(assinatura_expira_em, CURRENT_TIMESTAMP), CURRENT_TIMESTAMP) + ($4 * INTERVAL '1 day')`;
         paramsUser.push(novoPlano, diasParaAdicionar);
         // if (isFounder) sqlUpdateUser += `, is_founder = 1`;
-        if (isFounder) sqlUpdateUser += `, is_founder = true`;
+        if (isFounder) sqlUpdateUser += `, is_founder = '1'`;
     }
     
     // sqlUpdateUser += ` WHERE id = ?`;
@@ -221,7 +221,7 @@ router.post('/validate-coupon', autenticarUsuario, async (req: AuthRequest, res:
         //     [couponCode]
         // );
         const { rows } = await poolPromise.query(
-            'SELECT codigo, percentual_desconto FROM fs_cupons WHERE codigo = $1 AND ativo = true', 
+            `SELECT codigo, percentual_desconto FROM fs_cupons WHERE codigo = $1 AND ativo = '1'`, 
             [couponCode]
         );
 
@@ -475,7 +475,7 @@ router.post('/create-payment-intent', autenticarUsuario, async (req: AuthRequest
         
         if (isPlanoFundador) {
             // const [rows]: any = await poolPromise.query('SELECT COUNT(id) as total FROM fs_usuarios WHERE is_founder = 1');
-            const { rows } = await poolPromise.query('SELECT COUNT(id) as total FROM fs_usuarios WHERE is_founder = true');
+            const { rows } = await poolPromise.query(`SELECT COUNT(id) as total FROM fs_usuarios WHERE is_founder = '1'`);
             if (rows[0].total >= 100) return res.status(400).send({ error: 'As vagas para Membro Fundador estão esgotadas!' });
             valorBaseCentavos = 49700; 
         } else {
@@ -503,7 +503,7 @@ router.post('/create-payment-intent', autenticarUsuario, async (req: AuthRequest
 
         if (couponCode) {
             // const [cupons]: any = await poolPromise.query('SELECT percentual_desconto FROM fs_cupons WHERE codigo = ? AND ativo = 1', [couponCode]);
-            const { rows: cupons } = await poolPromise.query('SELECT percentual_desconto FROM fs_cupons WHERE codigo = $1 AND ativo = true', [couponCode]);
+            const { rows: cupons } = await poolPromise.query(`SELECT percentual_desconto FROM fs_cupons WHERE codigo = $1 AND ativo = '1'`, [couponCode]);
             if (cupons.length > 0) {
                 const percentual = cupons[0].percentual_desconto;
                 const descontoCentavos = Math.round(valorBaseCentavos * (percentual / 100));

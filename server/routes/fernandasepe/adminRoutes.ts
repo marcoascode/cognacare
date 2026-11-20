@@ -157,8 +157,8 @@ router.get('/dashboard-stats', autenticarAdmin, async (req: Request, res: Respon
         const { rows: kids } = await connection.query(`SELECT COUNT(*) as total FROM fs_crianca ${dateFilter}`, queryParams);
         const { rows: pifs } = await connection.query(`SELECT COUNT(*) as total FROM fs_plano_familiar ${dateFilter}`, queryParams);
         const { rows: msgs } = await connection.query(`SELECT COUNT(*) as total FROM fs_chat_logs ${dateFilter}`, queryParams);
-        const { rows: afiliados } = await connection.query(`SELECT COUNT(*) as total FROM fs_usuarios WHERE is_affiliate = 1 ${dateFilterAnd}`, queryParams);
-        const { rows: bonus } = await connection.query(`SELECT COUNT(*) as total FROM fs_usuarios WHERE perfil_recompensado = 1 ${dateFilterAnd}`, queryParams);
+        const { rows: afiliados } = await connection.query(`SELECT COUNT(*) as total FROM fs_usuarios WHERE is_affiliate = '1' ${dateFilterAnd}`, queryParams);
+        const { rows: bonus } = await connection.query(`SELECT COUNT(*) as total FROM fs_usuarios WHERE perfil_recompensado = '1' ${dateFilterAnd}`, queryParams);
 
         let faturamentoFilter = '';
         let fatParams: string[] = [];
@@ -350,7 +350,8 @@ router.get('/afiliados', autenticarAdmin, async (req: Request, res: Response) =>
     }
 });
 
-router.post('/afiliados', async (req: Request, res: Response) => {
+// SPRINT 0: rota passou a exigir administrador (antes era aberta a qualquer visitante).
+router.post('/afiliados', autenticarAdmin, async (req: Request, res: Response) => {
     const { nome, email, chave_pix } = req.body as { nome: string, email: string, chave_pix: string };
     try {
         // await poolPromise.query(
@@ -397,7 +398,7 @@ router.put('/afiliados/:id/aprovar', autenticarAdmin, async (req: Request, res: 
         const afiliado = afiliadoRows[0];
 
         await connection.query('UPDATE fs_afiliados SET status = \'aprovado\' WHERE id = $1', [id]);
-        await connection.query('UPDATE fs_usuarios SET is_affiliate = 1 WHERE id = $1', [afiliado.usuario_id]);
+        await connection.query(`UPDATE fs_usuarios SET is_affiliate = '1' WHERE id = $1`, [afiliado.usuario_id]);
 
         await connection.query('COMMIT');
 
@@ -859,7 +860,7 @@ router.post('/prompts', autenticarAdmin, async (req: Request, res: Response) => 
         `;
         await poolPromise.query(query, [
             chave, titulo, texto_prompt,
-            modelo || 'claude-3-5-sonnet-20241022',
+            modelo || 'claude-sonnet-4-6',
             temperatura || 0.5,
             max_tokens || 4000
         ]);
@@ -915,7 +916,7 @@ router.put('/prompts/:chave', autenticarAdmin, async (req: Request, res: Respons
             [
                 chave,
                 texto_prompt,
-                modelo || 'claude-3-5-sonnet-20241022',
+                modelo || 'claude-sonnet-4-6',
                 temperatura || 0.7,
                 max_tokens || 1024,
                 repetition_penalty || 1.0,

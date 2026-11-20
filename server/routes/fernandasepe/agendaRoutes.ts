@@ -5,6 +5,7 @@ import { addWeeks, addDays, addMonths, isBefore, parseISO, endOfDay } from 'date
 import authMiddleware from '../../middleware/authMiddleware';
 // import poolPromise from '../../config/mysqlPoolPromise';
 import poolPromise from '../../config/pgPoolPromise';
+import { exigirCriancaPropria } from '../../middleware/acessoCrianca';
 // import agentService from '../../services/agentService'; // Mantido comentado/importado conforme o seu uso atual
 
 const router = express.Router();
@@ -54,7 +55,7 @@ const formatToSQL = (d: Date): string => {
 router.get('/categorias', authMiddleware, async (req: CustomRequest, res: Response) => {
     try {
         // const [categorias]: any = await poolPromise.query('SELECT * FROM fs_categorias_terapia WHERE ativo = 1 ORDER BY nome ASC');
-        const { rows: categorias } = await poolPromise.query('SELECT * FROM fs_categorias_terapia WHERE ativo = 1 ORDER BY nome ASC');
+        const { rows: categorias } = await poolPromise.query(`SELECT * FROM fs_categorias_terapia WHERE ativo = '1' ORDER BY nome ASC`);
         res.json(categorias);
     } catch (e) { 
         res.status(500).json({ erro: 'Erro ao carregar categorias.' }); 
@@ -62,7 +63,7 @@ router.get('/categorias', authMiddleware, async (req: CustomRequest, res: Respon
 });
 
 // Listar marcas para o calendário (Badges)
-router.get('/crianca/:criancaId/marcas', authMiddleware, async (req: CustomRequest, res: Response) => {
+router.get('/crianca/:criancaId/marcas', authMiddleware, exigirCriancaPropria('criancaId'), async (req: CustomRequest, res: Response) => {
     try {
         const { criancaId } = req.params;
         const { mes, ano } = req.query;
@@ -85,7 +86,7 @@ router.get('/crianca/:criancaId/marcas', authMiddleware, async (req: CustomReque
 });
 
 // Listar agenda do dia
-router.get('/crianca/:criancaId', authMiddleware, async (req: CustomRequest, res: Response) => {
+router.get('/crianca/:criancaId', authMiddleware, exigirCriancaPropria('criancaId'), async (req: CustomRequest, res: Response) => {
     try {
         const { criancaId } = req.params;
         const { start, end } = req.query;
@@ -112,7 +113,7 @@ router.get('/crianca/:criancaId', authMiddleware, async (req: CustomRequest, res
 // =========================================================================
 // CRIAR EVENTO (POST) - GERAÇÃO DE RECORRÊNCIA BLINDADA
 // =========================================================================
-router.post('/', authMiddleware, async (req: CustomRequest, res: Response) => {
+router.post('/', authMiddleware, exigirCriancaPropria('crianca_id', 'body'), async (req: CustomRequest, res: Response) => {
     // const connection = await poolPromise.getConnection();
     const connection = await poolPromise.connect();
     try {
@@ -378,10 +379,13 @@ router.put('/:id', authMiddleware, async (req: CustomRequest, res: Response) => 
         const userId = req.user?.id;
 
         // 1. Busca o estado atual do evento e do usuário
+        // SPRINT 0: o JOIN anterior usava "(SELECT id_crianca ... LIMIT 1)", ou seja, só
+        // reconhecia eventos da PRIMEIRA criança do usuário. Agora valida a posse real.
         const { rows: existing } = await connection.query(
             `SELECT a.*, u.is_agent_active 
              FROM fs_agenda_crianca a 
-             JOIN fs_usuarios u ON a.crianca_id = (SELECT id_crianca FROM fs_crianca WHERE usuario_id = u.id LIMIT 1)
+             JOIN fs_crianca c ON a.crianca_id = c.id_crianca
+             JOIN fs_usuarios u ON c.usuario_id = u.id
              WHERE a.id = $1 AND u.id = $2`,
             [id, userId]
         );
@@ -493,7 +497,14 @@ router.delete('/:id', authMiddleware, async (req: CustomRequest, res: Response) 
     try {
         // Se apagar o Pai (id), apaga também todos os Filhos (parent_id) simultaneamente
         // await poolPromise.query('DELETE FROM fs_agenda_crianca WHERE id = ? OR parent_id = ?', [req.params.id, req.params.id]);
-        await poolPromise.query('DELETE FROM fs_agenda_crianca WHERE id = $1 OR parent_id = $2', [req.params.id, req.params.id]);
+        // SPRINT 0: antes qualquer usuário autenticado podia apagar eventos de qualquer família.
+        const { rowCount } = await poolPromise.query(
+            `DELETE FROM fs_agenda_crianca 
+             WHERE (id = $1 OR parent_id = $1)
+               AND crianca_id IN (SELECT id_crianca FROM fs_crianca WHERE usuario_id = $2)`,
+            [req.params.id, req.user?.id]
+        );
+        if (!rowCount) return res.status(404).json({ erro: 'Evento não encontrado.' });
         res.json({ success: true });
     } catch (e) {
         console.error("Erro no DELETE Agenda:", e);

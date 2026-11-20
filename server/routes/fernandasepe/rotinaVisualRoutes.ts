@@ -6,6 +6,7 @@ import OpenAI from 'openai';
 import nodemailer from 'nodemailer';
 
 import authMiddleware from '../../middleware/authMiddleware';
+import { exigirAgenteAtivo } from '../../middleware/acessoCrianca';
 // Certifique-se de que o arasaacService exporta a função corretamente para ES Modules
 import arasaacService from '../../services/arasaacService'; 
 
@@ -32,10 +33,8 @@ interface IItemRotina {
 }
 
 // Inicializa o cliente LLM (Grok via OpenAI SDK)
-const grokClient = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: 'https://api.x.ai/v1',
-});
+// SPRINT 0: cliente centralizado (GROK_API_KEY separado de OPENAI_API_KEY).
+import { grokClient } from '../../config/llmClients';
 
 // Configuração do Email
 const transporter = nodemailer.createTransport({
@@ -48,7 +47,8 @@ const transporter = nodemailer.createTransport({
 
 const languageNames: Record<string, string> = { 'pt': 'Portuguese', 'en': 'English', 'es': 'Spanish' };
 
-router.post('/gerar-rotina', authMiddleware, async (req: CustomRequest, res: Response): Promise<any> => {
+// SPRINT 0: recurso do tier Agent — agora exigido no backend.
+router.post('/gerar-rotina', authMiddleware, exigirAgenteAtivo, async (req: CustomRequest, res: Response): Promise<any> => {
     const { titulo, tema, lang } = req.body; 
     const userEmail = req.user?.email; 
     const userName = req.user?.nome || 'Usuário';

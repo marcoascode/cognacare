@@ -35,14 +35,13 @@ interface AuthRequest extends Request {
 }
 
 // Instâncias de API Híbrida (Roteamento Dinâmico)
-const grokClient = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: 'https://api.x.ai/v1',
-});
+// SPRINT 0: clientes centralizados (GROK_API_KEY separado de OPENAI_API_KEY).
+import { grokClient, anthropicClient } from '../../config/llmClients';
+import { exigirCriancaPropria } from '../../middleware/acessoCrianca';
+import { assinarToken } from '../../utils/jwtTokens';
 
-const anthropicClient = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+const escaparHtml = (valor: unknown): string =>
+  String(valor ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c] as string));
 
 // ==================================================================
 // FIREWALL COGNITIVO (ANTI-JAILBREAK E SANITIZAÇÃO)
@@ -208,7 +207,7 @@ router.post('/cadastro', verificarRecaptcha, async (req: Request, res: Response)
     const { rows: user } = await connection.query('SELECT id FROM fs_usuarios WHERE email = $1', [email]);
     const usuarioId = user[0].id;
     
-    const verificationToken = jwt.sign({ id: usuarioId }, process.env.JWT_SECRET as string, { expiresIn: '1d' });
+    const verificationToken = assinarToken({ id: usuarioId }, 'verify', '1d');
 
     // --- MySQL ORIGINAL ---
     // await connection.query('INSERT INTO fs_verification_tokens (usuario_id, token, expires_at) VALUES (?, ?, DATE_ADD(NOW(), INTERVAL 1 HOUR))', [usuarioId, verificationToken]);
@@ -288,7 +287,7 @@ router.get('/verify-email', async (req: Request, res: Response) => {
       
       // A biblioteca `pg` retorna diretamente o objeto do resultado no UPDATE/INSERT/DELETE, não é um array [rows, fields]
       const updateResult = await connection.query(
-        `UPDATE fs_usuarios SET status_assinatura = 'ativo', email_verified = 1 WHERE id = $1 AND (email_verified = 0 OR email_verified = false)`, 
+        `UPDATE fs_usuarios SET status_assinatura = 'ativo', email_verified = '1' WHERE id = $1 AND email_verified = '0'`, 
         [verificationToken.usuario_id]
       );
       
@@ -333,7 +332,8 @@ router.post('/resend-verification', async (req: Request, res: Response) => {
     connection = await poolPromise.connect();
     const { rows: results } = await connection.query('SELECT id, nome, email_verified FROM fs_usuarios WHERE email = $1', [email]);
     
-    if (results.length === 0) return res.status(404).json({ erro: templates.emailNotFound });
+    // SPRINT 0: resposta genérica para e-mail inexistente (evita enumeração de contas).
+    if (results.length === 0) return res.json({ mensagem: templates.verificationEmailSent });
 
     const usuario = results[0];
     // Proteção dupla para lidar com tinyint (MySQL) vs boolean (PostgreSQL)
@@ -341,7 +341,7 @@ router.post('/resend-verification', async (req: Request, res: Response) => {
       return res.status(400).json({ erro: templates.successVerified });
     }
 
-    const verificationToken = jwt.sign({ id: usuario.id }, process.env.JWT_SECRET as string, { expiresIn: '1d' });
+    const verificationToken = assinarToken({ id: usuario.id }, 'verify', '1d');
     
     // --- MySQL ORIGINAL ---
     // await connection.query(
@@ -395,7 +395,7 @@ router.post('/login', /*verificarRecaptcha,*/ async (req: Request, res: Response
     if (!usuario.email_verified) return res.status(403).json({ erro: templates.errorVerifyEmail });
 
     const duracaoToken = isMobile ? '3650d' : '1d';
-    const token = jwt.sign({ id: usuario.id, email: usuario.email }, process.env.JWT_SECRET as string, { expiresIn: duracaoToken });
+    const token = assinarToken({ id: usuario.id, email: usuario.email }, 'access', duracaoToken);
 
     res.json({ token, usuario: { nome: usuario.nome, email: usuario.email, status: usuario.status } });
   } catch (error: any) {
@@ -454,10 +454,11 @@ router.post('/forgot-password', async (req: Request, res: Response) => {
     connection = await poolPromise.connect();
     const { rows: results } = await connection.query('SELECT * FROM fs_usuarios WHERE email = $1', [email]);
     
-    if (results.length === 0) return res.status(404).json({ erro: templates.emailNotFound });
+    // SPRINT 0: resposta idêntica para e-mail existente ou não (evita enumeração de contas).
+    if (results.length === 0) return res.json({ mensagem: templates.resetAlert });
 
     const usuario = results[0];
-    const resetToken = jwt.sign({ id: usuario.id }, process.env.JWT_SECRET as string, { expiresIn: '1d' });
+    const resetToken = assinarToken({ id: usuario.id }, 'reset', '1d');
     
     // --- MySQL ORIGINAL ---
     // await connection.query(
@@ -748,7 +749,7 @@ router.delete('/criancas/:id', authMiddleware, async (req: AuthRequest, res: Res
 // =====================================================================
 // BUSCAR CONTAGEM DE DEPENDÊNCIAS PARA AVISO DE EXCLUSÃO
 // =====================================================================
-router.get('/criancas/:id/pif-count', authMiddleware, async (req: AuthRequest, res: Response) => {
+router.get('/criancas/:id/pif-count', authMiddleware, exigirCriancaPropria('id'), async (req: AuthRequest, res: Response) => {
   const { id } = req.params;
   const usuario_id = req.user?.id;
 
@@ -805,7 +806,7 @@ router.get('/plano-familiar/ultimo/:id_crianca', authMiddleware, async (req: Aut
 // =================================================================================
 // REATOR DO PIF (CLAUDE & GROK ROUTING + CHAINING XML)
 // =================================================================================
-router.post('/plano-familiar', authMiddleware, async (req: AuthRequest, res: Response) => {
+router.post('/plano-familiar', authMiddleware, exigirCriancaPropria('id_crianca', 'body'), async (req: AuthRequest, res: Response) => {
   const { id_crianca, dados_formulario, dados_crianca } = req.body;
   const usuario_id = req.user?.id;
   const lang = getLanguage(req as any);
@@ -933,7 +934,7 @@ router.post('/plano-familiar', authMiddleware, async (req: AuthRequest, res: Res
 
     // 4. CONFIGURAÇÃO DE ROTEAMENTO (CLAUDE vs GROK)
     const configIA: any = (await obterConfigIA('pif_system')) || {};
-    const modeloIA = configIA.modelo || 'claude-3-5-sonnet-20241022';
+    const modeloIA = configIA.modelo || 'claude-sonnet-4-6';
     const isClaude = modeloIA.toLowerCase().includes('claude');
 
     const baseConfig: Record<string, any> = {
@@ -1218,7 +1219,7 @@ router.get('/plano-familiar/download/:id_plano', authMiddleware, async (req: Aut
 });
 
 // ROTA PARA SALVAR RASCUNHO (CORRIGIDA: Sincronizada com o GET)
-router.post('/plano-familiar/rascunho', authMiddleware, async (req: AuthRequest, res: Response) => {
+router.post('/plano-familiar/rascunho', authMiddleware, exigirCriancaPropria('id_crianca', 'body'), async (req: AuthRequest, res: Response) => {
   const lang = getLanguage(req as any);
   const templates = i18nEmails[lang];
   const { id_crianca, dados_formulario } = req.body;
@@ -1471,7 +1472,7 @@ router.put('/profile/completar', authMiddleware, async (req: AuthRequest, res: R
         `UPDATE fs_usuarios 
              SET creditos = creditos + 1, 
                  chat_mensagens_restantes = chat_mensagens_restantes + 1, 
-                 perfil_recompensado = 1 
+                 perfil_recompensado = '1' 
              WHERE id = $1`,
         [usuarioId]
       );
@@ -1536,20 +1537,36 @@ router.get('/plano-familiar/lista/:id_crianca', authMiddleware, async (req: Auth
 
 router.post('/contato', async (req: Request, res: Response) => {
   const { name, email, subject, message } = req.body;
+
+  // SPRINT 0: validação mínima e escape de HTML (antes, o conteúdo era injetado cru no
+  // corpo HTML do e-mail). O rate limit desta rota é aplicado no index.ts.
+  if (!name || !email || !message || typeof message !== 'string') {
+    return res.status(400).json({ error: 'Preencha nome, e-mail e mensagem.' });
+  }
+  if (String(message).length > 5000 || String(name).length > 200 || String(subject || '').length > 200) {
+    return res.status(400).json({ error: 'Mensagem muito longa.' });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email))) {
+    return res.status(400).json({ error: 'E-mail inválido.' });
+  }
+
+  const nomeLimpo = String(name).replace(/[\r\n"<>]/g, ' ').trim();
+  const assuntoLimpo = String(subject || 'Sem assunto').replace(/[\r\n]/g, ' ').trim();
+
   try {
     const mailOptions = {
-      from: `"${name} (Via Site)" <${process.env.EMAIL_USER}>`, // Remetente autenticado para não cair no SPAM
-      replyTo: email, // Quando você clicar em "Responder" no seu cliente de email, irá para o usuário
+      from: `"${nomeLimpo} (Via Site)" <${process.env.EMAIL_USER}>`, // Remetente autenticado para não cair no SPAM
+      replyTo: String(email), // Quando você clicar em "Responder" no seu cliente de email, irá para o usuário
       to: 'contact@cognacare.com', // O destino final
-      subject: `[Contato Cognacare] ${subject}`,
-      text: `Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`,
+      subject: `[Contato Cognacare] ${assuntoLimpo}`,
+      text: `Nome: ${nomeLimpo}\nE-mail: ${email}\n\nMensagem:\n${message}`,
       html: `
         <h3>Novo Contato via Site Cognacare</h3>
-        <p><strong>Nome:</strong> ${name}</p>
-        <p><strong>E-mail:</strong> ${email}</p>
+        <p><strong>Nome:</strong> ${escaparHtml(nomeLimpo)}</p>
+        <p><strong>E-mail:</strong> ${escaparHtml(email)}</p>
         <hr>
         <p><strong>Mensagem:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${escaparHtml(message).replace(/\n/g, '<br>')}</p>
       `
     };
     await transporter.sendMail(mailOptions);

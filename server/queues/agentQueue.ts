@@ -13,6 +13,8 @@ export interface IAgentJobData {
     dataRelato?: string;
     detalhes?: string[];
     diasAnalisados?: number;
+    usuarioId?: string | number;
+    relato?: string;
 }
 
 // Configuração de conexão com o Redis (Memurai local ou Upstash)
@@ -67,19 +69,19 @@ const agentWorker = new Worker('cognacare-agent-queue', async (job: Job<IAgentJo
                 job.data.motivo || 'Motivo não informado'
             );
         } 
-        else if (job.name === 'detetive_padroes') {
-            await agentService.analisarPadroesEvolutivos(
-                job.data.criancaId, 
-                job.data.diasAnalisados
-            );
+        // SPRINT 0: 'analisar-padroes' mantido por compatibilidade com jobs já enfileirados no Redis.
+        else if (job.name === 'detetive_padroes' || job.name === 'analisar-padroes') {
+            // Detetive de 15 dias (prompt agent_detetive_padroes: diário + agenda + medicamentos)
+            await agentService.rodarDetetiveDePadroes(job.data.criancaId);
+        }
+        else if (job.name === 'avaliar_sobrecarga_cuidador') {
+            // SPRINT 0: antes executado de forma síncrona dentro do POST /diario/salvar.
+            if (!job.data.usuarioId || !job.data.relato) throw new Error('Dados do relato ausentes.');
+            await agentService.avaliarSobrecargaCuidador(job.data.usuarioId, job.data.relato);
         }
         else {
-            // Tarefa padrão: Avaliar rotina geral
-            if (typeof (agentService as any).avaliarRotinaEAgir === 'function') {
-                await (agentService as any).avaliarRotinaEAgir(job.data.criancaId);
-            } else {
-                console.warn(`[BullMQ Worker] Método 'avaliarRotinaEAgir' ainda não implementado no agentService.`);
-            }
+            // Ex.: 'avaliar-crise-diario' — handler ainda não implementado (ver roadmap).
+            console.warn(`[BullMQ Worker] Job '${job.name}' sem handler implementado. Ignorado.`);
         }
 
     } catch (error: any) {

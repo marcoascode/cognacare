@@ -2,7 +2,8 @@ import express, { Response } from 'express';
 import authMiddleware from '../../middleware/authMiddleware';
 // import poolPromise from '../../config/mysqlPoolPromise';
 import poolPromise from '../../config/pgPoolPromise';
-import memoryService from '../../services/memoryService';
+import { agentQueue } from '../../queues/agentQueue';
+import { exigirCriancaPropria, flagAtiva } from '../../middleware/acessoCrianca';
 
 const router = express.Router();
 
@@ -15,7 +16,7 @@ interface CustomRequest extends express.Request {
 }
 
 // 1. OBTER RESUMO DO MÊS
-router.get('/calendario/:criancaId', authMiddleware, async (req: CustomRequest, res: Response) => {
+router.get('/calendario/:criancaId', authMiddleware, exigirCriancaPropria('criancaId'), async (req: CustomRequest, res: Response) => {
     const { criancaId } = req.params;
     const { mes, ano } = req.query;
 
@@ -42,7 +43,7 @@ router.get('/calendario/:criancaId', authMiddleware, async (req: CustomRequest, 
 });
 
 // 2. OBTER DIÁRIO DE UM DIA ESPECÍFICO
-router.get('/dia/:criancaId', authMiddleware, async (req: CustomRequest, res: Response) => {
+router.get('/dia/:criancaId', authMiddleware, exigirCriancaPropria('criancaId'), async (req: CustomRequest, res: Response) => {
     const { criancaId } = req.params;
     const data = req.query.data as string;
 
@@ -71,7 +72,7 @@ router.get('/dia/:criancaId', authMiddleware, async (req: CustomRequest, res: Re
 });
 
 // 3. SALVAR (UPSERT) - Salvar ou Atualizar Diário de Bordo
-router.post('/salvar', authMiddleware, async (req: CustomRequest, res: Response) => {
+router.post('/salvar', authMiddleware, exigirCriancaPropria('crianca_id', 'body'), async (req: CustomRequest, res: Response) => {
     try {
         const {
             crianca_id, data, humor_dia, atividades_realizadas, atividades_pif,
@@ -159,30 +160,46 @@ router.post('/salvar', authMiddleware, async (req: CustomRequest, res: Response)
             habilidades_motoras || '', habilidades_cognitivas || '', habilidades_adaptativas || '', momentos_chave || ''
         ]);
 
-        // FIREWALL DO COGNACARE AGENT (Mantido intacto)
-        const [userCheck]: any = await poolPromise.query(
-            'SELECT is_agent_active FROM fs_usuarios WHERE id = ?',
-            [req.user?.id]
-        );
-        const isAgentActive = userCheck[0]?.is_agent_active === 1;
+        // FIREWALL DO COGNACARE AGENT
+        // SPRINT 0: a consulta abaixo usava sintaxe MySQL ('?' e desestruturação [rows]),
+        // o que fazia a rota responder 500 DEPOIS de já ter gravado o diário. Além disso,
+        // o require() devolvia o módulo (sem .default) e a análise de burnout rodava de
+        // forma síncrona dentro da requisição. Agora tudo vai para a fila BullMQ e uma
+        // falha do agente nunca impede a confirmação do salvamento.
+        try {
+            const { rows: userCheck } = await poolPromise.query(
+                'SELECT is_agent_active FROM fs_usuarios WHERE id = $1',
+                [req.user?.id]
+            );
+            const isAgentActive = flagAtiva(userCheck[0]?.is_agent_active);
 
-        if (isAgentActive) {
-            const { agentQueue } = require('../../queues/agentQueue');
-            const agentService = require('../../services/agentService');
+            if (isAgentActive) {
+                // A. Escudo de Sobrecarga (Monitoramento do Cuidador)
+                if (comportamento_geral && comportamento_geral.length > 10) {
+                    await agentQueue.add('avaliar_sobrecarga_cuidador', {
+                        criancaId: crianca_id,
+                        usuarioId: req.user?.id,
+                        relato: String(comportamento_geral).slice(0, 4000)
+                    }, {
+                        // No máximo 1 análise por cuidador por dia: o diário é um upsert e pode
+                        // ser salvo várias vezes. O job fica retido 24h para o jobId deduplicar.
+                        jobId: `sobrecarga_${req.user?.id}_${dataLimpa}`,
+                        removeOnComplete: { age: 86400 },
+                        removeOnFail: 100
+                    });
+                }
 
-            // A. Escudo de Sobrecarga (Monitoramento do Cuidador)
-            if (comportamento_geral && comportamento_geral.length > 10) {
-                await agentService.avaliarSobrecargaCuidador(req.user?.id, comportamento_geral);
+                // B. Via Rápida de Crise (handler ainda não implementado no worker)
+                if (teve_crise) {
+                    await agentQueue.add('avaliar-crise-diario', { 
+                        criancaId: crianca_id, 
+                        detalhes: detalhes_crise,
+                        dataRelato: dataLimpa 
+                    }, { priority: 1, removeOnComplete: true, removeOnFail: 100 });
+                }
             }
-
-            // B. Via Rápida de Crise
-            if (teve_crise) {
-                await agentQueue.add('avaliar-crise-diario', { 
-                    criancaId: crianca_id, 
-                    detalhes: detalhes_crise,
-                    data: dataLimpa 
-                }, { priority: 1 });
-            }
+        } catch (agentError) {
+            console.error('⚠️ Diário salvo, mas falhou o disparo do Agente:', agentError);
         }
 
         res.json({ success: true, mensagem: 'Diário salvo com sucesso!' });

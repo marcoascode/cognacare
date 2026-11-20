@@ -38,7 +38,7 @@ export default function fsPagamentosRoutes(io: any) {
   // --- FUNÇÃO AUXILIAR PARA DESCONTAR BÔNUS ---
   // const processarDebitoBonus = async (connection: any, usuario_id: number, valor_bonus: number, descricao_compra: string) => {
   //   if (valor_bonus > 0) {
-  //     const [user]: any = await connection.query('SELECT saldo_bonus FROM fs_usuarios WHERE id = ?', [usuario_id]);
+  //     const { rows: user }: any = await connection.query(`SELECT saldo_bonus FROM fs_usuarios WHERE id = $1`, [usuario_id]);
   //     const saldoAtual = parseFloat(user[0]?.saldo_bonus || 0);
 
   //     if (saldoAtual >= valor_bonus) {
@@ -115,7 +115,7 @@ export default function fsPagamentosRoutes(io: any) {
     // let comissaoValor = 0;
 
     // if (cupomCode) {
-    //   const [cupomRows]: any = await connection.query('SELECT afiliado_id, percentual_comissao FROM fs_cupons WHERE codigo = ? LIMIT 1', [cupomCode]);
+    //   const { rows: cupomRows }: any = await connection.query('SELECT afiliado_id, percentual_comissao FROM fs_cupons WHERE codigo = ? LIMIT 1', [cupomCode]);
     //   if (cupomRows.length > 0) {
     //     afiliadoId = cupomRows[0].afiliado_id;
     //     comissaoValor = (parseFloat(String(valor_pago)) * parseFloat(cupomRows[0].percentual_comissao)) / 100;
@@ -309,45 +309,9 @@ export default function fsPagamentosRoutes(io: any) {
   //=====================================================================================================
   // SISTEMA DE PAGAMENTO EFI
   //=====================================================================================================
-  router.get('/gerar-token-efi', async (req: Request, res: Response) => {
-    "use strict";
-    var certificado = fs.readFileSync(path.resolve(__dirname, 'certs', process.env.EFI_FS_CERT as string));
-
-    var credenciais = {
-      client_id: process.env.EFI_FS_CLIENT_ID,
-      client_secret: process.env.EFI_FS_CLIENT_SECRET,
-    };
-
-    var data = JSON.stringify({ grant_type: "client_credentials" });
-    var data_credentials = credenciais.client_id + ":" + credenciais.client_secret;
-    var auth = Buffer.from(data_credentials).toString("base64");
-
-    const agent = new https.Agent({
-      pfx: certificado,
-      passphrase: "",
-    });
-
-    var config = {
-      method: "POST",
-      url: "https://pix.api.efipay.com.br/oauth/token",
-      headers: {
-        Authorization: "Basic " + auth,
-        "Content-Type": "application/json",
-      },
-      httpsAgent: agent,
-      data: data,
-    };
-
-    axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-        res.json(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-        res.status(500).json({ error: 'Erro' });
-      });
-  });
+  // SPRINT 0: a rota pública GET /gerar-token-efi foi REMOVIDA. Ela devolvia a qualquer
+  // visitante (sem autenticação) o access token OAuth de PRODUÇÃO da Efí e o gravava no log.
+  // O SDK sdk-node-apis-efi já obtém e renova o token internamente.
 
   /* =====================================================================================================
     ROTA: CHECKOUT PIX (Efí Bank) - Valor mínimo: R$ 0.01
@@ -364,7 +328,7 @@ export default function fsPagamentosRoutes(io: any) {
       const isPlanoFundador = descriptionClean.toLowerCase().includes('fundador') || descriptionClean.toLowerCase().includes('founder');
 
       if (isPlanoFundador) {
-        const [rows]: any = await poolPromise.query('SELECT COUNT(id) as total FROM fs_usuarios WHERE is_founder = 1');
+        const { rows: rows }: any = await poolPromise.query(`SELECT COUNT(id) as total FROM fs_usuarios WHERE is_founder = '1'`);
         if (rows[0].total >= 100) {
           return res.status(400).send({ error: 'As vagas para Membro Fundador estão esgotadas!' });
         }
@@ -378,7 +342,7 @@ export default function fsPagamentosRoutes(io: any) {
       // --- LÓGICA DE CUPOM ---
       let cupomAplicado = null;
       if (couponCode) {
-        const [cupons]: any = await poolPromise.query('SELECT codigo, percentual_desconto FROM fs_cupons WHERE codigo = ? AND ativo = 1', [couponCode]);
+        const { rows: cupons }: any = await poolPromise.query(`SELECT codigo, percentual_desconto FROM fs_cupons WHERE codigo = $1 AND ativo = '1'`, [couponCode]);
         if (cupons.length > 0) {
           const percentual = cupons[0].percentual_desconto;
           const descontoValor = valorOriginal * (percentual / 100);
@@ -389,7 +353,7 @@ export default function fsPagamentosRoutes(io: any) {
 
       // --- LÓGICA DE BÔNUS ---
       if (usarBonus) {
-        const [userRows]: any = await poolPromise.query('SELECT saldo_bonus FROM fs_usuarios WHERE id = ?', [usuario_id]);
+        const { rows: userRows }: any = await poolPromise.query(`SELECT saldo_bonus FROM fs_usuarios WHERE id = $1`, [usuario_id]);
         const saldoBonus = parseFloat(userRows[0]?.saldo_bonus || 0);
         if (saldoBonus > 0) {
           bonusUtilizado = Math.min(saldoBonus, valorBaseComDesconto);
@@ -437,7 +401,7 @@ export default function fsPagamentosRoutes(io: any) {
         if (Math.abs(price - 497.00) < 0.01) precoValido = true;
       } else if (matchCreditos) {
         const creditQuantity = parseInt(matchCreditos[1], 10);
-        const [prices]: any = await poolPromise.query('SELECT de, ate, preco FROM fs_precos ORDER BY de ASC');
+        const { rows: prices }: any = await poolPromise.query('SELECT de, ate, preco FROM fs_precos ORDER BY de ASC');
         let expectedPrice = 0;
         for (const range of prices) {
           if (creditQuantity >= range.de && creditQuantity <= range.ate) {
@@ -446,7 +410,7 @@ export default function fsPagamentosRoutes(io: any) {
         }
         if (Math.abs(price - expectedPrice) < 0.01) precoValido = true;
       } else {
-        const [produtosFixos]: any = await poolPromise.query('SELECT preco FROM fs_produtos_fixos WHERE description_cobranca = ?', [descriptionClean]);
+        const { rows: produtosFixos }: any = await poolPromise.query(`SELECT preco FROM fs_produtos_fixos WHERE description_cobranca = $1`, [descriptionClean]);
         if (produtosFixos.length > 0) {
           const expectedPrice = parseFloat(produtosFixos[0].preco);
           if (Math.abs(price - expectedPrice) < 0.01) precoValido = true;
@@ -508,8 +472,8 @@ export default function fsPagamentosRoutes(io: any) {
       let valorComDesconto = valorTotal;
       let cupomValido = null;
       if (cupom) {
-        const [rowsCupom]: any = await connection.query(
-          'SELECT codigo FROM fs_cupons WHERE codigo = ? AND ativo = 1 LIMIT 1',
+        const { rows: rowsCupom }: any = await connection.query(
+          `SELECT codigo FROM fs_cupons WHERE codigo = $1 AND ativo = '1' LIMIT 1`,
           [cupom]
         );
         if (rowsCupom.length > 0) cupomValido = rowsCupom[0].codigo;
@@ -517,7 +481,7 @@ export default function fsPagamentosRoutes(io: any) {
 
       const valorFinalCentavos = Math.round(valorComDesconto * 100);
 
-      const [userRows]: any = await connection.query('SELECT nome, email FROM fs_usuarios WHERE id = ?', [usuario_id]);
+      const { rows: userRows }: any = await connection.query(`SELECT nome, email FROM fs_usuarios WHERE id = $1`, [usuario_id]);
       if (userRows.length === 0) return res.status(404).json({ error: 'Usuário não encontrado.' });
       const dbUser = userRows[0];
 
@@ -633,11 +597,14 @@ export default function fsPagamentosRoutes(io: any) {
         const valor = pix.valor;
         const horario = moment(pix.horario).format('YYYY-MM-DD HH:mm:ss');
 
-        const [cobrancaRows]: any = await connection.query(
+        // SPRINT 0: o BEGIN vinha DEPOIS do SELECT ... FOR UPDATE, então o lock não protegia
+        // contra notificações duplicadas simultâneas. A consulta também usava sintaxe MySQL.
+        await connection.query('BEGIN');
+        const { rows: cobrancaRows }: any = await connection.query(
           `SELECT c.id, c.usuario_id, c.description, c.valor_total, c.valor_bonus_utilizado, c.status, c.cupom_utilizado, u.email 
                  FROM fs_cobrancas c 
                  JOIN fs_usuarios u ON c.usuario_id = u.id 
-                 WHERE c.txid = ? FOR UPDATE`,
+                 WHERE c.txid = $1 FOR UPDATE OF c`,
           [txid]
         );
 
@@ -645,10 +612,7 @@ export default function fsPagamentosRoutes(io: any) {
           const cobranca = cobrancaRows[0];
 
           if (cobranca.status !== 'pago') {
-            // await connection.beginTransaction();
-            await connection.query('BEGIN');
-
-            await connection.query('UPDATE fs_cobrancas SET status = ? WHERE id = ?', ['pago', cobranca.id]);
+            await connection.query('UPDATE fs_cobrancas SET status = $1 WHERE id = $2', ['pago', cobranca.id]);
 
             await entregarBeneficiosUnicos(
               connection,
@@ -666,18 +630,21 @@ export default function fsPagamentosRoutes(io: any) {
               await processarDebitoBonus(connection, cobranca.usuario_id, bonusUtilizado, cobranca.description);
             }
 
-            // await connection.commit();
             await connection.query('COMMIT');
 
-            if (cobranca.email && io) {
-              io.to(`user:${cobranca.email}`).emit('paymentConfirmed', { txid, status: 'pago' });
+            // SPRINT 0: a notificação ia para a sala 'user:<email>', na qual qualquer cliente podia
+            // entrar. Agora usa a sala definida pelo JWT no handshake do socket.
+            if (io) {
+              io.to(`user_${cobranca.usuario_id}`).emit('paymentConfirmed', { txid, status: 'pago' });
             }
 
             notificarVendaAfiliado(txid, 'PIX');
           } else {
+            await connection.query('ROLLBACK');
             console.log(`[Webhook PIX] Pagamento ${txid} já estava processado.`);
           }
         } else {
+          await connection.query('ROLLBACK');
           console.log(`[Webhook PIX] Cobrança não encontrada para TXID: ${txid}`);
         }
       }
@@ -712,27 +679,40 @@ export default function fsPagamentosRoutes(io: any) {
 
         console.log(`[Webhook] Charge ${chargeId} -> ${status}`);
 
-        await connection.query('UPDATE fs_cobrancas SET status = ? WHERE charge_id = ?', [status, chargeId]);
+        // SPRINT 0: antes o status era sobrescrito ('paid') ANTES da checagem
+        // "!== 'pago_sistema'", que por isso sempre passava — notificações repetidas
+        // ('paid' e depois 'settled') entregavam os benefícios em dobro. Também usava sintaxe MySQL.
+        await connection.query('BEGIN');
+        const { rows: cobranca }: any = await connection.query('SELECT * FROM fs_cobrancas WHERE charge_id = $1 FOR UPDATE', [chargeId]);
 
-        if (status === 'paid' || status === 'settled') {
-          const [cobranca]: any = await connection.query('SELECT * FROM fs_cobrancas WHERE charge_id = ?', [chargeId]);
-          if (cobranca.length > 0 && cobranca[0].status !== 'pago_sistema') {
-            await connection.query("UPDATE fs_cobrancas SET status = 'pago_sistema' WHERE id = ?", [cobranca[0].id]);
-            await entregarBeneficiosUnicos(
-              connection,
-              cobranca[0].usuario_id,
-              cobranca[0].description,
-              chargeId,
-              cobranca[0].txid,
-              cobranca[0].valor_total,
-              moment().format('YYYY-MM-DD HH:mm:ss'),
-              cobranca[0].cupom_utilizado
-            );
-            notificarVendaAfiliado(`EFI-${chargeId}`, 'CARTAO');
-          }
+        if (cobranca.length === 0) {
+          await connection.query('ROLLBACK');
+          console.log(`[Webhook] Cobrança não encontrada para charge ${chargeId}`);
+        } else if (cobranca[0].status === 'pago_sistema') {
+          await connection.query('ROLLBACK');
+          console.log(`[Webhook] Charge ${chargeId} já processado.`);
+        } else if (status === 'paid' || status === 'settled') {
+          await connection.query("UPDATE fs_cobrancas SET status = 'pago_sistema' WHERE id = $1", [cobranca[0].id]);
+          await entregarBeneficiosUnicos(
+            connection,
+            cobranca[0].usuario_id,
+            cobranca[0].description,
+            chargeId,
+            cobranca[0].txid,
+            cobranca[0].valor_total,
+            moment().format('YYYY-MM-DD HH:mm:ss'),
+            cobranca[0].cupom_utilizado
+          );
+          await connection.query('COMMIT');
+          notificarVendaAfiliado(`EFI-${chargeId}`, 'CARTAO');
+        } else {
+          // Demais status (waiting, unpaid, canceled, refunded...): apenas registra.
+          await connection.query('UPDATE fs_cobrancas SET status = $1 WHERE id = $2', [status, cobranca[0].id]);
+          await connection.query('COMMIT');
         }
       }
     } catch (error) {
+      if (connection) { try { await connection.query('ROLLBACK'); } catch (e) { } }
       console.error('Erro Webhook:', error);
     } finally {
       if (connection) connection.release();
@@ -742,7 +722,7 @@ export default function fsPagamentosRoutes(io: any) {
   //=====================================================================================================
   router.get('/usuario/creditos-ativos', autenticarUsuario, async (req: AuthRequest, res: Response): Promise<any> => {
     try {
-      const [userRows]: any = await poolPromise.query('SELECT creditos, chat_mensagens_restantes, saldo_bonus FROM fs_usuarios WHERE id = ?', [req.usuarioId]);
+      const { rows: userRows }: any = await poolPromise.query(`SELECT creditos, chat_mensagens_restantes, saldo_bonus FROM fs_usuarios WHERE id = $1`, [req.usuarioId]);
       if (userRows.length === 0) return res.status(404).json({ error: 'Usuário não encontrado' });
       res.json({ creditos_ativos: userRows[0].creditos, chat_mensagens_restantes: userRows[0].chat_mensagens_restantes, saldo_bonus: userRows[0].saldo_bonus });
     } catch (error) {
@@ -797,7 +777,7 @@ export default function fsPagamentosRoutes(io: any) {
       connection = await poolPromise.connect();
 
       // // 1. Compras
-      // const [entradas]: any = await connection.query(`
+      // const { rows: entradas }: any = await connection.query(`
       //       SELECT 
       //           data_pagamento as data,
       //           'C' as tipo,
@@ -817,7 +797,7 @@ export default function fsPagamentosRoutes(io: any) {
       //   `, [usuarioId]);
 
       // // 2. Consumos
-      // const [saidas]: any = await connection.query(`
+      // const { rows: saidas }: any = await connection.query(`
       //       SELECT 
       //           DATE(data_consumo) as data, 
       //           'D' as tipo,
@@ -877,7 +857,7 @@ export default function fsPagamentosRoutes(io: any) {
       // 3. Histórico de Bônus
       let bonusHist: any[] = [];
       try {
-        // const [bonusRows]: any = await connection.query(`
+        // const { rows: bonusRows }: any = await connection.query(`
         //         SELECT 
         //             data, 
         //             'B' as tipo, 
@@ -914,7 +894,7 @@ export default function fsPagamentosRoutes(io: any) {
       const saidasFiltradas = saidasMapeadas.filter((s: any) => s.creditos_pif !== 0 || s.creditos_chat !== 0);
       const extrato = [...entradas, ...saidasFiltradas, ...bonusHist].sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime());
 
-      const [user]: any = await connection.query('SELECT creditos, chat_mensagens_restantes, saldo_bonus FROM fs_usuarios WHERE id = ?', [usuarioId]);
+      const { rows: user }: any = await connection.query(`SELECT creditos, chat_mensagens_restantes, saldo_bonus FROM fs_usuarios WHERE id = $1`, [usuarioId]);
 
       const saldoPif = user.length ? user[0].creditos : 0;
       const saldoChat = user.length ? user[0].chat_mensagens_restantes : 0;
@@ -940,7 +920,7 @@ export default function fsPagamentosRoutes(io: any) {
     try {
       const usuarioId = req.usuarioId;
       if (!usuarioId) return res.status(401).json({ error: 'Usuário não autenticado.' });
-      // const [rows]: any = await poolPromise.query(`SELECT 1 FROM fs_plano_familiar WHERE usuario_id = ? AND criado_em >= DATE_SUB(NOW(), INTERVAL 90 DAY) LIMIT 1`, [usuarioId]);
+      // const { rows: rows }: any = await poolPromise.query(`SELECT 1 FROM fs_plano_familiar WHERE usuario_id = ? AND criado_em >= DATE_SUB(NOW(), INTERVAL 90 DAY) LIMIT 1`, [usuarioId]);
       const { rows } = await poolPromise.query(
         `SELECT 1 FROM fs_plano_familiar WHERE usuario_id = $1 AND criado_em >= NOW() - INTERVAL '90 DAYS' LIMIT 1`, 
         [usuarioId]

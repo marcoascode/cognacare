@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import * as jwt from 'jsonwebtoken';
+import { verificarTokenAcesso } from '../utils/jwtTokens';
 
 // Estende a interface Request do Express para incluir o usuarioId
 // Exportamos esta interface para que possa ser reutilizada noutros ficheiros de rotas!
@@ -27,8 +28,9 @@ const autenticarUsuario = (req: AuthRequest, res: Response, next: NextFunction):
 
   try {
     // O cast 'as IDecodedToken' assegura ao TS que o payload contém o ID do utilizador
-    const decoded = jwt.verify(token, process.env.JWT_SECRET) as IDecodedToken;
+    const decoded = verificarTokenAcesso(token) as IDecodedToken;
     req.usuarioId = decoded.id;
+    (req as any).user = { id: decoded.id, email: (decoded as any).email };
     
     next();
   } catch (error) {

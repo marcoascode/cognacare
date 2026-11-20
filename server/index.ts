@@ -1,7 +1,17 @@
 //-----------------------------------------------------------------------------
 import dotenv from 'dotenv';
-// dotenv.config({ path: '.env' }); // USAR APENAS PARA PRODUÇÃO!
-dotenv.config({ path: '.env.dev' }); // USAR APENAS PARA DEV!
+// SPRINT 0: em produção as variáveis são injetadas pelo docker-compose (env_file);
+// o .env.dev só é carregado fora de produção. dotenv nunca sobrescreve variáveis já definidas.
+dotenv.config({ path: process.env.NODE_ENV === 'production' ? '.env' : '.env.dev' });
+
+// Falha rápida: sem JWT_SECRET qualquer token poderia ser forjado.
+if (!process.env.JWT_SECRET) {
+  console.error('❌ [BOOT] JWT_SECRET não definido. Abortando o arranque por segurança.');
+  process.exit(1);
+}
+if (process.env.JWT_SECRET.length < 32) {
+  console.warn('⚠️ [BOOT] JWT_SECRET com menos de 32 caracteres. Recomenda-se um segredo mais longo.');
+}
 // console.log(`[start:api]ENV: ${process.env.NODE_ENV}`)
 //-----------------------------------------------------------------------------
 // --- LOGS DE DIAGNÓSTICO (IMPORTANTE) ---
@@ -31,6 +41,7 @@ import agentService from './services/agentService';
 // --- POSTGRESQL CORRIGIDO ---
 import poolPromise from './config/pgPoolPromise';
 import { iniciarAgendamentos } from './queues/agentQueue';
+import { verificarTokenAcesso } from './utils/jwtTokens';
 
 // =========================================================================
 // IMPORTAÇÕES DAS ROTAS
@@ -107,7 +118,7 @@ const generalLimiter = rateLimit({
 // Aplica o limitador geral em TODAS as rotas
 app.use(generalLimiter); 
 
-// 2. LIMITADOR ESTRITO (Para Bots e Força Bruta - 5 req / 15 min)
+// 2. LIMITADOR ESTRITO (Para Bots e Força Bruta - 5 req / 15 min, por IP)
 const strictLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 5,
@@ -116,13 +127,50 @@ const strictLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-// 3. APLICANDO O LIMITE ESTRITO NAS ROTAS SENSÍVEIS
+// Chave por usuário autenticado (cai para o IP quando não há token válido).
+// Evita que famílias atrás do mesmo IP (NAT/4G) disputem o mesmo balde.
+const chavePorUsuario = (req: Request): string => {
+  const token = req.headers['authorization']?.split(' ')[1];
+  if (token) {
+    try {
+      const decoded: any = verificarTokenAcesso(token);
+      if (decoded?.id) return `u:${decoded.id}`;
+    } catch (e) { /* token inválido: usa o IP */ }
+  }
+  return `ip:${req.ip}`;
+};
+
+// 3. GERAÇÃO DE PIF: cada geração dura minutos e consome crédito → 5 / 15 min por usuário
+const pifLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5,
+    keyGenerator: chavePorUsuario,
+    message: { error: 'Muitas gerações de PIF em sequência. Aguarde alguns minutos.' } as any,
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// 4. CHAT: 10 mensagens / minuto por usuário (o saldo de mensagens já limita o volume)
+const chatLimiter = rateLimit({
+    windowMs: 1 * 60 * 1000,
+    max: 10,
+    keyGenerator: chavePorUsuario,
+    message: { error: 'Você está enviando mensagens muito rápido. Aguarde um instante.' } as any,
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+// APLICANDO OS LIMITES NAS ROTAS SENSÍVEIS
 // IMPORTANTE: Isso precisa vir ANTES do app.use(express.json()) e das definições de rotas.
+// SPRINT 0: antes, app.use('/fernandasepe/plano-familiar') e app.use('/chat') limitavam
+// TAMBÉM as rotas de leitura (listagem, download, rascunho, histórico) a 5 req/15 min.
 app.use('/fernandasepe/login', strictLimiter);
 app.use('/fernandasepe/cadastro', strictLimiter);
 app.use('/fernandasepe/forgot-password', strictLimiter);
-app.use('/fernandasepe/plano-familiar', strictLimiter); 
-app.use('/chat', strictLimiter);
+app.use('/fernandasepe/resend-verification', strictLimiter);
+app.use('/fernandasepe/contato', strictLimiter);
+app.post('/fernandasepe/plano-familiar', pifLimiter);
+app.post('/chat', chatLimiter);
 
 app.use(express.json({
   verify: (req: Request, res: Response, buf: Buffer) => {
@@ -135,8 +183,14 @@ app.use(express.json({
 
 app.use(express.urlencoded({ extended: true }));
 
-// Servir os arquivos estáticos, expondo a pasta uploads publicamente.
-app.use('/uploads', express.static('/app/uploads'));
+// Servir publicamente APENAS as fotos de perfil (UUID.webp gerado por processarImagemSegura).
+// SPRINT 0: qualquer outro arquivo (relatórios, histórias sociais, documentos) não é
+// servido estaticamente — dados clínicos não podem ficar acessíveis sem autenticação.
+const FOTO_PERFIL_REGEX = /^\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.webp$/i;
+app.use('/uploads', (req: Request, res: Response, next: NextFunction) => {
+  if (!FOTO_PERFIL_REGEX.test(req.path)) return res.status(404).end();
+  next();
+}, express.static('/app/uploads', { index: false, dotfiles: 'deny' }));
 
 // --- Configuração do WebSocket ---
 const io = new Server(server, {
@@ -156,11 +210,12 @@ io.use((socket: CustomSocket, next: (err?: Error) => void) => {
   const token = socket.handshake.auth?.token;
   if (!token) return next(new Error('Authentication error: Token not provided'));
   
-  jwt.verify(token, process.env.JWT_SECRET as string, (err: any, decoded: any) => {
-    if (err) return next(new Error('Authentication error: Invalid token'));
-    socket.decoded = decoded; 
+  try {
+    socket.decoded = verificarTokenAcesso(token);
     next();
-  });
+  } catch (err) {
+    return next(new Error('Authentication error: Invalid token'));
+  }
 });
 
 io.on('connection', (socket: CustomSocket) => {
@@ -173,10 +228,9 @@ io.on('connection', (socket: CustomSocket) => {
       console.log(`📡 [Socket.io] Utilizador ${usuarioId} ligado e alocado na sala de alertas.`);
   }
 
-  // Mantém a compatibilidade com partes antigas do seu código
-  socket.on('joinUserRoom', (data: { email: string }) => {
-      if (data.email) socket.join(`user:${data.email}`);
-  });
+  // SPRINT 0: o evento 'joinUserRoom' foi removido. Ele permitia que QUALQUER cliente
+  // entrasse na sala de outro usuário informando apenas o e-mail. A sala do usuário
+  // é definida exclusivamente pelo JWT (user_<id>) acima.
 });
 
 // --- Rotas ---
@@ -224,42 +278,15 @@ cron.schedule('59 23 * * *', () => {
   processarFechamentoDiario();
 });
 
-// Detetive de Padrões Fatiado (Domingo às 03:00)
-cron.schedule('0 3 * * 0', () => {
-  console.log('🕒 Disparando Detetive de Padrões (Semanal)...');
+// Detetive de Padrões (03:00 todos os dias, fatiado por id_crianca % 7)
+// SPRINT 0: antes havia DOIS jobs no domingo às 03:00 — um enfileirado (que nunca
+// executava, pois o nome do job não batia com o worker) e uma varredura síncrona de
+// todas as crianças dentro do processo da API. Agora há um único fluxo: o cron
+// distribui as crianças pelos 7 dias da semana e o worker BullMQ processa em fila.
+// Cada criança continua sendo analisada uma vez por semana.
+cron.schedule('0 3 * * *', () => {
+  console.log('🕒 Disparando Detetive de Padrões (fatia do dia)...');
   rodarDetetiveDePadroesJob();
-});
-
-// Varredura Semanal Completa (Domingo às 03:00)
-cron.schedule('0 3 * * 0', async () => {
-    console.log('⏰ Iniciando Job Semanal do Detetive de Padrões...');
-    try {
-        // CORREÇÃO TS2488: O "any" blinda o TypeScript contra o erro de iteração do MySQL2
-        // --- MySQL ORIGINAL ---
-        // const [criancas]: any = await poolPromise.query(`
-        //     SELECT c.id_crianca 
-        //     FROM fs_crianca c
-        //     JOIN fs_usuarios u ON c.usuario_id = u.id
-        //     WHERE u.is_agent_active = 1
-        // `);
-
-        // --- POSTGRESQL CORRIGIDO ---
-        const { rows: criancas } = await poolPromise.query(`
-            SELECT c.id_crianca 
-            FROM fs_crianca c
-            JOIN fs_usuarios u ON c.usuario_id = u.id
-            WHERE u.is_agent_active = 1
-        `);
-
-        // Processa uma criança de cada vez para não sobrecarregar a API da IA
-        for (const c of criancas) {
-            await agentService.rodarDetetiveDePadroes(c.id_crianca);
-        }
-        
-        console.log('✅ Job Semanal Concluído!');
-    } catch (error) {
-        console.error('Erro no Job Semanal:', error);
-    }
 });
 
 // =========================================================================

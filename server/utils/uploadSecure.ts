@@ -78,16 +78,26 @@ export const processarImagemSegura = async (buffer: Buffer): Promise<string> => 
     }
 
     // 2. Escaneamento de Vírus (Stream da memória)
+    // SPRINT 0: antes, o próprio erro de "arquivo infectado" era capturado pelo catch e
+    // apenas registrado como aviso — arquivos infectados eram aceitos (fail-open).
+    // Agora o padrão é fail-closed. CLAMAV_FAIL_OPEN=true existe só como válvula temporária
+    // caso o serviço de antivírus esteja fora do ar; arquivos INFECTADOS são sempre bloqueados.
+    let resultadoScan: { isInfected: boolean; viruses: string[] } | null = null;
     try {
         // O await inicial resolve a promessa de inicialização (Mock ou Real)
         const scanner = await clamscan; 
-        const { isInfected, viruses } = await scanner.scanStream(buffer);
-        
-        if (isInfected) {
-            throw new Error(`Arquivo infectado bloqueado: ${viruses.join(', ')}`);
-        }
+        resultadoScan = await scanner.scanStream(buffer);
     } catch (err: any) {
-        console.warn("Aviso: Verificação de antivírus falhou ou serviço indisponível.", err.message);
+        if (process.env.CLAMAV_FAIL_OPEN === 'true') {
+            console.error('🚨 [ClamAV] Serviço indisponível — upload ACEITO sem verificação (CLAMAV_FAIL_OPEN=true).', err.message);
+        } else {
+            console.error('🚨 [ClamAV] Serviço indisponível — upload recusado.', err.message);
+            throw new Error('Não foi possível verificar o arquivo no momento. Tente novamente em alguns minutos.');
+        }
+    }
+
+    if (resultadoScan?.isInfected) {
+        throw new Error(`Arquivo infectado bloqueado: ${(resultadoScan.viruses || []).join(', ')}`);
     }
 
     // 3. Higienização por Reconstrução (Sharp)

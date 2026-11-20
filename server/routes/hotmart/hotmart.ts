@@ -2,6 +2,7 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+import autenticarAdmin from '../../middleware/autenticarAdmin';
 import express, { Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto'; 
@@ -84,7 +85,9 @@ const verifyHotmartSignature = (req: Request, res: Response, next: NextFunction)
 };
 
 // --- ROTA QUE USA O TOKEN ---
-router.get('/minhas-vendas', async (req: Request, res: Response) => {
+// SPRINT 0: rota restrita a administradores e sem devolver o access token
+// (antes era pública e retornava o token Hotmart + histórico de vendas com PII).
+router.get('/minhas-vendas', autenticarAdmin, async (req: Request, res: Response) => {
   try {
     const token = await getValidAccessToken();
 
@@ -94,7 +97,7 @@ router.get('/minhas-vendas', async (req: Request, res: Response) => {
       }
     });
 
-    res.json({ data: response.data, message: "Token obtido com sucesso e pronto para ser usado!", token: token });
+    res.json({ data: response.data });
 
   } catch (error: any) {
     console.error("Erro na rota /minhas-vendas:", error.message);

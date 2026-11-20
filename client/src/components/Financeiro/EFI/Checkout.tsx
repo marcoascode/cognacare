@@ -255,7 +255,8 @@ export default function Checkout({ onPaymentSuccess }: CheckoutProps) {
         const token = localStorage.getItem('token');
         if (!token) return;
         const socket: Socket = io(import.meta.env.VITE_API_SITE, { path: '/socket.io/', transports: ['websocket'], auth: { token: token } });
-        socket.on('connect', () => { const email = localStorage.getItem('email'); if (email) socket.emit('joinUserRoom', { email }); });
+        // SPRINT 0: o servidor associa o socket à sala do usuário a partir do JWT do handshake;
+        // o antigo evento 'joinUserRoom' (por e-mail) foi removido por segurança.
 
         socket.on('paymentConfirmed', () => {
             setOpenPixModal(false);

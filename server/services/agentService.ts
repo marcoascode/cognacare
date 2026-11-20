@@ -3,7 +3,7 @@
 
 // --- POSTGRESQL CORRIGIDO ---
 import poolPromise from '../config/pgPoolPromise';
-import { anthropic } from '../config/aiModels';
+import { chamarLLM, extrairJSON } from '../utils/llm';
 
 // Importações dos serviços de PDF (Assegure-se que estes ficheiros existem na pasta services)
 import pdfService from './pdfService';
@@ -39,28 +39,43 @@ const agentService = {
     /**
      * Função auxiliar para buscar e processar prompts da base de dados
      */
-    async getProcessedPrompt(chave: string, variaveis: Record<string, any>): Promise<IPromptResponse> {
+    async getProcessedPrompt(chave: string | string[], variaveis: Record<string, any>): Promise<IPromptResponse> {
+        // SPRINT 0: aceita chaves alternativas (ex.: o código usava 'agent_user_burnout',
+        // mas o prompt cadastrado em fs_prompts chama-se 'agent_analise_burnout').
+        const chaves = Array.isArray(chave) ? chave : [chave];
         const { rows } = await poolPromise.query(
-            'SELECT texto_prompt, modelo, temperatura, max_tokens FROM fs_prompts WHERE chave = $1',
-            [chave]
+            'SELECT chave, texto_prompt, modelo, temperatura, max_tokens FROM fs_prompts WHERE chave = ANY($1::text[])',
+            [chaves]
         );
+        rows.sort((a: any, b: any) => chaves.indexOf(a.chave) - chaves.indexOf(b.chave));
 
-        if (rows.length === 0) throw new Error(`Prompt com a chave "${chave}" não encontrado.`);
+        if (rows.length === 0) throw new Error(`Prompt com a chave "${chaves.join(' | ')}" não encontrado.`);
 
         let promptFinal = rows[0].texto_prompt;
         
         // Substitui cada {{chave}} pelo valor correspondente no objeto variaveis
         Object.keys(variaveis).forEach(key => {
-            const regex = new RegExp(`{{${key}}}`, 'g');
-            promptFinal = promptFinal.replace(regex, variaveis[key] || 'Não informado');
+            const regex = new RegExp(`\\{\\{${key}\\}\\}`, 'g');
+            const valor = variaveis[key];
+            const texto = (valor === undefined || valor === null || valor === '')
+                ? 'Não informado'
+                : (typeof valor === 'object' ? JSON.stringify(valor) : String(valor));
+            promptFinal = promptFinal.replace(regex, () => texto);
         });
+
+        // Placeholders sem valor correspondente não devem chegar ao modelo como "{{...}}".
+        const orfaos = promptFinal.match(/\{\{\s*[\w.]+\s*\}\}/g);
+        if (orfaos) {
+            console.warn(`⚠️ [Prompt ${rows[0].chave}] Placeholders sem valor: ${[...new Set(orfaos)].join(', ')}`);
+            promptFinal = promptFinal.replace(/\{\{\s*[\w.]+\s*\}\}/g, 'Não informado');
+        }
 
         return {
             texto: promptFinal,
             config: {
                 model: rows[0].modelo,
-                temperature: parseFloat(rows[0].temperatura),
-                max_tokens: parseInt(rows[0].max_tokens)
+                temperature: rows[0].temperatura as any, // pode ser NULL — tratado em chamarLLM
+                max_tokens: parseInt(rows[0].max_tokens) || 1000
             }
         };
     },
@@ -130,20 +145,20 @@ const agentService = {
             });
 
             // 5. Invocação da Persona Sênior (Claude BCBA-D)
-            const response = await anthropic.messages.create({
+const response = await chamarLLM({
                 model: promptDinamico.config.model,
                 max_tokens: promptDinamico.config.max_tokens,
                 temperature: promptDinamico.config.temperature,
                 system: "Você responde apenas em JSON estruturado de acordo com as especificações do prompt.",
-                messages: [{ role: "user", content: promptDinamico.texto }]
+                prompt: promptDinamico.texto,
             });
 
             let analiseIA: any;
             try {
-                const responseText = (response.content[0] as any).text;
-                analiseIA = JSON.parse(responseText);
+                analiseIA = extrairJSON(response.texto);
             } catch (jsonError) {
-                console.error('❌ Erro de Parse JSON na resposta da IA:', (response.content[0] as any).text);
+                // Não registrar o texto bruto: pode conter dados clínicos da criança.
+                console.error(`❌ Erro de Parse JSON na resposta da IA (relatório, ${response.texto?.length || 0} caracteres).`);
                 throw new Error('A IA não retornou um JSON válido.');
             }
 
@@ -233,15 +248,15 @@ const agentService = {
                 humor_hoje: humorHoje
             });
 
-            const response = await anthropic.messages.create({
+const response = await chamarLLM({
                 model: promptDinamico.config.model,
                 max_tokens: promptDinamico.config.max_tokens,
                 temperature: promptDinamico.config.temperature,
                 system: "Retorne apenas JSON válido.",
-                messages: [{ role: "user", content: promptDinamico.texto }]
+                prompt: promptDinamico.texto,
             });
 
-            const ia = JSON.parse((response.content[0] as any).text);
+            const ia = extrairJSON(response.texto);
 
             await poolPromise.query(`
                 INSERT INTO fs_alertas_agente 
@@ -300,15 +315,15 @@ const agentService = {
                 diretrizExtra: diretriz
             });
 
-            const response = await anthropic.messages.create({
+const response = await chamarLLM({
                 model: promptDinamico.config.model,
                 max_tokens: promptDinamico.config.max_tokens,
                 temperature: promptDinamico.config.temperature,
                 system: "Você responde apenas em JSON estruturado.",
-                messages: [{ role: "user", content: promptDinamico.texto }]
+                prompt: promptDinamico.texto,
             });
 
-            const agenteJson = JSON.parse((response.content[0] as any).text);
+            const agenteJson = extrairJSON(response.texto);
             
             await poolPromise.query(
                 'INSERT INTO fs_alertas_agente (crianca_id, usuario_id, alerta_payload) VALUES ($1, $2, $3)',
@@ -350,19 +365,19 @@ const agentService = {
                 perfil_sensorial: perfilSensorialText
             });
 
-            const response = await anthropic.messages.create({
+const response = await chamarLLM({
                 model: promptDinamico.config.model,
                 max_tokens: promptDinamico.config.max_tokens,
                 temperature: promptDinamico.config.temperature,
                 system: "Responda APENAS com um objeto JSON válido, contendo o título, passos com ordem/texto/emoji e a mensagem final.",
-                messages: [{ role: "user", content: promptDinamico.texto }]
+                prompt: promptDinamico.texto,
             });
 
             let historiaIA: any;
             try {
-                historiaIA = JSON.parse((response.content[0] as any).text);
+                historiaIA = extrairJSON(response.texto);
             } catch (jsonError) {
-                console.error('❌ Erro de Parse JSON na resposta da IA:', (response.content[0] as any).text);
+                console.error(`❌ Erro de Parse JSON na resposta da IA (história social, ${response.texto?.length || 0} caracteres).`);
                 throw new Error('A IA não devolveu um JSON válido para a história social.');
             }
 
@@ -447,15 +462,15 @@ const agentService = {
                 historico_dias: historicoTexto
             });
 
-            const response = await anthropic.messages.create({
+const response = await chamarLLM({
                 model: promptDinamico.config.model,
                 max_tokens: promptDinamico.config.max_tokens,
                 temperature: promptDinamico.config.temperature,
                 system: "Você responde apenas em JSON estruturado.",
-                messages: [{ role: "user", content: promptDinamico.texto }]
+                prompt: promptDinamico.texto,
             });
 
-            const analise = JSON.parse((response.content[0] as any).text);
+            const analise = extrairJSON(response.texto);
 
             if (analise.encontrou_padrao === true || analise.encontrou_padrao === "true") {
                 await poolPromise.query(`
@@ -484,18 +499,20 @@ const agentService = {
 
     async avaliarSobrecargaCuidador(usuarioId: string | number, textoRelato: string) {
         try {
-            const promptDinamico = await this.getProcessedPrompt('agent_user_burnout', {
-                relato_texto: textoRelato
+            const promptDinamico = await this.getProcessedPrompt(['agent_analise_burnout', 'agent_user_burnout'], {
+                relato_texto: textoRelato,
+                relato: textoRelato
             });
 
-            const response = await anthropic.messages.create({
+            const response = await chamarLLM({
                 model: promptDinamico.config.model,
                 max_tokens: promptDinamico.config.max_tokens,
                 temperature: promptDinamico.config.temperature,
-                messages: [{ role: "user", content: promptDinamico.texto }]
+                system: "Você responde apenas em JSON estruturado.",
+                prompt: promptDinamico.texto,
             });
 
-            const analise = JSON.parse((response.content[0] as any).text);
+            const analise = extrairJSON(response.texto);
 
             await poolPromise.query(
                 `INSERT INTO fs_estado_cuidador (usuario_id, nivel_estresse_inferido, tom_emocional_predominante, insight_apoio, data_avaliacao) 
@@ -527,41 +544,16 @@ const agentService = {
             const promptDinamico = await this.getProcessedPrompt('agent_extracao_receita', {});
             const base64Image = fileBuffer.toString('base64');
 
-            const response = await anthropic.messages.create({
+const response = await chamarLLM({
                 model: promptDinamico.config.model,
                 max_tokens: promptDinamico.config.max_tokens,
                 temperature: promptDinamico.config.temperature,
                 system: "Retorne APENAS um objeto JSON estrito, sem formatação markdown fora do JSON.",
-                messages: [
-                    {
-                        role: "user",
-                        content: [
-                            {
-                                type: "image",
-                                source: {
-                                    type: "base64",
-                                    media_type: mimeType as any,
-                                    data: base64Image
-                                }
-                            },
-                            {
-                                type: "text",
-                                text: promptDinamico.texto
-                            }
-                        ]
-                    }
-                ]
+                prompt: promptDinamico.texto,
+                imagem: { base64: base64Image, mimeType },
             });
 
-            let iaText = (response.content[0] as any).text;
-            
-            if (iaText.includes('```json')) {
-                iaText = iaText.split('```json')[1].split('```')[0].trim();
-            } else if (iaText.includes('```')) {
-                 iaText = iaText.split('```')[1].split('```')[0].trim();
-            }
-
-            const analiseIA = JSON.parse(iaText);
+            const analiseIA = extrairJSON(response.texto);
             
             console.log(`✅ [Agente - Nível 4] Leitura concluída com sucesso!`);
             
@@ -625,17 +617,17 @@ const agentService = {
                 dados_medicamentos: stringMeds
             });
 
-            const response = await anthropic.messages.create({
+const response = await chamarLLM({
                 model: promptDinamico.config.model,
                 max_tokens: promptDinamico.config.max_tokens,
                 temperature: promptDinamico.config.temperature,
                 system: "Retorne estritamente um JSON de análise de padrões.",
-                messages: [{ role: "user", content: promptDinamico.texto }]
+                prompt: promptDinamico.texto,
             });
 
-            const ia = JSON.parse((response.content[0] as any).text);
+            const ia = extrairJSON(response.texto);
 
-            if (ia.encontrou_padrao && ia.precisao_confianca !== 'baixa') {
+            if ((ia.encontrou_padrao === true || ia.encontrou_padrao === 'true') && ia.precisao_confianca !== 'baixa') {
                 await poolPromise.query(`
                     INSERT INTO fs_insights_agente 
                     (crianca_id, tipo_padrao, descricao_insight, precisao_confianca, data_analise, dias_analisados) 

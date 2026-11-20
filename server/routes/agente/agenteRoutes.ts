@@ -4,8 +4,13 @@ import authMiddleware from '../../middleware/authMiddleware';
 // import poolPromise from '../../config/mysqlPoolPromise';
 import poolPromise from '../../config/pgPoolPromise';
 import agentService from '../../services/agentService';
+import { exigirAgenteAtivo, exigirCriancaPropria } from '../../middleware/acessoCrianca';
 
 const router = express.Router();
+
+// SPRINT 0: o tier Cognacare Agent passa a ser exigido NO BACKEND para todas as rotas
+// deste módulo (antes a restrição existia apenas no menu do frontend).
+router.use(authMiddleware, exigirAgenteAtivo);
 
 // --- INTERFACES ---
 interface CustomRequest extends express.Request {
@@ -65,7 +70,7 @@ router.get('/alertas', authMiddleware, async (req: CustomRequest, res: Response)
             `SELECT a.*, c.nome as nome_crianca 
              FROM fs_alertas_agente a
              JOIN fs_crianca c ON a.crianca_id = c.id_crianca
-             WHERE a.usuario_id = $1 AND a.lido = false
+             WHERE a.usuario_id = $1 AND a.lido = '0'
              ORDER BY a.criado_em DESC`,
             [usuarioId]
         );
@@ -85,7 +90,7 @@ router.put('/alertas/:id/lido', authMiddleware, async (req: CustomRequest, res: 
         // );
 
         await poolPromise.query(
-            'UPDATE fs_alertas_agente SET lido = 1 WHERE id = $1 AND usuario_id = $2', 
+            `UPDATE fs_alertas_agente SET lido = '1' WHERE id = $1 AND usuario_id = $2`, 
             [req.params.id, req.user?.id]
         );
         
@@ -95,7 +100,7 @@ router.put('/alertas/:id/lido', authMiddleware, async (req: CustomRequest, res: 
     }
 });
 
-router.get('/alertas/:criancaId', authMiddleware, async (req: CustomRequest, res: Response) => {
+router.get('/alertas/:criancaId', authMiddleware, exigirCriancaPropria('criancaId'), async (req: CustomRequest, res: Response) => {
     try {
         const { criancaId } = req.params;
         const usuarioId = req.user?.id;
@@ -109,7 +114,7 @@ router.get('/alertas/:criancaId', authMiddleware, async (req: CustomRequest, res
         const { rows: alertas } = await poolPromise.query(`
             SELECT id, risco_detectado, mensagem, sugestao_acao 
             FROM fs_alertas_agente 
-            WHERE usuario_id = $1 AND crianca_id = $2 AND lido = 0 AND criado_em >= NOW() - INTERVAL '24 HOURS'
+            WHERE usuario_id = $1 AND crianca_id = $2 AND lido = '0' AND criado_em >= NOW() - INTERVAL '24 HOURS'
             ORDER BY criado_em DESC LIMIT 1
         `, [usuarioId, criancaId]);
 
@@ -119,7 +124,7 @@ router.get('/alertas/:criancaId', authMiddleware, async (req: CustomRequest, res
     }
 });
 
-router.get('/insights/:criancaId', authMiddleware, async (req: CustomRequest, res: Response) => {
+router.get('/insights/:criancaId', authMiddleware, exigirCriancaPropria('criancaId'), async (req: CustomRequest, res: Response) => {
     try {
         const { criancaId } = req.params;
         
@@ -169,7 +174,7 @@ router.get('/cuidador', authMiddleware, async (req: CustomRequest, res: Response
 // GERADORES DA IA (RELATÓRIOS, HISTÓRIAS E OCR DE RECEITAS)
 // =========================================================================
 
-router.post('/relatorio/gerar', authMiddleware, async (req: CustomRequest, res: Response): Promise<any> => {
+router.post('/relatorio/gerar', authMiddleware, exigirCriancaPropria('criancaId', 'body'), async (req: CustomRequest, res: Response): Promise<any> => {
     try {
         const { criancaId, dataInicio, dataFim, tipoRelatorio } = req.body;
         const usuarioIdGerador = req.user?.id;
@@ -207,7 +212,7 @@ router.post('/relatorio/gerar', authMiddleware, async (req: CustomRequest, res: 
     }
 });
 
-router.post('/historias/gerar', authMiddleware, async (req: CustomRequest, res: Response): Promise<any> => {
+router.post('/historias/gerar', authMiddleware, exigirCriancaPropria('criancaId', 'body'), async (req: CustomRequest, res: Response): Promise<any> => {
     try {
         const { criancaId, eventoGatilho } = req.body;
         const usuarioIdGerador = req.user?.id;
@@ -268,7 +273,7 @@ router.post('/medicamentos/extrair', authMiddleware, uploadMemoria.single('recei
     }
 });
 
-router.post('/medicamentos/salvar', authMiddleware, async (req: CustomRequest, res: Response): Promise<any> => {
+router.post('/medicamentos/salvar', authMiddleware, exigirCriancaPropria('criancaId', 'body'), async (req: CustomRequest, res: Response): Promise<any> => {
     try {
         const { criancaId, medicamentoDados } = req.body as { criancaId: string | number, medicamentoDados: IMedicamentoDados };
         const usuarioId = req.user?.id;

@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import * as jwt from 'jsonwebtoken';
+import { verificarTokenAcesso } from '../utils/jwtTokens';
 // import poolPromise from '../config/mysqlPoolPromise';
 import poolPromise from '../config/pgPoolPromise';
 
@@ -33,7 +34,7 @@ const autenticarAdmin = async (req: AuthRequest, res: Response, next: NextFuncti
 
   try {
     // O cast 'as IDecodedToken' assegura ao TS que o payload contém o ID do utilizador
-    const decoded = jwt.verify(token, process.env.JWT_SECRET) as IDecodedToken;
+    const decoded = verificarTokenAcesso(token) as IDecodedToken;
     
     // O ": any" aqui previne o erro de Symbol.iterator no retorno do mysql2/promise
     // const [rows]: any = await poolPromise.execute(

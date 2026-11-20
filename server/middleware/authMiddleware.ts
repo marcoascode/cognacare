@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import * as jwt from 'jsonwebtoken';
+import { verificarTokenAcesso } from '../utils/jwtTokens';
 
 // Estende a interface Request do Express para incluir o objeto user
 export interface AuthRequest extends Request {
@@ -14,8 +15,14 @@ const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction): an
   }
   
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'seu-segredo');
+    // SPRINT 0: removido o fallback 'seu-segredo' (permitia forjar tokens sem JWT_SECRET).
+    if (!process.env.JWT_SECRET) {
+      console.error('Erro crítico de configuração: JWT_SECRET não está definido.');
+      return res.status(500).json({ erro: 'Erro de configuração do servidor.' });
+    }
+    const decoded: any = verificarTokenAcesso(token);
     req.user = decoded;
+    (req as any).usuarioId = decoded.id;
     next();
   } catch (error: any) {
     if (error.name === 'TokenExpiredError') {

@@ -44,10 +44,8 @@ interface ICriancaPerfil {
     gatilhos_comuns: string;
 }
 
-const grokClient = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: 'https://api.x.ai/v1',
-});
+// SPRINT 0: cliente centralizado (GROK_API_KEY separado de OPENAI_API_KEY).
+import { grokClient } from '../../config/llmClients';
 
 // Mapeamento de perfis de crise para orientar a IA
 const crisisPrompts: Record<string, string> = {

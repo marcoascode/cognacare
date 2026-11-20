@@ -34,8 +34,7 @@ export default async function processarExpiracoes(): Promise<void> {
         `);
 
         if (lotesVencidos.length === 0) {
-            connection.release();
-            return;
+            return; // SPRINT 0: o release é feito no finally (antes era chamado duas vezes)
         }
 
         console.log(`[CRON] Processando ${lotesVencidos.length} lotes vencidos.`);
