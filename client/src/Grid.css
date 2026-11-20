@@ -1,0 +1,58 @@
+/* src/styles/Cadastro.css */
+
+/* Estilos base (comuns a ambos os temas) */
+.pei-message-container {
+  border-radius: 8px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pei-form {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.textfield {
+  /* Propriedades comuns, se necessário */
+}
+
+/* Tema claro */
+[data-toolpad-color-scheme="light"] .pei-message-container {
+  border: 2px solid #1976d2; /* Cor primária padrão do MUI */
+  box-shadow: 0px 2px 4px 2px rgba(132, 130, 130, 0.78);
+  -webkit-box-shadow: 0px 2px 4px 2px rgba(132, 130, 130, 0.78);
+  -moz-box-shadow: 0px 2px 4px 2px rgba(132, 130, 130, 0.78);
+}
+
+[data-toolpad-color-scheme="light"] .pei-form {
+  background-color: rgb(244, 244, 244); /* Fundo cinza claro */
+  border: 1px solid #d1d1d1; /* Borda cinza clara */
+}
+
+[data-toolpad-color-scheme="light"] .textfield {
+  background-color: #ffffff; /* Fundo branco */
+}
+
+/* Tema escuro */
+[data-toolpad-color-scheme="dark"] .pei-message-container {
+  border: 2px solid #90caf9; /* Azul claro da paleta MUI Dark Mode para contraste */
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5); /* Sombra escura para harmonia */
+  -webkit-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+[data-toolpad-color-scheme="dark"] .pei-form {
+  background-color: #1e1e1e; /* Fundo escuro (padrão MUI Dark Mode) */
+  border: 1px solid #616161; /* Borda cinza escura */
+}
+
+[data-toolpad-color-scheme="dark"] .textfield {
+  background-color: #2a2a2a; /* Cinza escuro para campos de texto */
+}

@@ -1,0 +1,1827 @@
+{
+    "dashboard": {
+        "welcome_setup": "Setup Wizard",
+        "setup_desc": "We'll set up the platform for you in 3 simple steps.",
+        "tab_1": "Complete Profile",
+        "register_child": "Register Child",
+        "generate_first_pif": "Generate First FIP",
+        "founder": "FOUNDING MEMBER",
+        "greeting": "Hello",
+        "tutorial_title": "Step-by-step guide to creating a Family Intervention Plan (FIP):",
+        "step1_title": "Step 1: Your Details",
+        "step1_desc": "To get started, we need to get to know you better. Fill in your details to unlock your bonus credits!",
+        "step1_sub": "You can consult the records of the children you register by clicking on 'Children List'.",
+        "step2_title": "Step 2: Who will we help?",
+        "step2_desc": "Register the child's information so that the Artificial Intelligence can personalize the activities.",
+        "step2_sub": "By clicking 'Yes, create FIP', you will be directed to the 5-step form. Otherwise, you can create the FIP later.",
+        "step3_title": "Step 3: Your First FIP",
+        "step3_desc": "Complete the child development questionnaire so we can generate a personalized Family Intervention Plan.",
+        "step4_title": "4. Fill out the Form",
+        "step4_desc": "Select the desired child to display the form. Answer the questions and use the 'Next' and 'Back' buttons to navigate between the 5 steps.",
+        "step5_title": "5. Generate and Receive the FIP",
+        "step5_desc": "In the last step, click on \"GENERATE FIP\" and wait for the AI to build the document.",
+        "step5_sub1": "The FIP will be displayed on the screen, with options to Copy or Download as PDF. A copy will also be sent to your email.",
+        "step5_sub2": "A new FIP for the same child can be created after 30 days.",
+        "step5_sub3": "Consult all generated FIPs in <1>FIP List</1>.",
+        "step5_sub4": "Remember: FIPs are not editable, serving as a record of the child's progress.",
+        "important_links": "Important Links:",
+        "terms_of_use": "Terms of Use",
+        "privacy_policy": "Privacy Policy",
+        "contact": "Contact",
+        "kids": "Registered Children",
+        "pifs": "Generated Plans"
+    },
+    "common": {
+        "acc_status": "Account Status",
+        "settings": "Settings",
+        "change_photo": "Change Photo",
+        "change_pwd": "Change Password",
+        "change_language": "change",
+        "choose_language": "Choose Language",
+        "yes": "Yes",
+        "no": "No",
+        "ok": "OK",
+        "male": "Male",
+        "female": "Female",
+        "prefer_not_say": "Prefer not to say",
+        "other": "Others",
+        "specify_other": "Specify other(s)",
+        "save": "Save Changes",
+        "cancel": "Cancel",
+        "register": "Register Child",
+        "child_name": "Child's Name",
+        "child_name_placeholder": "Ex: John, Mary Smith, Juju...",
+        "child_name_helper": "How the child is called. Can be their first name, full name, or an affectionate nickname.",
+        "birth_date": "Birth Date",
+        "gender": "Gender",
+        "attends_school": "Attends School?",
+        "school_year": "School Year",
+        "does_therapy": "Undergoes Therapy?",
+        "which_therapies": "Which therapies?",
+        "which_therapies_placeholder": "Ex: Speech therapy, Occupational Therapy, Psychology...",
+        "is_verbal": "Is Verbal (Speaks)?",
+        "speech_type": "Communication / Speech Type",
+        "literate": "Literate?",
+        "lives_with": "Lives with?",
+        "primary_caregiver": "Who is the primary caregiver?",
+        "primary_caregiver_tab": "Primary Caregiver",
+        "actions": "Actions",
+        "has_pet": "Has a pet?",
+        "which_pet": "Which pet?",
+        "which_pet_placeholder": "Ex: Dog (Rex), cat...",
+        "interacts_pet": "Interacts with it?",
+        "regulation_strategy": "Regulation Strategies (What works?)",
+        "sensorial_profile": "Mark how the child perceives the world. This helps us decide whether to suggest \"hugging\" or \"distancing\" in a crisis.",
+        "sos_examples": "Ex: Warm bath, playdough, staying in a dark room...",
+        "sos_tips": "What usually calms the child during difficult times?",
+        "triggers": "Common Triggers (What irritates?)",
+        "trigger_examples": "Ex: Hunger, sleep, hearing 'no', noisy places, sudden routine changes...",
+        "triggers_helper": "What usually causes irritation or meltdowns?",
+        "caregiver_difficulty": "What is the primary caregiver's biggest daily struggle?",
+        "difficulty_placeholder": "Ex: Dealing with agitation at bedtime, picky eating, grocery store meltdowns...",
+        "development_priority": "What is your top priority for their development right now?",
+        "priority_placeholder": "Ex: Improving eye contact, potty training, eating independently...",
+        "describe_here": "Describe here...",
+        "diagnosis_title": "Diagnosis or Diagnostic Hypothesis",
+        "has_hyperfocus": "Has any hyperfocus?",
+        "describe_hyperfocus": "Describe the hyperfocus",
+        "hyperfocus_placeholder": "Ex: Dinosaurs, trains, solar system, letters...",
+        "hyperfocus_helper": "Topics or objects the child loves and focuses on for a long time.",
+        "other_info1": "Is there any information you would like to add about",
+        "other_info2": "the child",
+        "other_info3": "that was not asked in the form so far?",
+        "info_adicional1": "Additional Information",
+        "info_adicional2": "Ex: Very afraid of dogs, dislikes walking on grass, lines up toy cars...",
+        "kid_reg_success": "Child Registered Successfully!",
+        "create_pif": "Do you want to create a FIP for",
+        "now": "now?",
+        "notnow": "No, later",
+        "yes_create": "Yes, create FIP",
+        "edit_child_title1": "Edit Data",
+        "edit_child_title2": "of Child",
+        "weight": "Weight",
+        "weight_placeholder": "Ex: 14.5",
+        "height": "Height",
+        "height_placeholder": "Ex: 0.95",
+        "years": "years",
+        "months": "months",
+        "days": "days",
+        "hours": "hours",
+        "and": "and",
+        "close": "Close"
+    },
+    "home_tab": {
+        "access_panel": "Login",
+        "signup": "Sign Up"
+    },
+    "kids_tab": {
+        "my_kids": "Children's List",
+        "register_kid": "Register Child",
+        "medical_receipt": "Prescription Scan",
+        "select_kid": "Select Patient/Child",
+        "select": "Please select a child from the menu above to start scanning a medical prescription."
+    },
+    "payment": {
+        "tabs": {
+            "credits": "FIP Credits",
+            "plans": "FIP Pro Plan",
+            "chat_extra": "CHAT Credits"
+        },
+        "credits_desc": "Ideal for generating one-off documents. No access to AI Chat.",
+        "table": {
+            "qty": "Qty.",
+            "unit_price": "Unit Price"
+        },
+        "input_qty": "Quantity of Credits",
+        "plans_info": "* All plans are one-time payments (prepaid).",
+        "features": {
+            "1pif": "1 FIP",
+            "1pif_month": "1 FIP / month",
+            "100msgs": "100 AI Chat Msgs",
+            "100msgs_month": "100 AI Chat Msgs / month",
+            "access_30": "Access for 30 days",
+            "renew": "Renew whenever you want",
+            "save_percent": "Save 16%",
+            "everything": "Everything in Monthly Plan",
+            "badge": "Founder Badge",
+            "anteciped_access": "Early Access (Beta)",
+            "renewal": "Renew without price increases",
+            "limited": "🔥 LIMITED OFFER"
+        },
+        "chat_extra": {
+            "title_avail": "Need more help?",
+            "title_locked": "Feature Locked",
+            "desc": "If you reached your monthly message limit, you can buy an extra package.",
+            "card_title": "Extra Chat Package",
+            "card_feature": "+ 50 Messages",
+            "card_validity": "Valid for the current cycle of your subscription.",
+            "note_title": "Note:",
+            "note_text": "This package is an add-on. Requires active subscription.",
+            "warning": "The sale of chat message credits is restricted to users who have produced at least 1 FIP in the last 90 days."
+        },
+        "summary": {
+            "title": "Order Summary",
+            "item": "Item",
+            "bonus_balance": "Bonus Balance",
+            "use_bonus": "Use bonus balance",
+            "final_value": "Final Value",
+            "buy_btn": "Buy Now",
+            "secure_msg": "Secure payment via Stripe (Card and PIX)"
+        },
+        "modal": {
+            "title": "Secure Payment",
+            "bonus_success": "Payment made entirely with your bonus balance! Updating...",
+            "product": "Product",
+            "discount": "Bonus Discount applied",
+            "pay_btn": "Pay",
+            "success": "Payment successful!",
+            "error_init": "Could not initiate payment. Please try again.",
+            "error_unexpected": "An unexpected payment error occurred."
+        },
+        "feedback": {
+            "confirmed": "Payment confirmed! Updating your data...",
+            "pix_error": "Error generating PIX.",
+            "bonus_redeemed": "Redemption successful!"
+        },
+        "plan_names": {
+            "monthly": "Monthly",
+            "semiannual": "Semiannual",
+            "annual": "Founder Member"
+        },
+        "periods": {
+            "30days": "/ 30 days",
+            "6months": "/ 6 months",
+            "1year": "/ 1 year"
+        },
+        "item_desc": {
+            "credits_singular": "credit",
+            "credits_plural": "credits",
+            "credits_title": "Single Credits"
+        },
+        "options": {
+            "order_summary": "Order Summary",
+            "select_item": "Select an item",
+            "use_bonus": "Use bonus balance",
+            "available_balance": "Available balance",
+            "subtotal": "Subtotal",
+            "bonus_discount": "Bonus Discount",
+            "terms_read": "I have read and agree to the",
+            "terms_link": "Terms of Use",
+            "privacy_link": "Privacy Policy",
+            "connector": "and",
+            "processing": "PROCESSING...",
+            "confirm_redemption": "CONFIRM REDEMPTION",
+            "pay_pix": "Pay with PIX",
+            "pay_card": "Pay with Card"
+        }
+    },
+    "profile": {
+        "tab": "Profile",
+        "change_pwd": "Change Password",
+        "title": "Account Settings",
+        "subtitle": "Additional information, profile picture, and password.",
+        "tab_1": "Registration Data",
+        "tab_2": "Change Photo",
+        "tab_3": "Change Password",
+        "data_title": "Profile Data",
+        "data_subtitle": "This information is required for issuing invoices and receipts.",
+        "extra_credits": "Complete all the required fields below and instantly earn <1>+1 PIF Credit</1> and <2>+1 CHAT Credit</2> to try Cognacare!",
+        "name": "Registered Name",
+        "email": "Account Email",
+        "country": "Country of Residence",
+        "cpf": "Taxpayer Identification Number",
+        "doc_number": "Document Number",
+        "tel": "Contact Phone Number",
+        "tel_code": "+[Country Code] [Phone Number]",
+        "zip": "ZIP Code",
+        "logradouro": "Address Line 1",
+        "numero": "Number",
+        "complemento": "Address Line 2",
+        "cidade": "City",
+        "estado": "State/Province",
+        "education": "Education Level",
+        "edu_fund_inc": "Incomplete Elementary School",
+        "edu_fund_comp": "Complete Elementary School",
+        "edu_med_inc": "Incomplete High School",
+        "edu_med_comp": "Complete High School",
+        "edu_sup_inc": "Incomplete Higher Education",
+        "edu_sup_comp": "Complete Higher Education",
+        "edu_pos": "Postgraduate / Master's / Doctorate",
+        "relation": "Relationship to child",
+        "rel_mother": "Mother",
+        "rel_father": "Father",
+        "rel_uncle": "Uncle / Aunt",
+        "rel_grandparent": "Grandfather / Grandmother",
+        "rel_sibling": "Brother / Sister",
+        "rel_other": "Other",
+        "specify_relation": "Specify relationship",
+        "specify_relation_placeholder": "Ex: Therapist, Stepfather...",
+        "validating": "Validating...",
+        "save": "Save and Validate Registration",
+        "photo": "Profile Picture",
+        "photo_error": "The image must be a maximum of 2MB.",
+        "photo_error2": "Error sending image. Please try again.",
+        "photo_succcess": "Photo updated successfully!",
+        "choose": "Choose Photo"
+    },
+    "financial": {
+        "tab": "Financial",
+        "tabs": {
+            "statement": "Statement",
+            "buy_credits": "Buy Credits"
+        }
+    },
+    "financial_statement": {
+        "current_balances": "Current Balances",
+        "pif_credits": "FIP Credits",
+        "chat_messages": "Chat Credits",
+        "bonus_balance": "Bonus Balance",
+        "history": "History",
+        "no_transactions": "No transactions found.",
+        "table": {
+            "date": "Date",
+            "description": "Description",
+            "type": "Type",
+            "method": "Method",
+            "paid_value": "Amount Paid",
+            "bonus": "Bonus ($)",
+            "pif": "FIP",
+            "chat": "Chat"
+        },
+        "types": {
+            "bonus": "Bonus",
+            "expiration": "Expiration",
+            "purchase": "Purchase",
+            "consumption": "Consumption",
+            "daily_consumption": "Daily Consumption",
+            "plan_purchase": "Plan Purchase",
+            "chat_extra_purchase": "Extra Chat Purchase",
+            "pif_credits_purchase": "FIP Credits Purchase",
+            "credits_expired": "Expired credits",
+            "bonus_generated": "Bonus generated"
+        },
+        "methods": {
+            "card": "Card",
+            "pix": "PIX",
+            "system": "SYSTEM",
+            "bonus": "BONUS"
+        }
+    },
+    "progress_chart": {
+        "title": "Evolution Tracking",
+        "select_child_label": "Select Child",
+        "select_child_placeholder": "Select...",
+        "loading_data": "Loading data...",
+        "no_data": "Not enough data to generate the chart yet. Produce the first FIP to start tracking progress.",
+        "no_pif_found": "No FIP found for this child.",
+        "error_loading": "Error loading evolution data.",
+        "chart": {
+            "y_axis_label": "Points",
+            "x_axis_label": "Date",
+            "tooltip_total": "Total",
+            "tooltip_points": "points",
+            "legend_max": "Max",
+            "footer_note": "* The chart displays the sum of accumulated points (skills acquired) in each assessment."
+        },
+        "tabs": {
+            "play": "Play",
+            "language": "Language",
+            "cognition": "Cognition",
+            "social_emotional": "Social-Emotional",
+            "motor": "Motor Skills"
+        },
+        "levels": {
+            "level_1": "Level 1: Exploratory",
+            "level_2": "Level 2: Functional",
+            "level_3": "Level 3: Pre-symbolic",
+            "level_4": "Level 4: Symbolic",
+            "level_5": "Level 5: Games and Rules",
+            "label_1": "Exploratory",
+            "label_2": "Functional",
+            "label_3": "Pre-symbolic",
+            "label_4": "Symbolic",
+            "label_5": "Games and Rules"
+        }
+    },
+    "password_comp": {
+        "pwd_error": "Error requesting password reset.",
+        "pwd_recover": "Recover Password",
+        "email_recover": "Enter your email to receive the reset link.",
+        "recover_link_btn": "Send Recovery Link",
+        "return_login": "Back to Login",
+        "email_verify": "Email Verification",
+        "redirect_3s": "You will be redirected to the login page in 3 seconds...",
+        "go_login": "Go to Login",
+        "insert_email": "Please enter a valid email.",
+        "resend_email_error": "Error resending email",
+        "server_error": "Error connecting to server",
+        "query_error": "Request error:",
+        "verify_email": "Verify your Email",
+        "insert_email_to_link": "Enter your email below to receive the verification link. Click the received link to activate your account.",
+        "type_email": "Type the registered email to receive the verification link.",
+        "resend_email": "Resend Verification Email",
+        "didnt_receive": "Didn't receive the email? Check your spam folder or try resending above."
+    },
+    "reset_password": {
+        "title": "Reset Password",
+        "new_password": "New Password",
+        "confirm_new_password": "Confirm New Password",
+        "save_button": "Save New Password",
+        "back_to_login": "Back to Login",
+        "success_redirect": "You will be redirected in 5 seconds.",
+        "errors": {
+            "invalid_token_initial": "Invalid or missing reset token. Please request a new link.",
+            "fill_fields": "Please fill in both password fields.",
+            "mismatch": "Passwords do not match.",
+            "invalid_token_submit": "Invalid or missing reset token.",
+            "generic_error": "Error resetting password."
+        }
+    },
+    "sidebar": {
+        "sos": "SOS CRISIS",
+        "logbook": "Logbook",
+        "child": "Child",
+        "partner": "Become a Partner",
+        "profile": "Profile",
+        "acc_settings": "Account Settings",
+        "credits": "Earn +2 Free Credits",
+        "logout": "Logout"
+    },
+    "food": {
+        "disorder_label": "Any dietary issues?",
+        "selectivity": "Food selectivity (refusal based on texture, color, smell, or taste, without biological basis for adverse reaction)",
+        "intolerance": "Food intolerance (difficulty digesting or metabolizing certain foods)",
+        "allergy": "Food allergy (immune system reacts exaggeratedly to food protein)",
+        "other": "Other restrictive condition",
+        "which_food": "Which foods?",
+        "placeholder": "Ex: Texture, Milk, Gluten..."
+    },
+    "sensorial": {
+        "hipersensibility": "Auditory Hypersensitivity (Bothered by noise)",
+        "photophobia": "Photophobia/Light bothers",
+        "no_touch": "Tactile Aversion (Dislikes being touched)",
+        "hugs": "Seeks Deep Pressure (Likes strong hugs/weight)",
+        "movement": "Seeks Movement (Likes to spin/rock)",
+        "fabric": "Bothered by labels/fabrics",
+        "oral": "Oral Sensory Seeking (Bites things)",
+        "degree": "Thermal Sensitivity (cannot tolerate cold or heat)"
+    },
+    "diagnosis": {
+        "tea": "Autism Spectrum Disorder (ASD)",
+        "tdah": "Attention Deficit Hyperactivity Disorder (ADHD)",
+        "tod": "Oppositional Defiant Disorder (ODD)",
+        "di": "Intellectual Disability",
+        "ah_sd": "High Abilities / Giftedness",
+        "down": "Down Syndrome",
+        "dyslexia": "Dyslexia",
+        "dysgraphia": "Dysgraphia",
+        "dysorthography": "Dysorthography",
+        "dyscalculia": "Dyscalculia",
+        "low_vision": "Low Vision",
+        "monocular": "Monocular",
+        "blindness": "Blindness",
+        "tpac": "Auditory Processing Disorder (APD)",
+        "low_hearing": "Hearing Loss",
+        "unilateral_deafness": "Unilateral Deafness",
+        "deafness": "Deafness",
+        "motor_disability": "Motor Disability",
+        "tootip_hyperfocus": "Hyperfocus is a state of intense and prolonged concentration on a specific interest or activity."
+    },
+    "school_years": {
+        "nursery_1": "Nursery 1",
+        "nursery_2": "Nursery 2",
+        "maternal_1": "Toddler 1",
+        "maternal_2": "Toddler 2",
+        "pre_1": "Pre-K 1",
+        "pre_2": "Pre-K 2",
+        "grade_1": "1st Grade",
+        "grade_2": "2nd Grade",
+        "grade_3": "3rd Grade",
+        "grade_4": "4th Grade",
+        "grade_5": "5th Grade",
+        "grade_6": "6th Grade",
+        "grade_7": "7th Grade",
+        "grade_8": "8th Grade",
+        "grade_9": "9th Grade"
+    },
+    "speech_types": {
+        "functional": "Has functional speech (with communication intent)",
+        "repeats": "Only repeats words and/or sounds (without function)",
+        "alternative": "Does not speak, but communicates via pictures, writing, gestures, etc.",
+        "none": "Does not speak and does not communicate"
+    },
+    "kinship": {
+        "father": "Father",
+        "mother": "Mother",
+        "brothers": "Brother(s)",
+        "sisters": "Sister(s)",
+        "uncles": "Uncle(s)",
+        "aunts": "Aunt(s)",
+        "cousins": "Cousin(s)",
+        "grandfather": "Grandfather",
+        "grandmother": "Grandmother"
+    },
+    "pif_tab": {
+        "create_fip": "Create FIP",
+        "fip_list": "FIPs",
+        "fip_development": "Development"
+    },
+    "pif_form": {
+        "main_title": "New Family Intervention Plan",
+        "credits": "Credit(s) Available",
+        "select_child": "Choose Child",
+        "child_details": "Child Data: {{name}}",
+        "labels": {
+            "name": "Name",
+            "birth": "Birth",
+            "communication": "Communication",
+            "caregiver": "Primary Caregiver",
+            "diagnosis": "Diagnoses/Hypotheses",
+            "hyperfocus": "Hyperfocus",
+            "difficulty": "Caregiver Difficulty",
+            "priority": "Development Priority"
+        },
+        "not_informed": "Not informed",
+        "locked": {
+            "next_available": "Next assessment available in:",
+            "wait_message": "A new FIP can only be generated 30 days after the previous one.",
+            "view_previous": "View Previous FIPs"
+        },
+        "draft_loaded_msg": "You are continuing a previously saved draft.",
+        "save_draft": "Save Draft",
+        "saving_step": "Saving...",
+        "draft_restored": "Draft restored",
+        "back": "Back",
+        "next": "Next",
+        "generate_button": "Generate Intervention Plan",
+        "producing": "Producing...",
+        "success_title": "Family Intervention Plan Generated",
+        "copy_text": "Copy Text",
+        "download_pdf": "Download PDF",
+        "new_plan": "Generate New Plan",
+        "instruction_text": "In order for the Artificial Intelligence to create the best plan for your child, we need a true picture of their reality. Follow these 7 golden rules:\n\n1. Observe daily life: Evaluate the child in their natural routine, without forcing tests.\n2. One action at a time: Each option evaluates an isolated skill. Focus only on what is written.\n3. The '3 out of 5' Rule: Only check the option if the child can perform the action ALONE (without verbal prompts or physical help) in at least 3 out of every 5 attempts.\n4. Once done, always done: Mark the skills the child does today or has successfully done in the past, such as babbling, rolling, crawling, etc., even if they have stopped doing them.\n5. Be 100% honest: Omitting or masking difficulties directly harms the result of the Intervention Plan. Answer based on reality, not expectations.\n6. When in doubt, leave it blank: If the child only does it with a lot of help or you are not absolutely sure, leave it unchecked. It is better to focus on what is already guaranteed.\n7. If this is not the child's first PIF, observe if the child has lost any essential skills (talking, walking, playing with other children, etc.). If this occurs, uncheck the option on the form.\n\n⚠️ IMPORTANT WARNING: Cognacare structures the Intervention Plan based exclusively on your answers. If the information provided is inaccurate, incomplete, or unrealistic, the generated plan will be ineffective. The responsibility for the accuracy of the data lies entirely with the person filling out the form.",
+        "dont_show_again": "Don't show again",
+        "how_to_fill": "How to fill",
+        "instruction_title": "Filling Instructions",
+        "caregiver_disp": "Caregiver Availability",
+        "caregiver_time": "1. Does the primary caregiver have availability to dedicate at least 1 hour every day to the proposed activities?",
+        "how_many_days": "2. How many days per week can they dedicate?",
+        "min_max_days": "Minimum 1, Maximum 7 days",
+        "how_many_hours": "How many hours per day (on available days)?",
+        "30_min": "30 minutes",
+        "1hour": "1 hour",
+        "1hour30min": "1 hour and 30 minutes",
+        "2hours": "2 hours",
+        "2hours30min": "2 hours and 30 minutes",
+        "3hours": "3 hours",
+        "morning": "Morning",
+        "evening": "Afternoon",
+        "night": "Evening",
+        "timeout_message": "## ⏳ The FIP is being finalized!\n\nThe process of creating the Family Intervention Plan is complex and is taking longer than normal to ensure the best quality.\n\n**Don't worry!** The system continues working in the background.\n\n1.  **Wait a few minutes** (about 2 to 5 minutes).\n2.  Access the **\"FIPs\"** menu.\n3.  Your new plan will appear there as soon as the Artificial Intelligence finishes writing it.\n4.  Remember: You will also receive a copy by email!",
+        "errors": {
+            "load_children": "Could not load the list of children.",
+            "load_data": "Error loading child data.",
+            "save_draft": "Could not save draft at this time.",
+            "generate_pif": "An error occurred while generating the plan.",
+            "copy": "Error copying.",
+            "download": "Error downloading PDF.",
+            "insufficient_credits": "Insufficient credits. Purchase more credits in the \"Financial\" area."
+        },
+        "dialogs": {
+            "generating_title": "Generating your Intervention Plan",
+            "generating_text": "This process may take some time. Please do not close or refresh this page.",
+            "confirm_title": "Confirm FIP Generation?",
+            "confirm_text_1": "You are about to generate a Family Intervention Plan for",
+            "selected_child": "the selected child",
+            "confirm_text_2": "This action will consume <strong>1 credit</strong> from your balance.",
+            "confirm_text_3": "Remember: a new FIP for this same child can only be generated after 30 days.",
+            "confirm_button": "Confirm and Generate FIP",
+            "success_title": "FIP Generated and Sent!",
+            "success_text": "A copy of the Family Intervention Plan has been sent to your registered email address. You can also view the generated FIP by clicking on \"FIPs\" in the menu."
+        },
+        "snackbars": {
+            "draft_saved": "Draft saved successfully! You can continue later.",
+            "copied": "FIP copied to clipboard!"
+        },
+        "kids": {
+            "sensorial": "Sensorial Profile",
+            "perception": "Mark how the child perceives the world. This helps us decide whether to suggest \"hugging\" or \"distancing\" in a crisis."
+        },
+        "availability": {
+            "period_question": "What time of day do you prefer to do the activities?"
+        }
+    },
+    "pif_steps": {
+        "available": "Availability",
+        "progress": "Progress of Filling",
+        "play": "Play Stages",
+        "language": "Language Development",
+        "cognition": "Cognition Development",
+        "social_emotional": "Social-Emotional Development",
+        "motor": "Motor Development",
+        "avd": "Activities of Daily Living (ADL)",
+        "error": "Error saving automatic draft."
+    },
+    "pif_registros": {
+        "title": "My Family Intervention Plans",
+        "filter_label": "Filter by child's name",
+        "generated_at": "Generated on",
+        "no_name": "Unnamed child",
+        "empty_list": "No generated plans found.",
+        "modal_title": "View Intervention Plan",
+        "errors": {
+            "load_list": "Error loading Intervention Plans list.",
+            "load_content": "Error loading Plan content.",
+            "download": "Error downloading PDF.",
+            "copy": "Could not copy text."
+        }
+    },
+    "milestones": {
+        "2m": "2 months",
+        "4m": "4 months",
+        "6m": "6 months",
+        "9m": "9 months",
+        "12m": "12 months / 1 year",
+        "18m": "1 year and 6 months",
+        "2y": "2 years",
+        "30m": "2 years and 6 months",
+        "3y": "3 years",
+        "4y": "4 years",
+        "5y": "5 years",
+        "6y": "6 years"
+    },
+    "play_options": {
+        "never": "Never",
+        "sometimes": "Sometimes",
+        "often": "Almost always",
+        "always": "Always"
+    },
+    "play_levels": {
+        "exploratory": "Level 1: Exploratory",
+        "functional": "Level 2: Functional",
+        "pre_symbolic": "Level 3: Pre-symbolic",
+        "symbolic": "Level 4: Symbolic",
+        "games_rules": "Level 5: Games and Rules"
+    },
+    "play_questions": {
+        "exploratory_1": "The child often puts fingers or hands in their mouth (e.g., sucks thumb, hand, or any small object they grab)",
+        "exploratory_2": "The child interacts with an adult during play (e.g., adult hides face and reappears, child looks, smiles, or tries to do the same)",
+        "exploratory_3": "The child looks at an object when the adult points to it with a finger",
+        "exploratory_4": "The child points with a finger, extends arms, or pulls the adult's hand to indicate they want to continue playing",
+        "exploratory_5": "The child throws toys or objects on the floor and expects the adult to pick them up and return them (repeats this several times)",
+        "exploratory_6": "The child picks up a toy and observes it by looking at it, shaking it, or putting it in their mouth (e.g., picks up a rattle and puts it in mouth)",
+        "exploratory_7": "The child searches for or tries to grab objects that fall or roll on the floor (e.g., sees something fall and moves to try to catch it)",
+        "exploratory_8": "The child does something different with a toy (e.g., bangs instead of shaking) and looks at the adult to see their reaction",
+        "exploratory_9": "The child performs repeated actions to hear sounds (e.g., shakes a rattle, squeezes a ball that squeaks, throws things on the floor, etc.)",
+        "functional_1": "The child rolls a ball down a ramp or pushes a toy car (uses the toy for its intended purpose)",
+        "functional_2": "The child performs simple and clear actions with toys (e.g., opens and closes a box, puts in and takes out pieces, fits pieces)",
+        "functional_3": "The child stacks blocks in different ways (e.g., makes a tower by stacking one on top of the other, places side by side in sequence, creates a bridge)",
+        "functional_4": "The child kicks a ball aiming to hit something (e.g., tries to make the ball go towards a target or in a certain direction)",
+        "functional_5": "The child removes parts from toys that come together (e.g., removes discs from a rod, disconnects connecting blocks that are linked)",
+        "functional_6": "The child places small pieces exactly where they fit (e.g., puts coins in a piggy bank, fits pieces into specific holes)",
+        "functional_7": "The child imitates simple actions they see an adult do with toys (e.g., sees adult banging with a hammer and tries to do the same)",
+        "functional_8": "The child purposely repeats the same action several times with a toy (e.g., fits and removes a piece repeatedly, opens and closes a box several times)",
+        "functional_9": "The child tries to use the toy in different ways to test different results (e.g., hits with one side of the hammer, then with the other side)",
+        "functional_10": "The child correctly uses objects by their function (e.g., brings a toothbrush to mouth and hairbrush to head; places a car on a ramp to go down)",
+        "pre_symbolic_1": "The child arranges several objects together because they match (e.g., puts plates, cups, and cutlery together on the play table)",
+        "pre_symbolic_2": "The child uses blocks to build something specific (e.g., makes a house, a car, or a train) and then shows or says what they built",
+        "pre_symbolic_3": "The child puts toys in the right places (e.g., puts toy furniture in the correct rooms of the dollhouse)",
+        "pre_symbolic_4": "The child makes movements with a doll as if feeding (puts toy in doll's mouth), bathing (pretends to pour water), or putting to sleep (lays doll down and covers it)",
+        "pre_symbolic_5": "The child simulates the act of cooking (picks up toy food, makes cutting motions, puts in a pan and stirs as if cooking)",
+        "pre_symbolic_6": "The child explains out loud what they are doing while playing (e.g., 'now I'm going to harvest', 'I'm driving')",
+        "pre_symbolic_7": "The child says what they drew when you ask (it may be just scribbles, but they can point and describe)",
+        "pre_symbolic_8": "The child puts a toy car on a track, makes engine noise (even if rough) and pretends to be racing (e.g., moves the car on the track while making sound)",
+        "pre_symbolic_9": "The child takes real clothes or shoes (from an adult) and pretends to be dressing for an activity (e.g., puts on a hat and says 'going to work')",
+        "symbolic_1": "The child pretended an object is something completely different (e.g., a pencil becomes a magic wand, a stick becomes a spoon, sits on a chair and says they are driving a car)",
+        "symbolic_2": "The child uses invisible (imaginary) things in play as if they were real (e.g., makes motions of washing hair with non-existent shampoo, or pretends to turn a key to start an invisible car)",
+        "symbolic_3": "The child creates a sequence of actions that make sense and connect logically (e.g., first puts the doll in bed, then covers with blanket, then turns off light)",
+        "symbolic_4": "The child changes tone and way of speaking to represent different characters (e.g., speaks with deep voice for one character and high voice for another)",
+        "symbolic_5": "The child makes dolls perform actions (e.g., the doll cooks, bathes a toy animal, drives a car)",
+        "symbolic_6": "The child pretended to be a character and represents their actions using toys (e.g., 'I am the teacher' and uses dolls as students)",
+        "symbolic_7": "When you ask, the child can say what the character will do next (e.g., you ask 'and now?' and they continue the story saying the next action)",
+        "symbolic_8": "The child follows the story another adult or child is making up and continues the story in a way that matches (e.g., you start a scenario and they add things that make sense)",
+        "symbolic_9": "The child suggests new and different ideas for make-believe stories (e.g., 'now we can go to the park' or 'what if it were a castle?')",
+        "games_rules_1": "The child understands they have to wait their turn and waits when it is someone else's turn to play (e.g., in a game, watches while other plays and then plays when it is their turn)",
+        "games_rules_2": "The child gives up what they want to do so as not to spoil the game and maintain friendship (e.g., wants to take a piece, but sees they can't because it's not the game rule)",
+        "games_rules_3": "The child can follow several commands that do not connect to each other (e.g., in a game: roll die, move piece indicated number of spaces, then draw a card)",
+        "games_rules_4": "The child knows whose turn it is and keeps attention on the game until the end (e.g., observes who played last and knows it is their turn next)",
+        "games_rules_5": "The child works together with another player to reach a common goal (e.g., in a cooperative game, performs an action that helps the other win)",
+        "games_rules_6": "The child does not do things that benefit only them and harm other players (e.g., in a game with hidden pieces, does not give hints for a player to win)",
+        "games_rules_7": "The child helps organize and prepare the game before starting (e.g., arranges board in middle, distributes cards to each player or places pieces in right place)",
+        "games_rules_8": "The child thinks of the best strategy to win the game (e.g., chooses which card to play because it increases their chances of winning)",
+        "games_rules_9": "The child understands that an action generates a predictable consequence (e.g., says 'if I play this card, I win the round' or 'if I do this, he will win')",
+        "games_rules_10": "The child can think about what another player might be planning or wanting to do to make a move decision (e.g., thinks 'he wants to take that piece, so I'll take it first')"
+    },
+    "language_abilities": {
+        "2m_1": "The child smiles when you smile at them",
+        "2m_2": "The child looks at people's faces attentively",
+        "2m_3": "The child cries in different ways (different cry when hungry, when wanting affection, when wanting to sleep)",
+        "4m_1": "The child tries to imitate sounds you make with your mouth (e.g., you go 'pa pa', they try to do the same)",
+        "4m_2": "The child looks with interest at sounds in the environment (turns towards sound)",
+        "6m_1": "The child interrupts what they are doing and looks when you call by name (even if briefly)",
+        "9m_1": "The child changes tone of voice to show different emotions (happy voice, scared voice, angry voice)",
+        "9m_2": "The child understands the word 'NO' and momentarily stops what they are doing",
+        "9m_3": "The child performs simple actions and imitations when you ask (e.g., claps hands, blows kiss, blinks eyes when requested)",
+        "9m_4": "The child points with finger to show objects they like or want",
+        "12m_1": "The child makes animal sounds when seeing an animal (e.g., 'woof woof' for dog, 'meow' for cat)",
+        "12m_2": "The child points to objects and people when you ask (e.g., 'where is mommy?')",
+        "12m_3": "The child performs simple actions when you ask (e.g., you say 'come here' and they come)",
+        "12m_4": "The child speaks one or more words that most people can understand (example: 'dada', 'mama', 'water')",
+        "18m_1": "The child uses simple words to point to things (e.g., says 'this' or 'that' while pointing)",
+        "18m_2": "The child shows interest in knowing the names of things (points and asks)",
+        "18m_3": "The child repeats words you just spoke (copies your speech immediately)",
+        "18m_4": "The child understands about 30 different words",
+        "18m_5": "The child speaks at least 20 words that most people can understand",
+        "2y_1": "The child uses words to talk about location (e.g., 'up', 'down', 'under')",
+        "2y_2": "The child uses articles in sentences (e.g., 'a car', 'the toy')",
+        "2y_3": "The child speaks words in plural (e.g., 'cats', 'balls')",
+        "2y_4": "When seeing images in books, the child can point and name (e.g., sees a cow and goes 'mooo!')",
+        "2y_5": "The child can name people they know when seeing their photos",
+        "2y_6": "The child knows their own name and answers when you ask 'what is your name?'",
+        "2y_7": "The child can tell very simple stories about what they did (e.g., 'went to park')",
+        "30m_1": "The child uses facial expressions and gestures when speaking to make it clearer what they want",
+        "30m_2": "The child loves music, sings parts of songs they hear",
+        "30m_3": "The child understands and follows orders with up to 3 actions (e.g., 'get the toy, give to mommy, and come back here')",
+        "3y_1": "The child uses prepositions when speaking (e.g., 'in', 'to', 'with')",
+        "3y_2": "The child uses subject, verb, and object in sentences (more complete sentences)",
+        "3y_3": "The child knows some concepts of opposites (big/small, hot/cold)",
+        "3y_4": "The child narrates their play to organize their thought (says what they are thinking of doing)",
+        "4y_1": "When reporting events, the child uses spoken language and gestures very expressively",
+        "4y_2": "The child asks questions all the time (why, how, when)",
+        "4y_3": "The child can answer simple questions about what they like and what happened",
+        "4y_4": "The child loves to sing and uses voice and expressions to communicate",
+        "5y_1": "The child can tell a story they invented, without book or cues, with beginning, middle, and end that makes sense",
+        "5y_2": "The child is very communicative and likes to tell about their experiences",
+        "5y_3": "The child makes comparisons between objects (e.g., 'this car is like ours, but red')",
+        "5y_4": "The child loves rhymes and inventing words and tongue twisters",
+        "5y_5": "The child can memorize and say their address and parents' phone number when asked",
+        "6y_1": "The child plays rhyming games with words",
+        "6y_2": "The child can recognize symbols on signs (e.g., traffic sign)",
+        "6y_3": "The child can retell stories they heard before, with many details (including characters' emotions)",
+        "6y_4": "The child uses gestures and facial expressions to dramatize (represent with body) what they are telling"
+    },
+    "cognition_abilities": {
+        "2m_1": "The child recognizes mother's or primary caregiver's voice (turns towards voice)",
+        "2m_2": "The child loves colorful objects (looks with interest)",
+        "2m_3": "The child follows moving things with eyes",
+        "2m_4": "The child makes sounds when wanting to participate in fun activities (like tickling)",
+        "4m_1": "The child observes and moves own hands in front of face as if playing with them",
+        "4m_2": "The child brings objects to mouth to explore and know",
+        "4m_3": "The child observes movements of people and things around them",
+        "4m_4": "The child tries to grab objects they see near them, extending arm",
+        "6m_1": "The child is interested in exploring new and colorful objects",
+        "6m_2": "The child can follow with eyes an object moving from top to bottom",
+        "6m_3": "The child explores things more with hands",
+        "9m_1": "The child can imitate you doing an action you did (learn by observing)",
+        "9m_2": "The child can solve simple problems, like moving an obstacle to get a desired toy or dragging a chair to reach something high, for example.",
+        "9m_3": "The child is very interested in people's faces",
+        "9m_4": "The child can put small objects inside a box",
+        "12m_1": "The child can differentiate simple concepts (big vs small, near vs far)",
+        "12m_2": "The child loves listening to children's songs and stories, dancing or pointing to pictures",
+        "18m_1": "The child can recognize and point to body parts when you ask (e.g., 'where is the nose?')",
+        "18m_2": "The child likes to throw ball to another person and wants person to return it",
+        "18m_3": "The child likes to put objects inside containers (pots, boxes) and take them out again",
+        "18m_4": "The child can assemble a very simple 2-piece puzzle",
+        "2y_1": "The child can put away their toys when you ask",
+        "2y_2": "The child hides something and looks for it after a while (shows they remember hiding something)",
+        "30m_1": "The child can stay attentive in an activity for about 5 minutes",
+        "30m_2": "The child can do two things at the same time, like listening to a story while drawing",
+        "30m_3": "The child knows quantity concepts (one, many, few, none)",
+        "30m_4": "The child can assemble a puzzle with up to 4 pieces",
+        "30m_5": "The child can recognize at least 2 colors",
+        "30m_6": "The child remembers simple instructions given by familiar people",
+        "3y_1": "The child can represent events from previous days (tells what they did and plays about it too)",
+        "4y_1": "The child can build a tower with up to 12 blocks and make a bridge",
+        "4y_2": "The child can color better within lines (goes outside less)",
+        "4y_3": "The child can draw a circle and a square copying you",
+        "4y_4": "The child draws a human figure with more details (may have head, eyes, nose, mouth)",
+        "4y_5": "The child can make various shapes with playdough",
+        "4y_6": "The child can fold paper in half and tear with pincer movement",
+        "4y_7": "The child can say how old they are (may show with fingers)",
+        "4y_8": "The child can recognize when one line is longer than another",
+        "4y_9": "The child can separate objects into groups by size (big, medium, and small)",
+        "4y_10": "The child can count up to 3 objects and name at least 8 colors",
+        "5y_1": "The child can explain what an object is for (cup for drinking, candle for lighting)",
+        "5y_2": "The child can mix colors to make new colors",
+        "5y_3": "The child can plan an activity before doing it (says 'I'm going to draw before cutting')",
+        "5y_4": "The child can maintain attention on an activity for about 10 minutes easily",
+        "5y_5": "The child can assemble puzzles of up to 20 pieces",
+        "5y_6": "The child can hold pencil with hand in firm pincer position and makes defined strokes",
+        "6y_1": "The child likes to do experiments to understand how things work",
+        "6y_2": "The child can remember the order of objects you showed before",
+        "6y_3": "The child can follow 4 or more different instructions without you needing to remind (no need to repeat)",
+        "6y_4": "The child can count up to 10 objects and understand which number is smaller or larger up to 10",
+        "6y_5": "The child has acquired concept of time (knows what is before, after, today, tomorrow, yesterday)",
+        "6y_6": "The child can differentiate left from right"
+    },
+    "social_emotional_abilities": {
+        "2m_1": "The child smiles when someone plays with them",
+        "2m_2": "The child looks for parents with eyes (takes eyes off something to look for parents)",
+        "4m_1": "The child loves seeing their image in mirror, makes sounds and gets excited (showing joy)",
+        "4m_2": "The child smiles without you having to do anything special (natural smile)",
+        "4m_3": "The child makes sounds showing joy, upset, or frustration different from each other",
+        "4m_4": "The child sleeps through the night if you establish a sleep routine",
+        "6m_1": "The child looks for parents with gaze and gestures when scared or insecure",
+        "6m_2": "The child cries when you take away a toy they like",
+        "6m_3": "Most of the time, the child is happy and smiles easily",
+        "9m_1": "The child loves social games like 'peekaboo' (when you hide face and appear)",
+        "9m_2": "The child starts waving 'bye-bye' with hand when you ask",
+        "12m_1": "The child interrupts what they are doing when you say 'no', shows dislike, but may go back to doing it later",
+        "12m_2": "The child prefers playing with caregivers or older children than being alone",
+        "12m_3": "The child plays with toys doing repeated actions (hugs, feeds, puts doll to sleep)",
+        "18m_1": "The child gets angry when adult prevents them from exploring environment (wants to investigate things)",
+        "18m_2": "The child can be affectionate with other children (hugs, touches)",
+        "18m_3": "The child may bite or pull hair of other children during play",
+        "18m_4": "The child has contradictory actions with known people (gets happy then irritated without clear reason)",
+        "2y_1": "The child loves being near other children (even if not playing together yet)",
+        "2y_2": "The child likes social games like running and hide-and-seek",
+        "2y_3": "The child wants an adult or another child to play with them (doesn't play alone)",
+        "2y_4": "The child likes to show people they know things they like (points or brings for adult to see)",
+        "2y_5": "The child is defiant (when you ask not to do something, they keep doing it, looking at your face to test limits)",
+        "30m_1": "The child plays make-believe in more advanced way (e.g., pretends to be someone else)",
+        "30m_2": "The child can express emotions and desires through make-believe play",
+        "30m_3": "When not getting something they want, the child complains or insists a lot",
+        "30m_4": "The child throws tantrums and cries when frustrated",
+        "3y_1": "The child has difficulty adapting to routine changes (may cry or be resistant)",
+        "3y_2": "The child greets other people when seeing them, on their own initiative (you don't need to ask)",
+        "3y_3": "The child expresses emotions clearly (jumps and screams when happy, cries when sad)",
+        "4y_1": "The child loves playing with other children of same age",
+        "4y_2": "The child makes friends easily and has a best friend",
+        "4y_3": "The child has emotional control, but may still have anger outbursts",
+        "4y_4": "The child may act babyish to get attention (wants you to do what they want)",
+        "5y_1": "The child can be demanding (wants things their way)",
+        "5y_2": "With adult help, the child can understand a situation and follow orders better",
+        "5y_3": "The child starts playing with other children in games that have rules",
+        "5y_4": "The child can differentiate fantasy from reality (knows Santa Claus is make-believe)",
+        "6y_1": "The child can understand social rules and behave correctly in public places",
+        "6y_2": "The child throws trash in right place and doesn't break things that aren't theirs",
+        "6y_3": "The child takes care when using objects that are borrowed",
+        "6y_4": "The child has common fears (fear of dark, monsters, even if they like watching scary movies)"
+    },
+    "motor_abilities": {
+        "2m_1": "The child lifts head a few inches when lying on stomach (prone)",
+        "4m_1": "The child can move arms and legs at same time (coordinated movements)",
+        "4m_2": "The child can support head when lying on stomach leaning on elbows",
+        "4m_3": "The child turns to side or stomach when lying on back",
+        "6m_1": "The child can grab objects with entire palm of hand (claw shape)",
+        "6m_2": "The child loves clapping hands and banging hands on furniture or toys",
+        "6m_3": "The child can hold head steady when you pull from lying to sitting position",
+        "6m_4": "The child can support self on legs and give small jumps when you hold by underarms",
+        "9m_1": "The child can bang one object on another in body midline",
+        "9m_2": "The child can pick up small objects (like coins) with index finger and thumb (pincer)",
+        "9m_3": "The child can pick up a cookie and bring to mouth",
+        "12m_1": "The child can put small objects inside holes (like a coin in a piggy bank)",
+        "12m_2": "The child scribbles on paper by own will (not drawing, just scribbling)",
+        "12m_3": "The child can drink from open cup, holding with both hands",
+        "12m_4": "The child can stack at least 3 blocks on top of each other (makes a tower)",
+        "12m_5": "The child can chew food",
+        "12m_6": "The child can stand, squat, and try to climb on sofas and chairs",
+        "18m_1": "The child can drink water from open cup without spilling much",
+        "18m_2": "The child can bring spoon to mouth to feed (may spill, but manages to bring)",
+        "18m_3": "The child makes scribbles on paper with horizontal lines when you show how",
+        "18m_4": "The child can put simple shapes (circle, square) in cutouts",
+        "18m_5": "The child can stack up to 4 small cubes",
+        "18m_6": "The child can turn a pot over to get object out",
+        "18m_7": "The child can button and unbutton large buttons",
+        "18m_8": "The child can turn pages of a book (even if turning several at once)",
+        "2y_1": "The child can walk backward with dexterity",
+        "2y_2": "The child can jump with both feet in same place",
+        "2y_3": "The child can throw and kick a ball maintaining balance",
+        "2y_4": "The child can stand supported on one foot only (with help)",
+        "2y_5": "The child can open and close doors turning handle",
+        "2y_6": "The child can play squatting without falling",
+        "2y_7": "The child can run without falling (but still can't stop when you ask)",
+        "30m_1": "The child can walk on tiptoes maintaining balance",
+        "30m_2": "The child can jump with both feet up to 30 centimeters distance",
+        "30m_3": "The child can walk in a straight line, one foot in front of other",
+        "30m_4": "The child can run and change direction (makes turns)",
+        "30m_5": "The child tries to pedal (even if not really succeeding yet)",
+        "30m_6": "The child can play on park equipment with an adult watching",
+        "3y_1": "The child can walk in a straight line maintaining balance",
+        "3y_2": "The child can jump with two feet down from a step",
+        "3y_3": "The child can go up and down stairs, one foot on each step, holding handrail or wall",
+        "3y_4": "The child can hop on one foot",
+        "3y_5": "The child can pedal a tricycle or small bicycle",
+        "4y_1": "The child can move with coordination and balance in play",
+        "5y_1": "The child can stand on one foot, swinging the other in air, without help",
+        "5y_2": "The child can dance and follow rhythm of music well",
+        "6y_1": "The child can jump rope maintaining rhythm",
+        "6y_2": "The child can walk on a bar maintaining balance",
+        "6y_3": "The child can catch a ball thrown from distance of at least 3 meters",
+        "6y_4": "The child can do somersaults well",
+        "6y_5": "The child likes to dance and can follow rhythm of music and imitate complex moves"
+    },
+    "avd_category": {
+        "The personal_care": "The personal Care",
+        "domestic": "Domestic Care",
+        "recreation": "Work and Recreation",
+        "money": "Shopping and Money",
+        "locomotion": "Locomotion",
+        "communication": "Communication"
+    },
+    "avd": {
+        "feeding_title": "A - FEEDING",
+        "feeding_1": "The person is able to bring spoon or fork to mouth and eat alone (without someone helping hand)",
+        "feeding_2": "The person is able to cut food into small pieces using a knife",
+        "feeding_3": "The person is able to serve food onto a plate from a pan or bowl",
+        "feeding_4": "The person is able to eat without spilling food on clothes or table (most times)",
+        "dressing_title": "B - DRESSING",
+        "dressing_1": "The person is able to choose which clothes they want to wear (has preference and chooses)",
+        "dressing_2": "The person is able to put on a piece of clothing (shirt, pants) alone on correct limbs",
+        "dressing_3": "The person is able to button buttons of a garment",
+        "dressing_4": "The person is able to fasten a zipper of a garment",
+        "dressing_5": "The person is able to tie shoes or close velcro correctly",
+        "bathing_title": "C - BATHING",
+        "bathing_1": "The person is able to get in and out of shower or bathtub alone without help (can step over edge)",
+        "bathing_2": "The person is able to turn on tap and control water temperature",
+        "bathing_3": "The person is able to wash entire body (arms, legs, back, intimate areas)",
+        "bathing_4": "The person is able to dry entire body after bath",
+        "bathing_5": "The person takes bath when they want, without needing to be reminded",
+        "toileting_title": "D - TOILET USE",
+        "toileting_1": "The person goes to bathroom alone when needed (recognizes need and goes)",
+        "toileting_2": "The person is able to go to bathroom alone when someone tells them to go",
+        "toileting_3": "The person is able to sit on toilet and stay until finished",
+        "toileting_4": "The person is able to wipe with toilet paper after using bathroom",
+        "toileting_5": "The person is able to flush the toilet",
+        "toileting_6": "The person is able to put clothes back on (button, zip, pull-up)",
+        "toileting_7": "The person is able to wash hands after using bathroom",
+        "appearance_title": "E - PERSONAL APPEARANCE",
+        "appearance_1": "The person is able to brush teeth alone",
+        "appearance_2": "The person is able to comb hair alone",
+        "appearance_3": "The person is able to wash face with water and soap",
+        "appearance_4": "The person cares for appearance every day, without needing to be reminded",
+        "cooking_title": "A - FOOD PREPARATION",
+        "cooking_1": "The person is able to plan meals (decides what to eat in the day)",
+        "cooking_2": "The person is able to use stove to cook or heat food",
+        "cooking_3": "The person is able to use oven to cook or heat food",
+        "cooking_4": "The person is able to use microwave to heat food",
+        "cooking_5": "The person is only able to prepare very simple foods (milk, bread, fruit, etc)",
+        "table_title": "B - TABLE SETTING",
+        "table_1": "The person is able to get plates, cups, and cutlery from kitchen and take to table",
+        "table_2": "The person is able to place plates, cups, and cutlery in correct places on table",
+        "table_3": "The person is able to place napkins or other items on table",
+        "cleaning_title": "C - HOUSEHOLD CHORES",
+        "cleaning_1": "The person is able to sweep the floor",
+        "cleaning_2": "The person is able to clean tables and furniture (dust)",
+        "cleaning_3": "The person is able to wash dishes (plates, cups, cutlery)",
+        "cleaning_4": "The person is able to put away dishes in cupboards after washing",
+        "cleaning_5": "The person is able to make the bed (arrange the sheets, blanket, pillow) without help",
+        "cleaning_6": "The person is able to hang clothes to dry",
+        "cleaning_7": "The person is able to put clothes away in closets or drawers",
+        "cleaning_8": "The person occasionally does small household chores",
+        "recreation_title": "A - RECREATION AND LEISURE",
+        "recreation_1": "The person watches television regularly",
+        "recreation_2": "The person reads books or magazines regularly",
+        "recreation_3": "The person plays games (board games, cards)",
+        "recreation_4": "The person plays video games",
+        "recreation_5": "The person goes out with friends or family for fun",
+        "recreation_6": "The person seeks fun and leisure activities on their own",
+        "transport_title": "A - PUBLIC TRANSPORT",
+        "transport_1": "The person is able to get on and off public transport (bus, subway, train, etc.) without assistance",
+        "transport_2": "The person is able to enter and exit a subway or train correctly",
+        "transport_3": "The person is able to pay public transport fare",
+        "transport_4": "The person is able to recognize when they arrived at their destination",
+        "mobility_title": "B - MOBILITY IN NEIGHBORHOOD",
+        "mobility_1": "The person can walk accompanied to places near home (bakery, neighbors, park, etc.)",
+        "mobility_2": "A person can cross a street while looking both ways",
+        "mobility_3": "The person is able to recognize way back home",
+        "mobility_4": "The person leaves house alone to go to nearby places",
+        "comm_general_title": "A - GENERAL COMMUNICATION",
+        "comm_general_1": "The person is able to make themselves understood when speaking",
+        "comm_general_2": "The person knows only a few words (limited vocabulary)",
+        "comm_general_3": "The person points with their finger to indicate what they want instead of using words",
+        "phone_title": "B - PHONE USE",
+        "phone_1": "The person is able to make a phone call to any number",
+        "phone_2": "The person is able to maintain a conversation on phone",
+        "phone_3": "The person is able to answer and hang up phone correctly",
+        "phone_4": "The person is only able to make calls to phone numbers they know well",
+        "conversation_title": "C - CONVERSATIONS",
+        "conversation_1": "The person is able to converse naturally with another person",
+        "conversation_2": "The person is able to participate in long conversations (more than 5 minutes)",
+        "conversation_3": "The person is able to remember correct words when speaking",
+        "conversation_4": "The person speaks clearly so most is able to understand",
+        "comprehension_title": "D - COMPREHENSION (UNDERSTANDING WHAT PEOPLE SAY)",
+        "comprehension_1": "The person understands everything people say to them",
+        "comprehension_2": "The person is able to follow spoken instructions",
+        "comprehension_3": "Sometimes the person asks people to repeat what they said"
+    },
+    "logbook": {
+        "dom": "Sun",
+        "seg": "Mon",
+        "ter": "Tue",
+        "qua": "Wed",
+        "qui": "Thu",
+        "sex": "Fri",
+        "sab": "Sat",
+        "title": "Logbook and Calendar",
+        "subtitle": "Track and record the child's daily progress.",
+        "no_child": "No child registered for the logbook.",
+        "switch_child": "Switch Child",
+        "select_date": "Select a date:",
+        "day_mood": "Daily Mood",
+        "moods": {
+            "1": "Difficult",
+            "2": "Challenging",
+            "3": "Neutral",
+            "4": "Good",
+            "5": "Great"
+        },
+        "compass": {
+            "title": "🧭 Caregiver's Compass",
+            "intro": "The Logbook is your strategy tool.",
+            "tip1_title": "Text limit:",
+            "tip1_desc": "Be direct when recording events.",
+            "tip2_title": "Detail the Crisis:",
+            "tip2_desc": "Understanding the \"Before\", \"During\", and \"After\" is key to changing behaviors.",
+            "tip3_title": "Editing:",
+            "tip3_desc": "You can only edit records for the current day."
+        },
+        "dialog": {
+            "title_prefix": "Log",
+            "read_only": "(Read Only)",
+            "save": "Save",
+            "of": "of"
+        },
+        "form": {
+            "management": "Daily Management:",
+            "save": "Save Logbook",
+            "schedule": "Scheduling and Therapies",
+            "no_schedule": "No appointments scheduled for this day.",
+            "finished": "Mark as Completed",
+            "justify": "Cancel with Justification",
+            "delete": "Permanently Delete",
+            "blocked": "Logbook blocked",
+            "blocked_text": "The Logbook can only be filled out on the day of the event or retroactively. Use this screen only to plan the agenda above.",
+            "reason": "Reason:",
+            "report": "Report of the Day",
+            "mood_question": "How was the day overall?",
+            "section1_title": "1. Day Activities",
+            "activities_general": "General Activities",
+            "activities_pif": "FIP Activities",
+            "section2_title": "2. Behavior and Regulation",
+            "behavior_general": "General Behavior",
+            "crisis_question": "Was there a crisis or intense tantrum today?",
+            "crisis_before": "What happened before?",
+            "crisis_during": "What happened during?",
+            "crisis_after": "What happened after?",
+            "crisis_time": "Approximate duration",
+            "section3_title": "3. Basic Routines",
+            "food": "Feeding",
+            "sleep": "Sleep",
+            "visual_resources": "Visual Resources used today:",
+            "resource_routine": "Routine Board",
+            "resource_clues": "Visual Cues",
+            "resource_stories": "Social Stories",
+            "section4_title": "4. Development",
+            "communication": "Communication",
+            "socialization": "Socialization",
+            "sensorial": "Sensorial",
+            "section5_title": "5. Specific Skills",
+            "motor": "Motor",
+            "cognitive": "Cognitive",
+            "adaptive": "Adaptive",
+            "section6_title": "🌟 Day Highlights (Key Moments)",
+            "highlights_placeholder": "Describe overcome challenges, great successes, discoveries, or emotions that marked the day...",
+            "new_schedule": "New Appointment",
+            "category": "Category",
+            "title": "Title (Ex: Therapy with Dr. Amy)",
+            "end": "End",
+            "repeat": "Repeat the event?",
+            "unique": "Unique Event",
+            "weekly": "Weekly",
+            "quinze": "Every 15 days",
+            "monthly": "Monthly"
+        },
+        "placeholders": {
+            "activities_general": "Ex: Went to school, played in park, went to grandma's, had speech therapy...",
+            "activities_pif": "Ex: Trained eye contact for 5 minutes; Played 'my turn, your turn'...",
+            "behavior_general": "Ex: Was agitated in morning, but focused well on toys in afternoon. Cried at bath time...",
+            "crisis_before": "Ex: Was hungry? Tired? Heard 'no'? Routine changed suddenly?",
+            "crisis_during": "Ex: Threw self on floor? Screamed? Tried to bite? Threw objects?",
+            "crisis_after": "Ex: Calmed down alone? Needed hug? Got tired and slept?",
+            "crisis_time": "Ex: 10 minutes",
+            "food": "Ex: Refused lunch, tried new fruit, ate alone...",
+            "sleep": "Ex: Took long to fall asleep, woke up scared, didn't want to nap...",
+            "communication": "Ex: Spoke new word, pointed to what they wanted, used gestures...",
+            "socialization": "Ex: Played with brother, shared toy, isolated self at recess...",
+            "sensorial": "Ex: Covered ears with noise, bothered by clothing tag, sought tight hug...",
+            "motor": "Ex: Ran without falling, managed to button shirt, held pencil correctly...",
+            "cognitive": "Ex: Assembled puzzle, counted to 5, recognized colors...",
+            "adaptive": "Ex: Brushed teeth alone, helped put away toys, dressed self..."
+        },
+        "helpers": {
+            "activities_general": "Summarize routine and places where child was.",
+            "activities_pif": "Which Family Intervention Plan goals did you practice today?",
+            "behavior_general": "Describe child's mood, attention, and cooperation.",
+            "crisis_before": "Try to identify trigger (reason) that started behavior.",
+            "crisis_during": "Describe child's action without judgment.",
+            "crisis_after": "How did crisis end and how did you react?",
+            "food": "How was appetite and acceptance of textures/flavors?",
+            "sleep": "Quality of night sleep and naps.",
+            "communication": "How did they express desires and feelings today?",
+            "socialization": "Interaction with adults and other children.",
+            "sensorial": "Reactions to lights, sounds, touches, textures, or movements.",
+            "motor": "Balance, strength, and hand use.",
+            "cognitive": "Learning, memory, and problem solving.",
+            "adaptive": "Autonomy in daily life (bathing, dressing, eating)."
+        },
+        "alerts": {
+            "save_error": "Error saving log. Check your connection.",
+            "save_error_2": "Error saving log. Check the fields.",
+            "error_update": "Error updating appointment.",
+            "delete": "Do you really want to cancel this appointment permanently?",
+            "delete_error": "Error deleting appointment.",
+            "register": "Register a child to view the Logbook.",
+            "locked_title": "Edit Locked",
+            "locked_text": "This record is already saved and belongs to a previous date. To ensure history integrity, changes are only allowed on current day.",
+            "future_title": "We're not there yet!",
+            "future_text": "You selected a future date. The Logbook serves to record what has already happened. Please wait until that day to make your entry.",
+            "wait_btn": "Ok, I'll wait",
+            "understood_btn": "Understood"
+        }
+    },
+    "affiliates_landing": {
+        "hero_title": "Become a Cognacare Partner",
+        "hero_desc": "Help atypical families find support. Our program is exclusive to those who live or work with neurodiversity. Submit your application and grow with us.",
+        "benefits": {
+            "commission_title": "Attractive Commission",
+            "commission_desc": "Receive 20% commission on every subscription or purchase made through your exclusive link.",
+            "community_title": "Help the Community",
+            "community_desc": "Bring child development tools and parental guidance to families who need support.",
+            "discount_val": "10%",
+            "discount_title": "Discount for Followers",
+            "discount_desc": "Create your personalized coupon and offer a 10% immediate discount to your audience."
+        },
+        "cta_button": "Apply Now",
+        "pending_message": "Your partnership request is under review. We will notify you by email!"
+    },
+    "partner_pix": {
+        "title": "Partner Configuration",
+        "description": "Create your exclusive discount coupon and register your PIX key to receive your commissions.",
+        "coupon_label": "Your Coupon Name",
+        "coupon_placeholder": "Ex: MYNAME10",
+        "coupon_helper": "Do not use the word 'COGNACARE'. Letters and numbers only.",
+        "key_type_label": "PIX Key Type",
+        "pix_key_label": "Your PIX Key",
+        "pix_key_placeholder": "Ex: your@email.com",
+        "pix_key_helper": "Ensure the key is correct.",
+        "saving": "Saving...",
+        "save_btn": "Save Settings",
+        "success_msg": "Settings saved successfully!",
+        "error_msg": "Error saving. Try again.",
+        "types": {
+            "cpf": "CPF",
+            "cnpj": "CNPJ",
+            "email": "Email",
+            "phone": "Phone",
+            "random": "Random Key"
+        }
+    },
+    "partner_panel": {
+        "title": "Partner Dashboard",
+        "subtitle": "Track your performance, commissions, and configure your payments.",
+        "stats": {
+            "available_balance": "Available Balance",
+            "ready_withdrawal": "Ready for withdrawal",
+            "pending_balance": "Pending Balance",
+            "awaiting_release": "Awaiting release",
+            "sales_made": "Sales Made",
+            "total_received": "Total received",
+            "link_clicks": "Link Clicks",
+            "coming_soon": "Coming soon"
+        },
+        "transactions": {
+            "title": "Latest Transactions",
+            "date": "Date",
+            "client": "Client",
+            "sale_value": "Sale Value",
+            "commission": "Your Commission",
+            "status": "Status",
+            "confirmed": "Confirmed",
+            "empty": "No sales recorded yet. Share your link!"
+        },
+        "referral": {
+            "title": "Your Referral Link",
+            "desc": "Send this link to your contacts. If they buy, you earn commission!",
+            "copy": "Copy",
+            "copied": "Copied!",
+            "active_coupon": "Your active coupon:",
+            "loading_coupon": "Loading..."
+        },
+        "loading_error": "Error loading partner dashboard."
+    },
+    "affiliate_terms": {
+        "title": "Partnership Agreement and Affiliate Program Terms - Cognacare",
+        "last_updated": "Last updated: {{date}}",
+        "intro": "This Agreement regulates participation in the Affiliate Program of {{razaoSocial}}, a legal entity duly constituted under Brazilian laws, registered under CNPJ No. {{cnpj}} (\"Cognacare\"). By requesting participation, the Affiliate declares that they have read, understood, and fully agree to these Terms.",
+        "section1_title": "1. Legal Nature of the Relationship",
+        "section1_text": "The relationship between Cognacare and the Affiliate is strictly commercial, autonomous, and non-exclusive, with no employment, corporate, representation, agency, or any form of legal subordination involved. The Affiliate will act at their own risk and is fully responsible for their tax, social security, and fiscal obligations, including before the Federal Revenue and other competent bodies.",
+        "section2_title": "2. Eligibility and Approval Process",
+        "section2_text": "Participation is restricted to individuals over 18 years of age who have a direct or indirect relationship with the cause of atypical families, such as health and education professionals, family members of neurodivergent individuals, or neurodivergent individuals themselves. Cognacare may analyze public profiles on social networks and other information provided by the candidate to verify alignment with institutional values and the Program's purpose, prohibiting any form of discrimination based on race, color, gender, sexual orientation, religion, or socioeconomic status. Approval is exclusive and discretionary to Cognacare and may be denied or revoked at any time in case of breach of these Terms, suspected fraud, conduct incompatible with the brand's values, or legal or regulatory requirements. In the event of revocation, commissions already due and linked to valid sales not subject to cancellation will be paid normally, observing the conditions of Clause 5.",
+        "section3_title": "3. Use of Brand and Intellectual Property",
+        "section3_text": "The Affiliate receives a limited, non-exclusive, non-transferable, and revocable authorization to use the \"Cognacare\" brand and official materials exclusively for the purpose of promoting the Program and the services offered by the platform, within the terms and limits defined by Cognacare. It is strictly forbidden to register domains, social network profiles, ad accounts, or any identifiers that reproduce or imitate the brand, as well as to alter, adapt, or create derivative materials from official content without prior written authorization.",
+        "section4_title": "4. Advertising Rules and Conduct",
+        "section4_intro": "The following practices constitute serious infractions, liable to immediate suspension or banishment from the Program and cancellation of commissions related to irregular operations:",
+        "section4_list": {
+            "item1": "Making promises of cure, therapeutic guarantees, or unproven medical claims, in disagreement with applicable legislation and best health practices.",
+            "item2": "Sending SPAM or unsolicited and invasive messages, including mass messaging on messaging apps, emails, or comments on third-party posts.",
+            "item3": "Buying keywords related to the \"Cognacare\" brand or terms that may mislead the consumer into believing it is an official company channel, unless expressly authorized.",
+            "item4": "Presenting oneself as an employee, legal representative, partner, or agent of Cognacare, or omitting the Affiliate status when it may mislead the consumer.",
+            "item5": "AUTO-AFFILIATION AND NETWORK FRAUD: It is strictly prohibited to use one's own link or coupon for personal purchases or for third parties with the intent of obtaining undue discounts. The system will consider it fraud and withhold commissions if the referred purchases share the same CPF/CNPJ, the same credit card holder, the same PIX origin account, or the same network IP address of the Affiliate."
+        },
+        "section5_title": "5. Commissions and Payments",
+        "section5_text": "The Affiliate will be entitled to a 20% commission on the actual financial value (Pix or Credit Card) effectively transacted and received by Cognacare for each sale attributed to their link. The commission will not apply, under any circumstances, to portions of the purchase that have been discounted using Bonus balances, Cashback, or promotional coupons. Payment will be made via PIX on the 1st business day of each month, provided that: (i) the sale is confirmed and without a chargeback/refund request; (ii) a minimum of 30 days has elapsed since the payment; (iii) the Affiliate has a minimum accumulated balance of R$ 50.00; and (iv) has made sales to at least 3 (three) clients with distinct CPFs and distinct payment origins. Amounts below the minimum will remain accumulated.",
+        "section6_title": "6. Refunds, Cancellations, and Chargebacks",
+        "section6_text": "In case of cancellation, refund, fraud, misuse of a coupon, or chargeback, the corresponding commission will be automatically deducted from amounts due. If Cognacare identifies an atypical volume of sales, suspicion of credit card fraud, or a chargeback/refund rate higher than 5% on the Affiliate's referrals, the payment of all commissions will be preventively blocked for up to 90 days for auditing, and the partnership may be summarily terminated and commissions canceled if the fraud is confirmed by the payment operators.",
+        "section7_title": "7. Liability and Indemnification",
+        "section7_text": "The Affiliate is fully responsible for the content they disclose, as well as for their interactions with potential clients and third parties. If Cognacare suffers any damage, loss, administrative penalty, or legal claim arising, directly or indirectly, from the Affiliate's conduct or breach of these Terms, the Affiliate must fully indemnify the company, including costs, expenses, and attorney's fees.",
+        "section8_title": "8. Data Processing (LGPD)",
+        "section8_text": "Cognacare will generally act as the controller of the final clients' personal data and the Affiliates' registration data, processing such information for the purposes of executing this Agreement, complying with legal obligations, and legitimate interest, under the terms of Law No. 13,709/2018 (LGPD). The Affiliate commits to fully comply with the LGPD and other data protection rules when prospecting clients, refraining from collecting, storing, or sharing personal data excessively, without a legal basis, or in disagreement with Cognacare's guidelines. The parties agree to cooperate in the event of security incidents that may affect personal data related to the Program and to enable the exercise of data subjects' rights when applicable.",
+        "section9_title": "9. Confidentiality",
+        "section9_text": "The Affiliate agrees to maintain absolute secrecy regarding non-public information of Cognacare to which they have access due to this Agreement, including commercial strategies, conversion rates, special conditions, performance reports, and client data. The duty of confidentiality will survive for 5 (five) years after the termination of the relationship, except when there is a legal obligation to disclose.",
+        "section10_title": "10. No Guarantee of Earnings",
+        "section10_text": "Cognacare does not guarantee any minimum volume of sales, traffic, leads, conversions, or financial revenue to the Affiliate. Performance will depend on factors beyond Cognacare's control, such as the Affiliate's own actions, market conditions, and public interest.",
+        "section11_title": "11. Term, Suspension, and Termination",
+        "section11_text": "This Agreement will remain in force for an indefinite period and may be terminated by either party at any time, by simple electronic notification, without the right to indemnification. Cognacare may immediately suspend or terminate the Affiliate's participation in case of violation of these Terms, suspected fraud, practice of illicit acts, or conduct that may damage the company's image, without prejudice to the adoption of appropriate legal measures. Upon termination, commissions already due on valid sales not subject to cancellation will be calculated and paid in the following cycle, observing the deadlines and conditions of Clause 5.",
+        "section12_title": "12. Forum",
+        "section12_text": "The parties will use their best efforts to amicably resolve any disputes arising from this Agreement. If the conflict persists, the forum of the district of Cognacare's headquarters is elected, waiving any other, however privileged it may be, to resolve any disputes arising therefrom.",
+        "form_social_title": "Where can we follow your work?",
+        "where_find": "Select the platform and enter your username/handle.",
+        "form_social_desc": "Provide the links to your social networks (Instagram, TikTok, YouTube, Facebook):",
+        "other": "Other (Website/Blog)",
+        "form_social_placeholder": "Ex: instagram.com/your.profile",
+        "form_cause_title": "Your relationship with the cause of atypical families",
+        "form_cause_placeholder": "Tell us briefly: Are you a psychopedagogue? An atypical mother? A therapist?",
+        "accept_a": "I declare that I have read, understood, and fully agree to the ",
+        "accept_b": "Program Terms",
+        "public_doc": "Document for public consultation.",
+        "join_button": "Send Partnership Request",
+        "processing": "Sending your data...",
+        "profile": "Partner Profile",
+        "success_msg": "Your application has been sent! We will review your profile and you will receive the result by email.",
+        "error": "Please add at least one valid social network and describe your relationship with the cause of atypical families."
+    },
+    "privacy_policy": {
+        "title": "Privacy Policy",
+        "last_updated": "Last updated: {{date}}",
+        "intro": "Welcome to the Cognacare Family Intervention Plan (PIF) platform ({{siteUrl}}). Your privacy is important to us. This Privacy Policy explains how we collect, use, share, and protect your personal information and the information of the children registered on the platform, in compliance with the General Data Protection Law (LGPD - Law No. 13.709/2018), GDPR, and other applicable regulations.",
+        "section1_title": "1. Data Controller and Scope",
+        "section1_text": "{{razaoSocial}}, registered under CNPJ No. {{cnpj}} (\"Cognacare\"), is the data controller of the personal data processed through the platform. This Policy applies to the users who are the legal guardians of the children, invited professionals, affiliates, and other visitors who use our digital services.",
+        "section2_title": "2. Information We Collect",
+        "section2_intro": "We collect different types of information to provide and improve our services:",
+        "section2_list": {
+            "user_info": "<strong>User Registration Information:</strong> Name, email address, CPF (when necessary for tax purposes), optional phone number, and password (stored encrypted) when you create an account.",
+            "child_info": "<strong>Child Information:</strong> Data voluntarily provided by you, such as name, date of birth, diagnoses, and developmental characteristics, essential for customizing our educational support and family routine services, which do not constitute medical diagnosis. The processing of this data is always carried out in the best interest of the child and with the specific consent of the legal guardian.",
+            "pif_data": "<strong>PIF Form Data:</strong> Detailed responses regarding the child's development and family context, used to generate customized documents.",
+            "chat_history": "<strong>Chat History:</strong> Content of interactions with the AI Assistant, used to improve the experience and contextualize the support.",
+            "financial": "<strong>Financial Information:</strong> Transaction history, subscribed plans, credits, and balances. Complete credit card data is processed exclusively by a secure payment gateway (Efi Pay) and is not stored by Cognacare.",
+            "usage": "<strong>Usage Information:</strong> Technical data such as IP address, device identifiers, access logs, cookies, and browsing data, collected for security, fraud prevention, and experience improvement purposes.",
+            "affiliate": "<strong>Affiliate Data:</strong> Name, email, CPF or CNPJ (when applicable), PIX key, bank details necessary for payment, history of sales attributed to your link or coupon, performance metrics, and public social media profile information used in the evaluation process."
+        },
+        "section3_title": "3. Legal Bases and Purposes of Processing",
+        "section3_intro": "We process your data based on different legal grounds, according to the specific purpose:",
+        "section3_list": {
+            "provide_service": "<strong>Contract Execution:</strong> To operate the platform, create and manage your account, generate Family Intervention Plans (PIF), record chat sessions, and manage credits, subscriptions, and payments.",
+            "legal_obligation": "<strong>Compliance with Legal Obligations:</strong> Issuance of tax documents, maintenance of records for accounting purposes, and compliance with legal retention periods.",
+            "legitimate_interest": "<strong>Legitimate Interest:</strong> To monitor platform use, prevent fraud, improve features, conduct statistical analysis, and manage the Affiliate Program, always respecting your fundamental rights and freedoms.",
+            "consent_child": "<strong>Consent:</strong> Processing of children's personal data, with the specific and prominent consent of the legal guardian, always in the best interest of the minor.",
+            "communication": "<strong>Communications:</strong> To send generated documents, important account notices, plan updates, and contractual changes. Promotional messages will only be sent when permitted by applicable law, with an opt-out option."
+        },
+        "section4_title": "4. Information Sharing",
+        "section4_intro": "We do not sell your personal data. We share information only with third parties strictly necessary for the operation of the service or compliance with legal obligations:",
+        "section4_list": {
+            "providers": "<strong>Service Providers:</strong> AI technology providers, payment gateways, hosting services, email delivery, and analytics tools, which act as data processors and are subject to contractual obligations of confidentiality and security.",
+            "affiliates": "<strong>Affiliate Program:</strong> We may share aggregated and non-identifiable information about campaign performance. Personal customer data is not shared with affiliates, except when strictly necessary and in a minimized format for commission attribution purposes.",
+            "legal": "<strong>Legal Obligations and Exercise of Rights:</strong> Sharing with public authorities, regulatory bodies, or third parties when required by law, court order, or to defend Cognacare's rights in administrative, arbitration, or judicial proceedings."
+        },
+        "section5_title": "5. Processing of Children's Data",
+        "section5_text": "Registration and use of the platform must be carried out by the child's legal guardian or by a professional duly authorized by that guardian. The processing of children's personal data is done with the specific consent of at least one of the parents or legal guardian, providing clear information about the types of data collected, how it is used, and the procedures for exercising rights. We always act based on the principle of the best interest of the child.",
+        "section6_title": "6. Information Security",
+        "section6_text": "We implement appropriate technical and administrative security measures to protect your data, considering the nature and sensitivity of the information processed, including encryption (HTTPS/TLS), access controls, audit logs, and security practices aligned with market recommendations. Nevertheless, no system is entirely immune to risks, and we encourage the use of strong passwords and not sharing them with third parties.",
+        "section7_title": "7. Data Retention and Deletion",
+        "section7_text": "We retain your personal data only for as long as necessary to fulfill the purposes described in this Policy, including for compliance with legal or contractual obligations, and the regular exercise of rights. After this period, the data may be anonymized for statistical purposes or securely deleted. You can request the deletion of your account and your data at any time directly through the application or by contacting our support; in these cases, certain data may remain stored for the legal period or to safeguard Cognacare's rights.",
+        "section8_title": "8. Data Subject Rights (LGPD/GDPR)",
+        "section8_text": "You have the right to access, correct, update, port, and request the deletion of your personal data, as well as to obtain information about how we use it, revoke consent, and request the review of automated decisions, when applicable. To exercise your rights, contact us through the channels indicated at the end of this Policy. In the case of children's data, the exercise of rights is carried out by the legal guardian.",
+        "section9_title": "9. Cookies and Similar Technologies",
+        "section9_text": "We use cookies and similar technologies to authenticate users, remember preferences, improve the browsing experience, and perform usage analysis. You can manage cookies directly in your browser settings, understanding that some features may be impacted.",
+        "section10_title": "10. Affiliates and Personal Data",
+        "section10_text": "When you register for the Cognacare Affiliate Program, we process your personal data for eligibility analysis, commission management, fraud prevention, and compliance with legal obligations. The processed data may include, among others, full name, email, CPF or CNPJ, PIX key, bank details necessary for payment, history of sales attributed to your link or coupon, performance metrics, and public social media profile information used in the evaluation process. The processing is based on the execution of the affiliation contract, compliance with legal obligations (including tax), and Cognacare's legitimate interest in operating and improving the Affiliate Program, always respecting your rights as a data subject. This data may be shared with payment, accounting, auditing service providers, and technological platforms strictly necessary for calculating and transferring commissions. Upon ending your participation in the Affiliate Program, we will keep your data for the period necessary to comply with legal obligations and safeguard Cognacare's rights.",
+        "section11_title": "11. Changes to this Policy",
+        "section11_text": "We may update this Privacy Policy periodically to reflect changes in legislation, our services, or internal data processing practices. The most recent version will always be available on this page, indicating the date of the last update. If significant changes are made that require new consent, we will request your agreement before continuing with the processing.",
+        "contact_title": "12. Contact and Data Protection Officer (DPO)",
+        "contact_general": "If you have questions about this Policy, the processing of your data, or to exercise your rights as a data subject, please contact us by email:",
+        "contact_support": "For technical support or issues related to platform usage:"
+    },
+    "terms_of_use": {
+        "title": "Terms of Use",
+        "last_updated": "Last updated: {{date}}",
+        "intro": "These Terms of Use govern your access and use of the Cognacare platform. By using the service, you declare that you have read, understood, and agree to these Terms and the applicable Privacy Policy.",
+        "section1_title": "1. Service Description",
+        "section1_text": "The platform offers AI-based parental support tools, including the generation of Family Intervention Plans (PIF), organization and tracking resources, and a Virtual Assistant for educational and behavioral support.",
+        "section1_disclaimer": "<strong>Important:</strong> Our services are educational and support tools. They <strong>do not replace</strong> medical diagnoses, medical treatments, professional therapeutic monitoring, or individualized guidance from qualified professionals.",
+        "section2_title": "2. Account, Registration, and Access",
+        "section2_text": "To use the platform's features, you must create an account, providing true, complete, and updated information, as well as maintaining the confidentiality of your password. You are responsible for all activities carried out under your account and must notify us immediately in case of unauthorized use or suspected security breach. The use of the platform by legal guardians on behalf of children must comply with applicable legislation and the terms of the Privacy Policy.",
+        "section3_title": "3. Credits, Subscriptions, and Plans",
+        "section3_intro": "The service operates through individual credits and subscription plans, as described below:",
+        "section3_pif_title": "A. PIF Credits",
+        "section3_pif_text": "Used to generate personalized Family Intervention Plan (PIF) documents. PIF credits have no expiration date and never expire, remaining available in the user's account regardless of active subscriptions.",
+        "section3_chat_title": "B. Chat Credits",
+        "section3_chat_text": "Used for exchanging messages with the AI. Their validity is strictly tied to the billing cycle of the contracted plan (e.g., 30 days for the monthly plan, 6 months for the semi-annual, and 1 year for the annual). At the exact end of the current cycle, unused credits will strictly expire.",
+        "section3_bonus_title": "C. Bonuses and Expiration",
+        "section3_bonus_text": "All expired chat credits are automatically and mandatorily converted into a bonus balance, at a fixed value of {{cashbackValue}} per credit. Bonuses do not expire, do not grant the right to withdrawal or cash refunds under any circumstances, and must be used exclusively within the Cognacare platform to deduct up to a limit of 50% of the total value of new eligible purchases or plan renewals.",
+        "section3_founder_title": "D. Special Conditions: Founding Member",
+        "section3_founder_text": "The \"Founding Member\" status guarantees a fixed promotional price on annual renewals, as long as this modality is available. This condition is valid as long as the subscription is renewed uninterruptedly. In case of voluntary cancellation, unresolved payment failure, or refund request, the user loses the Founder status and, if they wish to return to the platform, will be subject to the current public table rates.",
+        "section4_title": "4. Cancellation, Renewal, and Refund",
+        "section4_text": "You can cancel the automatic renewal of your subscription at any time through your account settings. For digital purchases made through the platform, the right of withdrawal is guaranteed within 7 (seven) calendar days from the purchase confirmation, in accordance with the Consumer Protection Code, provided the user has not characterized substantial use of the platform. Substantial use, which voids the right of withdrawal as it constitutes immediate consumption of the digital product, is considered to be the generation of 1 (one) or more PIFs, or the use of more than 10% of the chat credits provided in the plan. After this period or upon verification of substantial use, no refunds will be issued.",
+        "section5_title": "5. Acceptable Use and Conduct",
+        "section5_text": "It is prohibited to use the platform for illicit purposes, to violate third-party rights, or to disseminate content that is discriminatory, offensive, or contrary to current legislation. The AI Assistant must not be used for medical emergencies, acute crisis situations, or critical health decisions, and the user must immediately seek healthcare services or trained professionals. Cognacare may suspend or terminate the user's access in case of misuse, suspected fraud, or violation of these Terms.",
+        "section6_title": "6. Intellectual Property and License of Use",
+        "section6_text": "The platform, its source code, interfaces, brands, logos, texts, illustrations, and other content are owned by or licensed to Cognacare, being protected by intellectual property legislation. Upon contracting the services, the user receives a limited, non-exclusive, and non-transferable license for personal use of the platform's resources. Documents generated for your family, including the PIF, are intended for personal use and may not be commercialized, publicly reproduced, or redistributed without express authorization.",
+        "section7_title": "7. Affiliate Program (Overview)",
+        "section7_text": "Participation in the Affiliate Program is optional and governed by a specific Partnership Agreement and Affiliate Program Terms, which establish rules on eligibility, commissions, payments, conduct, and brand use. In the event of a conflict between these Terms of Use and the Affiliate Agreement, the specific instrument will prevail for matters related to the Affiliate Program.",
+        "section8_title": "8. Affiliates and Personal Data Processing",
+        "section8_text": "Users who choose to participate in the Affiliate Program will have their personal data additionally processed to enable eligibility analysis, creation of personalized links or coupons, sales tracking, and commission payments, as provided in the Partnership Agreement and Affiliate Program Terms. By joining the Program, the Affiliate authorizes Cognacare to use data such as name, email, CPF or CNPJ, PIX key, referral history, and performance metrics for contract execution, fraud prevention, Program improvement, and compliance with legal and regulatory obligations. The Affiliate further commits to treat any non-public information accessed with confidentiality and to fully comply with the LGPD when prospecting clients, refraining from using contact lists or third-party data obtained irregularly or without an adequate legal basis. Further details on the processing of Affiliate data are described in the Privacy Policy and the Affiliate Agreement, which are part of these Terms.",
+        "section9_title": "9. Limitation of Liability and Technical Responsibility",
+        "section9_text": "Cognacare's algorithms, forms, and Artificial Intelligence workflows were designed and supervised under the technical responsibility of a qualified professional in Neuropsychopedagogy. However, to the maximum extent permitted by applicable law, Cognacare is not responsible for decisions made solely based on the content generated by the platform. The use of the platform does not replace professional monitoring; the user is responsible for evaluating, alongside medical and educational specialists, the suitability of the proposed activities for the child's reality.",
+        "section9_disclaimer": "<strong>Important:</strong> The accuracy, safety, and effectiveness of the Family Intervention Plan (PIF) depend entirely on the accuracy and truthfulness of the answers provided in the assessment form. Cognacare provides the technological infrastructure to structure the document, but disclaims any liability for ineffective or inadequate plans resulting from omitted, incorrect, or unrealistic information entered by the user.",
+        "section10_title": "10. Privacy and Data Protection",
+        "section10_text": "The processing of personal data on the Cognacare platform is governed by the Privacy Policy, which is part of these Terms of Use. By using the service, you agree to the processing of your personal data and the data of the children under your responsibility, as described in the Privacy Policy, including the storage, sharing, and security measures adopted.",
+        "section11_title": "11. Changes to the Terms",
+        "section11_text": "We may update these Terms of Use periodically to reflect changes in our services, legislation, or internal practices. The most recent version will always be available on this page, indicating the date of the last update. In the event of significant changes, we may notify you via email or within the platform itself. Continued use of the service after an update constitutes acceptance of the new terms.",
+        "contact_title": "12. Contact",
+        "contact_general": "For general inquiries about these Terms of Use:",
+        "contact_support": "For technical support or questions about your account, credits, or subscriptions:",
+        "contact_sales": "For commercial matters and corporate plans:"
+    },
+    "social_media": {
+        "title": "My Social Media",
+        "desc": "Keep your social media links updated so our team can follow your work.",
+        "edit": "Edit",
+        "save": "Save",
+        "saving": "Saving...",
+        "success": "Social media updated!",
+        "error": "Error updating social media."
+    },
+    "footer": {
+        "tagline": "Technology guiding your care.",
+        "quick_links": "Navigation",
+        "social_media": "Social Media",
+        "legal": "Legal",
+        "doubt": "Ask your Questions",
+        "rights_reserved": "All rights reserved.",
+        "made_with_love": "Made with love for extraordinary families.",
+        "current_lang": "Portuguese",
+        "affiliate_terms_link": "Affiliate Program Terms"
+    },
+    "not_found": {
+        "err404": "404 - Page Not Found",
+        "back_home": "Back to Home Page",
+        "back_previous": "Back to Previous Page"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about Cognacare, FIPs, and our Artificial Intelligence.",
+        "items": [
+            {
+                "question": "What is Cognacare?",
+                "answer": "Cognacare is an AI-powered platform designed to support atypical families and healthcare professionals. Our tool helps structure routines, adapt play, and create personalized Family Intervention Plans (FIP) tailored to each child's sensory profile and diagnosis."
+            },
+            {
+                "question": "Does Cognacare replace medical therapy or professional guidance?",
+                "answer": "No. Cognacare is a parental and educational SUPPORT tool. The suggestions generated by our Artificial Intelligence do not replace diagnoses, medical treatments, or the monitoring by trained professionals (neurologists, occupational therapists, speech therapists, psychologists, etc.). Always validate the suggested activities with the child's therapy team."
+            },
+            {
+                "question": "What is a FIP?",
+                "answer": "FIP stands for Family Intervention Plan. It is a document generated by our AI that translates developmental needs into practical, playful activities to be done at home. It takes into account the child's hyperfocus, triggers, dietary restrictions, and sensory profile to ensure that the activities are welcoming and functional."
+            },
+            {
+                "question": "How does the Credit and Chat system work?",
+                "answer": "Cognacare operates on a balance system. You use 'FIP Credits' to generate new comprehensive plans, and 'Chat Credits' to converse with the AI Assistant (each sent and received message consumes credits). You can purchase extra packages or subscribe to one of our Premium Plans for automatic recharges and exclusive benefits."
+            },
+            {
+                "question": "Can I register more than one child on the same account?",
+                "answer": "Yes! You can create separate profiles for different children under your account. Our AI will treat each profile independently, ensuring that the FIP and Chat interactions are 100% focused on the specific characteristics of that individual child."
+            },
+            {
+                "question": "How does the Affiliate program work?",
+                "answer": "Selected users can become Cognacare Affiliates. By sharing your exclusive link or coupon, you offer discounts to new families and earn a commission for every subscription or credit package sold. You can track your sales and earnings directly from your dashboard."
+            },
+            {
+                "question": "Are my data and my child's data secure?",
+                "answer": "The security and privacy of your family are our top priority. The data entered (such as age, diagnosis, and sensory profile) is used exclusively by the AI engine to personalize your experience during generation. We do not sell or share sensitive data with third parties."
+            }
+        ],
+        "still_have_questions": "Still have questions?",
+        "contact_prompt": "Contact us through our Contact Form and ask whatever you want to know!",
+        "contact_button": "Go to Contact Form"
+    },
+    "tutorials": {
+        "sidebar": "Tutorials",
+        "title": "Video Tutorials",
+        "subtitle": "Learn how to use all Cognacare features step by step.",
+        "search_label": "Search or select a tutorial...",
+        "no_options": "No tutorials found",
+        "select_prompt": "Select a video from the list above to start watching."
+    },
+    "glossary": {
+        "title": "Glossary",
+        "subtitle": "Translate 'therapy-speak' into plain English. Understand technical terms and acronyms of atypical child development.",
+        "search_placeholder": "Search for a term, acronym, or therapy...",
+        "no_results": "No terms found for this word.",
+        "terms": [
+            {
+                "term": "ABA (Applied Behavior Analysis)",
+                "definition": "A science that studies human behavior. In child therapies, it is used to teach useful skills (like speaking, playing, and interacting) and reduce harmful behaviors, always focusing on how the environment influences the child.",
+                "tags": [
+                    "Therapy",
+                    "Behavior"
+                ]
+            },
+            {
+                "term": "Mand",
+                "definition": "In ABA vocabulary, a 'mand' is simply the act of REQUESTING something the child wants or needs (e.g., saying 'water' when thirsty, or pointing to a toy).",
+                "tags": [
+                    "ABA",
+                    "Language"
+                ]
+            },
+            {
+                "term": "Tact",
+                "definition": "In ABA vocabulary, a 'tact' is the act of NAMING or commenting on something the child sees, hears, or feels (e.g., seeing a dog on the street and saying 'dog!', without wanting to pet the dog).",
+                "tags": [
+                    "ABA",
+                    "Language"
+                ]
+            },
+            {
+                "term": "Echoic",
+                "definition": "The ability to exactly repeat what the other person just said, like an echo.",
+                "tags": [
+                    "ABA",
+                    "Language"
+                ]
+            },
+            {
+                "term": "Positive Reinforcement",
+                "definition": "A good consequence (a reward, praise, a smile, a toy) that happens right after the child does something expected, which increases the chances of them repeating that good behavior in the future.",
+                "tags": [
+                    "ABA",
+                    "Psychology"
+                ]
+            },
+            {
+                "term": "Extinction",
+                "definition": "A therapeutic strategy that consists of withholding attention or reward for an inappropriate behavior, with the goal of making that behavior stop.",
+                "tags": [
+                    "ABA",
+                    "Behavior"
+                ]
+            },
+            {
+                "term": "Pairing (Rapport)",
+                "definition": "The process of building a bond of trust with the child. The adult associates themselves with the things the child likes most, showing that their presence is fun and safe, before starting to demand any tasks.",
+                "tags": [
+                    "Therapy",
+                    "Behavior"
+                ]
+            },
+            {
+                "term": "Emotional Regulation",
+                "definition": "The ability of the child (or adult) to recognize, manage, and respond to a strong emotion (like anger, frustration, or excessive joy) in an appropriate and healthy way.",
+                "tags": [
+                    "Socioemotional",
+                    "Psychology"
+                ]
+            },
+            {
+                "term": "Meltdown",
+                "definition": "An intense crisis caused by sensory or emotional overload. It is not a 'tantrum' to get something, but rather a total loss of brain control due to an excess of stimuli. The child cannot stop even if they want to.",
+                "tags": [
+                    "Crisis",
+                    "ASD",
+                    "Sensory"
+                ]
+            },
+            {
+                "term": "Shutdown",
+                "definition": "The opposite of a Meltdown. Faced with sensory or emotional overload, the child's brain 'turns off'. They retreat, stop talking, do not react to stimuli, and isolate themselves physically and mentally.",
+                "tags": [
+                    "Crisis",
+                    "ASD",
+                    "Sensory"
+                ]
+            },
+            {
+                "term": "Executive Functions",
+                "definition": "A set of brain skills that acts like the 'conductor of an orchestra'. It involves the ability to plan tasks, maintain focus, remember instructions, control impulses, and transition from one activity to another.",
+                "tags": [
+                    "Neurology",
+                    "Cognition"
+                ]
+            },
+            {
+                "term": "Echolalia",
+                "definition": "The repetition of sounds, words, or phrases that the child heard (from people, cartoons, or songs). It can occur immediately after hearing or days later. It is often used by the child to self-soothe or attempt to communicate.",
+                "tags": [
+                    "Language",
+                    "ASD"
+                ]
+            },
+            {
+                "term": "Stimming (Stereotypy)",
+                "definition": "Repetitive body movements or sounds (like hand-flapping, toe-walking, rocking, or making vocal sounds). They are primarily used for emotional or sensory self-regulation.",
+                "tags": [
+                    "Behavior",
+                    "Sensory"
+                ]
+            },
+            {
+                "term": "Sensory Integration",
+                "definition": "The way the brain receives, organizes, and interprets information that comes from the senses (sight, hearing, touch, smell, taste, plus balance and body awareness).",
+                "tags": [
+                    "Occupational Therapy",
+                    "Sensory"
+                ]
+            },
+            {
+                "term": "ADL (Activities of Daily Living)",
+                "definition": "Basic self-care tasks necessary for independence in everyday life, such as bathing, dressing, using the toilet, brushing teeth, and eating independently.",
+                "tags": [
+                    "Occupational Therapy",
+                    "Autonomy"
+                ]
+            },
+            {
+                "term": "AAC (Augmentative and Alternative Communication)",
+                "definition": "The use of tools (like picture boards, tablets with speech apps, or sign language) to help people who are non-speaking or have speech difficulties to express themselves and be understood.",
+                "tags": [
+                    "Speech Therapy",
+                    "Communication"
+                ]
+            },
+            {
+                "term": "Hyperfocus (Special Interest)",
+                "definition": "An extremely intense and prolonged interest in a specific subject, object, or activity (e.g., dinosaurs, fans, letters). The child focuses a large part of their attention on it.",
+                "tags": [
+                    "Cognition",
+                    "ASD"
+                ]
+            },
+            {
+                "term": "CAPD (Central Auditory Processing Disorder)",
+                "definition": "The child has perfect hearing in their ears, but the brain has difficulty interpreting and understanding what was heard, especially in noisy environments.",
+                "tags": [
+                    "Diagnosis",
+                    "Speech Therapy"
+                ]
+            },
+            {
+                "term": "CAS (Childhood Apraxia of Speech)",
+                "definition": "A neurological motor speech disorder. The child knows what they want to say, but the brain has difficulty planning and coordinating the exact movements of the lips, tongue, and jaw needed to produce the word's sound.",
+                "tags": [
+                    "Diagnosis",
+                    "Speech Therapy"
+                ]
+            },
+            {
+                "term": "ODD (Oppositional Defiant Disorder)",
+                "definition": "A behavioral disorder characterized by a persistent pattern of irritability, stubbornness, frequent arguments, and defiance toward authority figures (parents, teachers).",
+                "tags": [
+                    "Diagnosis",
+                    "Psychiatry"
+                ]
+            },
+            {
+                "term": "ASD (Autism Spectrum Disorder)",
+                "definition": "A neurodevelopmental condition characterized by differences in social communication, interactions, and the presence of restricted and repetitive behaviors, interests, or activities. It is called a 'spectrum' because it affects each person in a unique way.",
+                "tags": [
+                    "Diagnosis",
+                    "Neurology"
+                ]
+            },
+            {
+                "term": "Support Levels (Autism)",
+                "definition": "Current clinical classification for ASD (Level 1, 2, or 3). Replaces older terms like 'Asperger's' or 'Mild/Severe Autism'. Indicates the amount of help and adaptation the person needs for daily activities.",
+                "tags": [
+                    "Diagnosis",
+                    "ASD"
+                ]
+            },
+            {
+                "term": "ADHD (Attention-Deficit/Hyperactivity Disorder)",
+                "definition": "A neurobiological disorder that includes inattention, hyperactivity, and impulsivity. The child may have difficulty focusing on tasks outside their extreme interests or act without thinking about consequences.",
+                "tags": [
+                    "Diagnosis",
+                    "Psychiatry"
+                ]
+            },
+            {
+                "term": "SPD (Sensory Processing Disorder)",
+                "definition": "The brain's difficulty in receiving and responding to information coming through the senses. The child may be hypersensitive (feels pain from common noises or textures) or hyposensitive (constantly seeks impact, jumping, or deep pressure).",
+                "tags": [
+                    "Diagnosis",
+                    "Sensory"
+                ]
+            },
+            {
+                "term": "GDD (Global Developmental Delay)",
+                "definition": "A temporary diagnosis given to children under 5 who do not meet expected developmental milestones in several areas (speech, motor, social), but are still too young for a definitive diagnosis like ASD or Intellectual Disability.",
+                "tags": [
+                    "Diagnosis",
+                    "Pediatrics"
+                ]
+            },
+            {
+                "term": "Dyslexia",
+                "definition": "A specific learning disorder that affects the ability to read and recognize words fluently, regardless of the child's intelligence.",
+                "tags": [
+                    "Diagnosis",
+                    "Cognition",
+                    "Education"
+                ]
+            },
+            {
+                "term": "Dyspraxia",
+                "definition": "Also known as Developmental Coordination Disorder (DCD). It affects motor planning and coordination, making the child appear 'clumsy' when running, writing, using utensils, or tying shoes.",
+                "tags": [
+                    "Diagnosis",
+                    "Motor Skills"
+                ]
+            },
+            {
+                "term": "ADOS-2 and ADI-R",
+                "definition": "Considered the 'gold standard' assessments for an Autism diagnosis. ADOS-2 is an observation play session with the child, and ADI-R is an in-depth interview with the parents.",
+                "tags": [
+                    "Assessment",
+                    "ASD"
+                ]
+            },
+            {
+                "term": "VB-MAPP",
+                "definition": "One of the most famous assessments in ABA therapy. It measures language development milestones and identifies 'barriers' (what is stopping the child from learning, such as disruptive behaviors or visual perception flaws).",
+                "tags": [
+                    "Assessment",
+                    "ABA"
+                ]
+            },
+            {
+                "term": "Neuropsychological Evaluation",
+                "definition": "A detailed mapping of the brain conducted by a specialized psychologist. Through tests and games, it measures intelligence (IQ), memory, attention, reasoning, and executive functions to help reach a diagnosis.",
+                "tags": [
+                    "Assessment",
+                    "Psychology"
+                ]
+            },
+            {
+                "term": "IEP (Individualized Education Program)",
+                "definition": "A legally mandated school document for inclusive education. It is a roadmap created by the school (often alongside therapists) that adapts the curriculum, tests, and teaching methods to the reality of that specific child.",
+                "tags": [
+                    "Education",
+                    "Inclusion"
+                ]
+            },
+            {
+                "term": "ESDM (Early Start Denver Model)",
+                "definition": "A therapy focused on very young children (ages 1 to 4) with autism. It combines the principles of ABA science with natural play, applied in a highly playful and relationship-focused manner.",
+                "tags": [
+                    "Therapy",
+                    "Studies"
+                ]
+            },
+            {
+                "term": "PECS (Picture Exchange Communication System)",
+                "definition": "A specific alternative communication protocol. The child is taught to pick up a picture of what they want and hand it to an adult to get the item, encouraging communication initiation.",
+                "tags": [
+                    "Therapy",
+                    "Speech Therapy",
+                    "Communication"
+                ]
+            },
+            {
+                "term": "Padovan Method",
+                "definition": "A therapeutic approach that repeats the natural phases of a baby's neuro-psychomotor development (such as rolling, creeping, and crawling) to try to reorganize the nervous system and improve speech, chewing, and movement.",
+                "tags": [
+                    "Therapy",
+                    "Motor Skills"
+                ]
+            },
+            {
+                "term": "Bobath Concept",
+                "definition": "A therapy widely used in physical and speech therapy for neurological rehabilitation. It focuses on inhibiting abnormal movement patterns and facilitating correct postures, very common in Cerebral Palsy cases.",
+                "tags": [
+                    "Therapy",
+                    "Physical Therapy"
+                ]
+            },
+            {
+                "term": "TEACCH",
+                "definition": "An educational program that focuses on the visual organization of the environment. It uses boards, colors, and physical space separation to help people with autism understand routines and gain independence at work or school.",
+                "tags": [
+                    "Therapy",
+                    "Education"
+                ]
+            },
+            {
+                "term": "Neurotypical",
+                "definition": "A person whose neurological and cognitive development follows the expected and majority pattern of the population. It is the opposite of neurodivergent.",
+                "tags": [
+                    "Common Phrase",
+                    "Society"
+                ]
+            },
+            {
+                "term": "Neurodivergent",
+                "definition": "A term encompassing people whose brains function, learn, and process information differently than the typical pattern (includes people with Autism, ADHD, Dyslexia, Giftedness, among others).",
+                "tags": [
+                    "Common Phrase",
+                    "Society"
+                ]
+            },
+            {
+                "term": "Joint Attention",
+                "definition": "A vital developmental milestone. It is when a child and another person purposely focus their attention on the same object (e.g., the child points to an airplane in the sky and looks back at their mother to see if she is also looking). Deficits here are early warning signs for ASD.",
+                "tags": [
+                    "Common Phrase",
+                    "Cognition"
+                ]
+            },
+            {
+                "term": "Prompting (Level of Assistance)",
+                "definition": "The help an adult gives to ensure the child succeeds. It can be full physical prompt (holding their hand to do it together), visual prompt (pointing), vocal prompt (giving the first syllable), or gestural prompt. The goal is to prevent the child from failing and getting frustrated.",
+                "tags": [
+                    "Common Phrase",
+                    "ABA",
+                    "Pedagogy"
+                ]
+            },
+            {
+                "term": "Prompt Fading",
+                "definition": "The art of gradually removing help so the child doesn't become dependent on the adult. For example, moving from holding their hand (physical prompt) to just pointing (visual prompt), until the child does it independently.",
+                "tags": [
+                    "Common Phrase",
+                    "ABA"
+                ]
+            },
+            {
+                "term": "Generalization",
+                "definition": "The child's ability to use a skill learned in the clinic in the real world. If they learn to use the clinic's toilet with the therapist but can't use it at school, they haven't generalized the skill yet.",
+                "tags": [
+                    "Common Phrase",
+                    "Learning"
+                ]
+            },
+            {
+                "term": "Neuroplasticity",
+                "definition": "The brain's ability to change, adapt, and create new connections. It is the reason why early intervention (starting therapies as early as possible) has such a massive impact on a child's future.",
+                "tags": [
+                    "Common Phrase",
+                    "Neurology"
+                ]
+            },
+            {
+                "term": "Disruptive Behavior",
+                "definition": "Actions that interrupt learning or routines, and that may put the child or others at risk (such as screaming very loudly, throwing objects, hitting others, or self-harming).",
+                "tags": [
+                    "Common Phrase",
+                    "Behavior"
+                ]
+            },
+            {
+                "term": "ABC of Behavior",
+                "definition": "Stands for Antecedent (what happened right before), Behavior (what the child did), and Consequence (what happened right after). Used by therapists to figure out the reason behind a child's challenging behavior.",
+                "tags": [
+                    "Common Phrase",
+                    "Behavior",
+                    "ABA"
+                ]
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "Do you have any questions, suggestions, or partnership proposals? Send us a message!",
+        "name": "Your Name",
+        "email": "Your Email",
+        "subject": "Subject",
+        "message": "Message",
+        "send_button": "Send Message",
+        "sending": "Sending...",
+        "success": "Message sent successfully! We will get back to you as soon as possible.",
+        "error": "An error occurred while sending your message. Please try again later."
+    },
+    "visual_routine": {
+        "menu_title": "Visual Routines",
+        "title": "Visual Routine Generator",
+        "subtitle_ai": "Type an activity (e.g., 'Take a Bath') and our AI will create the visual step-by-step automatically.",
+        "input_topic_label": "Which activity do you want to detail?",
+        "generate_btn_ai": "Generate Automatic Routine",
+        "subtitle": "Create personalized routine boards with pictograms to help with child's organization and autonomy.",
+        "input_title_label": "Routine Title",
+        "input_title_placeholder": "Ex: Morning Routine, Bedtime...",
+        "task_list_title": "Task List",
+        "add_task_btn": "Add Task",
+        "generate_btn": "Generate Visual PDF",
+        "generating": "Creating pictograms...",
+        "placeholder_task": "Ex: Brush teeth",
+        "error_empty": "Add at least one task.",
+        "error_title": "Give the routine a title.",
+        "success_msg": "Routine generated successfully!"
+    },
+    "typing": "Analyzing the FIP and writing...",
+    "password": "Password",
+    "enter": "Enter",
+    "forgotpwd": "Forgot password?",
+    "notsigned": "Not registered yet?",
+    "signup": "Sign Up",
+    "errorobo": "Please confirm you are not a robot.",
+    "errologin2": "Error attempting login. Check your credentials.",
+    "name": "Name",
+    "confirmpwd": "Confirm Password",
+    "register": "Create account",
+    "alreadyregistered": "Already registered?",
+    "login": "Access account",
+    "errosenha": "Passwords do not match.",
+    "errocad": "Error in registration. Try again.",
+    "crediterror": "Error fetching credits:",
+    "verifiedemail": "Email verified successfully!",
+    "emailerror": "Error verifying email",
+    "servererror": "Error connecting to server",
+    "notoken": "Verification token missing",
+    "sessionerror": "checkSession - Error verifying session:",
+    "kidsearcherror": "Error searching children:",
+    "credittopif": "Credits that can be used to produce FIPs (1 Credit = 1 FIP).",
+    "credittochat": "Credits that can be used to send messages to FIP assistant (1 Credit = 1 Message).",
+    "bonuscredit": "When 'CHAT Credits' expire (read 'Terms of Use') they are converted into BONUS that can be used to purchase 'FIP Credits', 'CHAT Credits' or FIP Pro Subscriptions).",
+    "pifcredit": "FIP Credits",
+    "chatcredit": "CHAT Credits",
+    "home": "Home",
+    "kids": "Children",
+    "pif": "FIP",
+    "pifassistant": "FIP Assistant",
+    "expectedfor": "Expected for: ",
+    "errorpwdchange": "An error occurred while changing password.",
+    "currentpwd": "Current Password",
+    "newpwd": "New Password",
+    "confirmnewpwd": "Confirm New Password",
+    "savenewpwd": "Save New Password",
+    "lastpif": "The last FIP for this child was generated ",
+    "piflimit": " days ago. To ensure updated guidance, the limit is 90 days.",
+    "kidnopif": "This child does not yet have a registered Family Intervention Plan (FIP).",
+    "piferror": "Error checking FIP:",
+    "pifexperror": "Error checking FIP validity.",
+    "histerror": "Error loading history.",
+    "chaterror": "Error communicating with chat.",
+    "errormsg": "Error sending message.",
+    "kidtotalk": "Child to assist",
+    "choose": "Select...",
+    "remainingmsg": "Messages remaining: ",
+    "startchat": "Choose a child to start chat.",
+    "hello": "Hello! I am your FIP assistant.",
+    "readytotalk": "I have analyzed the chosen child's FIP and I am ready to help you with it!",
+    "attention": "Attention:",
+    "prodpif": "PRODUCE FIP",
+    "choosekid": "Choose a child...",
+    "chatblock": "Chat blocked",
+    "typedoubt": "Type your doubt...",
+    "list": "List"
+}

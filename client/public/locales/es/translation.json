@@ -1,0 +1,1827 @@
+{
+    "dashboard": {
+        "welcome_setup": "Asistente de Configuración",
+        "setup_desc": "Configuraremos la plataforma para usted en 3 sencillos pasos.",
+        "tab_1": "Perfil Completo",
+        "register_child": "Registrar Niño",
+        "generate_first_pif": "Generar el Primer PIF",
+        "founder": "MIEMBRO FUNDADOR",
+        "greeting": "Hola",
+        "tutorial_title": "Paso a paso para la elaboración de un Plan de Intervención Familiar (PIF):",
+        "step1_title": "Paso 1: Tus datos",
+        "step1_desc": "Para empezar, necesitamos conocerte mejor. ¡Completa tus datos para desbloquear tus créditos de bonificación!",
+        "step1_sub": "Puedes consultar los registros de los niños que has inscrito haciendo clic en 'Lista de Niños'.",
+        "step2_title": "Paso 2: ¿A quién vamos a ayudar?",
+        "step2_desc": "Registra la información del niño para que la Inteligencia Artificial pueda personalizar las actividades.",
+        "step2_sub": "Al hacer clic en 'Sí, crear PIF', serás dirigido al formulario de 5 pasos. De lo contrario, podrás crear el PIF más tarde.",
+        "step3_title": "Paso 3: Tu primer PIF",
+        "step3_desc": "Por favor, complete el cuestionario sobre el desarrollo de su hijo para que podamos crear un Plan de Intervención Familiar personalizado.",
+        "step4_title": "4. Completa el Formulario",
+        "step4_desc": "Selecciona el niño deseado para mostrar el formulario. Responde las preguntas y usa los botones 'Siguiente' y 'Atrás' para navegar entre las 5 etapas.",
+        "step5_title": "5. Generar y Recibir el PIF",
+        "step5_desc": "En el último paso, haz clic en \"GENERAR PIF\" y espera a que la IA construya el documento.",
+        "step5_sub1": "El PIF se mostrará en pantalla, con opciones para Copiar o Descargar en PDF. También se enviará una copia a tu correo electrónico.",
+        "step5_sub2": "Un nuevo PIF para el mismo niño puede crearse después de 30 días.",
+        "step5_sub3": "Consulta todos los PIFs generados en <1>Lista de PIFs</1>.",
+        "step5_sub4": "Recuerda: Los PIFs no son editables, sirven como registro de la evolución del niño.",
+        "important_links": "Enlaces Importantes:",
+        "terms_of_use": "Términos de Uso",
+        "privacy_policy": "Política de Privacidad",
+        "contact": "Contacto",
+        "kids": "Niños Registrados",
+        "pifs": "Planes generados"
+    },
+    "common": {
+        "acc_status": "Estado de la Cuenta",
+        "settings": "Configuraciones",
+        "change_photo": "Cambiar Foto",
+        "change_pwd": "Cambiar Contraseña",
+        "change_language": "cambiar",
+        "choose_language": "Elegir Idioma",
+        "yes": "Sí",
+        "no": "No",
+        "ok": "OK",
+        "male": "Masculino",
+        "female": "Femenino",
+        "prefer_not_say": "Prefiero no decir",
+        "other": "Otros",
+        "specify_other": "Especificar otro(s)",
+        "save": "Guardar Cambios",
+        "cancel": "Cancelar",
+        "register": "Registrar Niño",
+        "child_name": "Nombre del Niño",
+        "child_name_placeholder": "Ej: Juan, María Pérez, Juju...",
+        "child_name_helper": "Cómo llaman al niño. Puede ser el primer nombre, nombre completo o un apodo cariñoso.",
+        "birth_date": "Fecha de Nacimiento",
+        "gender": "Género",
+        "attends_school": "¿Asiste a la escuela?",
+        "school_year": "Año Escolar",
+        "does_therapy": "¿Hace terapia?",
+        "which_therapies": "¿Qué terapias?",
+        "which_therapies_placeholder": "Ej: Fonoaudiología, Terapia Ocupacional, Psicología...",
+        "is_verbal": "¿Es Verbal (Habla)?",
+        "speech_type": "Comunicación / Tipo de habla",
+        "literate": "¿Alfabetizado?",
+        "lives_with": "¿Con quién vive?",
+        "primary_caregiver": "¿Quién es el cuidador principal?",
+        "primary_caregiver_tab": "Cuidador Principal",
+        "actions": "Acciones",
+        "has_pet": "¿Tiene mascota?",
+        "which_pet": "¿Qué animal?",
+        "which_pet_placeholder": "Ej: Perro (Rex), gato...",
+        "interacts_pet": "¿Interactúa con él?",
+        "regulation_strategy": "Estrategias de Regulación (¿Qué funciona?)",
+        "sensorial_profile": "Marca cómo el niño percibe el mundo. Esto nos ayuda a decidir si sugerir \"abrazo\" o \"distanciamiento\" en una crisis.",
+        "sos_examples": "Ej: Baño tibio, jugar con plastilina, quedarse a oscuras...",
+        "sos_tips": "¿Qué suele calmar al niño en los momentos difíciles?",
+        "triggers": "Desencadenantes Comunes (¿Qué le irrita?)",
+        "trigger_examples": "Ej: Hambre, sueño, escuchar un 'no', lugares ruidosos, cambio de rutina...",
+        "triggers_helper": "¿Qué suele causar irritación o crisis?",
+        "caregiver_difficulty": "¿Cuál es la mayor dificultad diaria del cuidador principal?",
+        "difficulty_placeholder": "Ej: Lidiar con la agitación al dormir, selectividad alimentaria, crisis en el mercado...",
+        "development_priority": "¿Cuál es tu mayor prioridad para su desarrollo en este momento?",
+        "priority_placeholder": "Ej: Mejorar el contacto visual, dejar el pañal, comer solo...",
+        "describe_here": "Describe aquí...",
+        "diagnosis_title": "Diagnóstico o Hipótesis Diagnóstica",
+        "has_hyperfocus": "¿Tiene algún hiperfoco?",
+        "describe_hyperfocus": "Describe el hiperfoco",
+        "hyperfocus_placeholder": "Ej: Dinosaurios, trenes, sistema solar, letras...",
+        "hyperfocus_helper": "Temas u objetos que al niño le encantan y en los que se concentra mucho tiempo.",
+        "other_info1": "¿Hay alguna información que quisieras agregar sobre",
+        "other_info2": "el niño",
+        "other_info3": "que no se haya preguntado en el formulario hasta ahora?",
+        "info_adicional1": "Información Adicional",
+        "info_adicional2": "Ej: Le dan mucho miedo los perros, no le gusta pisar el césped, alinea los cochecitos...",
+        "kid_reg_success": "¡Niño Registrado con Éxito!",
+        "create_pif": "¿Deseas crear un PIF para",
+        "now": "ahora?",
+        "notnow": "No, después",
+        "yes_create": "Sí, crear PIF",
+        "edit_child_title1": "Editar Datos",
+        "edit_child_title2": "del Niño",
+        "weight": "Peso",
+        "weight_placeholder": "Ej: 14.5",
+        "height": "Altura",
+        "height_placeholder": "Ej: 0.95",
+        "years": "años",
+        "months": "meses",
+        "days": "días",
+        "hours": "horas",
+        "and": "y",
+        "close": "Cerrar"
+    },
+    "home_tab": {
+        "access_panel": "Acceder",
+        "sign_up": "Crear Cuenta"
+    },
+    "kids_tab": {
+        "my_kids": "Lista de NiñoS",
+        "register_kid": "Registrar Niño",
+        "medical_receipt": "Leer receta",
+        "select_kid": "Seleccionar paciente/niño",
+        "select": "Seleccione un niño del menú superior para comenzar a leer la receta médica."
+    },
+    "payment": {
+        "tabs": {
+            "credits": "Créditos PIF",
+            "plans": "Plan PIF Pro",
+            "chat_extra": "Créditos CHAT"
+        },
+        "credits_desc": "Ideal para generar documentos puntuales. Sin acceso al Chat con IA.",
+        "table": {
+            "qty": "Cant.",
+            "unit_price": "Precio Unit."
+        },
+        "input_qty": "Cantidad de Créditos",
+        "plans_info": "* Todos los planes son de pago único (prepago).",
+        "features": {
+            "1pif": "1 PIF",
+            "1pif_month": "1 PIF / mes",
+            "100msgs": "100 Msj Chat IA",
+            "100msgs_month": "100 Msj Chat IA / mes",
+            "access_30": "Acceso por 30 días",
+            "renew": "Renueva cuando quieras",
+            "save_percent": "Ahorra 16%",
+            "everything": "Todo lo del Plan Mensual",
+            "badge": "Insignia Fundador",
+            "anteciped_access": "Acceso Anticipado (Beta)",
+            "renewal": "Renovación sin aumento de precio",
+            "limited": "🔥 OFERTA LIMITADA"
+        },
+        "chat_extra": {
+            "title_avail": "¿Necesitas más ayuda?",
+            "title_locked": "Función Bloqueada",
+            "desc": "Si has alcanzado tu límite mensual de mensajes, puedes comprar un paquete extra.",
+            "card_title": "Paquete Chat Extra",
+            "card_feature": "+ 50 Mensajes",
+            "card_validity": "Válido para el ciclo actual de tu suscripción.",
+            "note_title": "Nota:",
+            "note_text": "Este paquete es un complemento. Requiere una suscripción activa.",
+            "warning": "La venta de créditos de mensajes de chat está restringida a usuarios que hayan producido al menos 1 PIF en los últimos 90 días."
+        },
+        "summary": {
+            "title": "Resumen del Pedido",
+            "item": "Ítem",
+            "bonus_balance": "Saldo de Bonificación",
+            "use_bonus": "Usar saldo de bonos",
+            "final_value": "Valor Final",
+            "buy_btn": "Comprar Ahora",
+            "secure_msg": "Pago seguro vía Stripe (Tarjeta y PIX)"
+        },
+        "modal": {
+            "title": "Pago Seguro",
+            "bonus_success": "¡Pago realizado totalmente con tu saldo de bonos! Actualizando...",
+            "product": "Producto",
+            "discount": "Descuento por Bonos aplicado",
+            "pay_btn": "Pagar",
+            "success": "¡Pago realizado con éxito!",
+            "error_init": "No se pudo iniciar el pago. Por favor, intenta nuevamente.",
+            "error_unexpected": "Ocurrió un error inesperado en el pago."
+        },
+        "feedback": {
+            "confirmed": "¡Pago confirmado! Actualizando tus datos...",
+            "pix_error": "Error al generar PIX.",
+            "bonus_redeemed": "¡Canje realizado con éxito!"
+        },
+        "plan_names": {
+            "monthly": "Mensual",
+            "semiannual": "Semestral",
+            "annual": "Miembro Fundador"
+        },
+        "periods": {
+            "30days": "/ 30 días",
+            "6months": "/ 6 meses",
+            "1year": "/ 1 año"
+        },
+        "item_desc": {
+            "credits_singular": "crédito",
+            "credits_plural": "créditos",
+            "credits_title": "Créditos Individuales"
+        },
+        "options": {
+            "order_summary": "Resumen del Pedido",
+            "select_item": "Seleccione un ítem",
+            "use_bonus": "Usar saldo de bonos",
+            "available_balance": "Saldo disponible",
+            "subtotal": "Subtotal",
+            "bonus_discount": "Descuento Bono",
+            "terms_read": "He leído y acepto los",
+            "terms_link": "Términos de Uso",
+            "privacy_link": "Política de Privacidad",
+            "connector": "y",
+            "processing": "PROCESANDO...",
+            "confirm_redemption": "CONFIRMAR CANJE",
+            "pay_pix": "Pagar con PIX",
+            "pay_card": "Pagar con Tarjeta"
+        }
+    },
+    "profile": {
+        "tab": "Perfil",
+        "change_pwd": "Cambiar Contraseña",
+        "title": "Configuraciones de la cuenta",
+        "subtitle": "Información adicional, foto de perfil y contraseña.",
+        "tab_1": "Datos de registro",
+        "tab_2": "Cambiar foto",
+        "tab_3": "Cambiar contraseña",
+        "data_title": "Datos de perfil",
+        "data_subtitle": "Esta información es necesaria para la emisión de facturas y recibos.",
+        "extra_credits": "Complete todos los campos obligatorios a continuación y gane al instante <1>+1 crédito PIF</1> y <2>+1 crédito CHAT</2> para probar Cognacare.",
+        "name": "Nombre registrado",
+        "email": "Correo electrónico de la cuenta",
+        "country": "País de residencia",
+        "cpf": "Documento Nacional de Identidad",
+        "doc_number": "Número de Documento",
+        "tel": "Número de teléfono de contacto",
+        "tel_code": "+[Código de país] [Número de teléfono]",
+        "zip": "Código postal",
+        "logradouro": "Address Line 1",
+        "numero": "Número",
+        "complemento": "Address Line 2",
+        "cidade": "Ciudad",
+        "estado": "Estado/Provincia",
+        "education": "Nivel de Educación",
+        "edu_fund_inc": "Educación Primaria Incompleta",
+        "edu_fund_comp": "Educación Primaria Completa",
+        "edu_med_inc": "Educación Secundaria Incompleta",
+        "edu_med_comp": "Educación Secundaria Completa",
+        "edu_sup_inc": "Educación Superior Incompleta",
+        "edu_sup_comp": "Educación Superior Completa",
+        "edu_pos": "Posgrado / Maestría / Doctorado",
+        "relation": "Relación con el niño(a)",
+        "rel_mother": "Madre",
+        "rel_father": "Padre",
+        "rel_uncle": "Tío / Tía",
+        "rel_grandparent": "Abuelo / Abuela",
+        "rel_sibling": "Hermano / Hermana",
+        "rel_other": "Otros",
+        "specify_relation": "Especifique la relación",
+        "specify_relation_placeholder": "Ej: Terapeuta, Padrastro...",
+        "validating": "Validando...",
+        "save": "Guardar y validar registro",
+        "photo": "Foto de Perfil",
+        "photo_error": "La imagen debe tener un tamaño máximo de 2 MB.",
+        "photo_error2": "Error al enviar la imagen. Inténtalo de nuevo.",
+        "photo_succcess": "¡Foto actualizada correctamente!",
+        "choose": "Elegir foto"
+    },
+    "financial": {
+        "tab": "Financiero",
+        "tabs": {
+            "statement": "Extracto",
+            "buy_credits": "Comprar Créditos"
+        }
+    },
+    "financial_statement": {
+        "current_balances": "Saldos Actuales",
+        "pif_credits": "Créditos PIF",
+        "chat_messages": "Créditos Chat",
+        "bonus_balance": "Saldo de Bonos",
+        "history": "Historial",
+        "no_transactions": "No se encontraron transacciones.",
+        "table": {
+            "date": "Fecha",
+            "description": "Descripción",
+            "type": "Tipo",
+            "method": "Método",
+            "paid_value": "Valor Pagado",
+            "bonus": "Bono ($)",
+            "pif": "PIF",
+            "chat": "Chat"
+        },
+        "types": {
+            "bonus": "Bonificación",
+            "expiration": "Vencimiento",
+            "purchase": "Compra",
+            "consumption": "Consumo",
+            "daily_consumption": "Consumo Diario",
+            "plan_purchase": "Compra de Plan",
+            "chat_extra_purchase": "Compra Chat Extra",
+            "pif_credits_purchase": "Compra Créditos PIF",
+            "credits_expired": "Créditos vencidos",
+            "bonus_generated": "Bono generado"
+        },
+        "methods": {
+            "card": "Tarjeta",
+            "pix": "PIX",
+            "system": "SISTEMA",
+            "bonus": "BONO"
+        }
+    },
+    "progress_chart": {
+        "title": "Seguimiento de Evolución",
+        "select_child_label": "Seleccionar Niño",
+        "select_child_placeholder": "Seleccione...",
+        "loading_data": "Cargando datos...",
+        "no_data": "Aún no hay datos suficientes para generar el gráfico. Produce el primer PIF para comenzar el seguimiento.",
+        "no_pif_found": "Ningún PIF encontrado para este niño.",
+        "error_loading": "Error al cargar datos de evolución.",
+        "chart": {
+            "y_axis_label": "Puntos",
+            "x_axis_label": "Fecha",
+            "tooltip_total": "Total",
+            "tooltip_points": "puntos",
+            "legend_max": "Máx",
+            "footer_note": "* El gráfico muestra la suma de los puntos acumulados (habilidades adquiridas) en cada evaluación."
+        },
+        "tabs": {
+            "play": "Juego",
+            "language": "Lenguaje",
+            "cognition": "Cognición",
+            "social_emotional": "Socioemocional",
+            "motor": "Motricidad"
+        },
+        "levels": {
+            "level_1": "Nivel 1: Exploratorio",
+            "level_2": "Nivel 2: Funcional",
+            "level_3": "Nivel 3: Pre-simbólico",
+            "level_4": "Nivel 4: Simbólico",
+            "level_5": "Nivel 5: Juegos y Reglas",
+            "label_1": "Exploratorio",
+            "label_2": "Funcional",
+            "label_3": "Pre-simbólico",
+            "label_4": "Simbólico",
+            "label_5": "Juegos y Reglas"
+        }
+    },
+    "password_comp": {
+        "pwd_error": "Error al solicitar restablecimiento de contraseña.",
+        "pwd_recover": "Recuperar Contraseña",
+        "email_recover": "Ingresa tu email para recibir el enlace de recuperación.",
+        "recover_link_btn": "Enviar Enlace",
+        "return_login": "Volver al Login",
+        "email_verify": "Verificación de Email",
+        "redirect_3s": "Serás redirigido a la página de login en 3 segundos...",
+        "go_login": "Ir al Login",
+        "insert_email": "Por favor, ingresa un email válido.",
+        "resend_email_error": "Error al reenviar email",
+        "server_error": "Error al conectar con el servidor",
+        "query_error": "Error en la solicitud:",
+        "verify_email": "Verifica tu Email",
+        "insert_email_to_link": "Ingresa tu email abajo para recibir el enlace de verificación. Haz clic en el enlace recibido para activar tu cuenta.",
+        "type_email": "Escribe el email registrado para recibir el enlace.",
+        "resend_email": "Reenviar Email de Verificación",
+        "didnt_receive": "¿No recibiste el email? Revisa tu carpeta de Spam o intenta reenviar arriba."
+    },
+    "reset_password": {
+        "title": "Restablecer Contraseña",
+        "new_password": "Nueva Contraseña",
+        "confirm_new_password": "Confirmar Nueva Contraseña",
+        "save_button": "Guardar Nueva Contraseña",
+        "back_to_login": "Volver al Login",
+        "success_redirect": "Serás redirigido en 5 segundos.",
+        "errors": {
+            "invalid_token_initial": "Token de restablecimiento inválido o no encontrado. Solicita un nuevo enlace.",
+            "fill_fields": "Por favor, completa ambos campos de contraseña.",
+            "mismatch": "Las contraseñas no coinciden.",
+            "invalid_token_submit": "Token de restablecimiento inválido o no encontrado.",
+            "generic_error": "Error al restablecer contraseña."
+        }
+    },
+    "sidebar": {
+        "sos": "SOS CRISIS",
+        "logbook": "Diario de Bordo",
+        "child": "Niños",
+        "partner": "Conviértete en socio",
+        "profile": "Perfil",
+        "acc_settings": "Configuraciones de la cuenta",
+        "credits": "Gana +2 créditos gratis",
+        "logout": "Salir"
+    },
+    "food": {
+        "disorder_label": "¿Algún trastorno alimentario?",
+        "selectivity": "Selectividad alimentaria (rechazo por textura, color, olor o sabor, sin base biológica)",
+        "intolerance": "Intolerancia alimentaria (dificultad para digerir)",
+        "allergy": "Alergia alimentaria (reacción del sistema inmunológico)",
+        "other": "Otra condición restrictiva",
+        "which_food": "¿Qué alimentos?",
+        "placeholder": "Ej: Textura, Leche, Gluten..."
+    },
+    "sensorial": {
+        "hipersensibility": "Hipersensibilidad Auditiva (Le molesta el ruido)",
+        "photophobia": "Fotofobia/La luz le molesta",
+        "no_touch": "Aversión al Tacto (No le gusta que lo toquen)",
+        "hugs": "Busca Presión Profunda (Le gustan los abrazos fuertes)",
+        "movement": "Busca Movimiento (Le gusta girar/balancearse)",
+        "fabric": "Molestia con etiquetas/tejidos",
+        "oral": "Búsqueda Sensorial Oral (Muerde cosas)",
+        "degree": "Sensibilidad Térmica (no tolera frío o calor)"
+    },
+    "diagnosis": {
+        "tea": "Trastorno del Espectro Autista (TEA)",
+        "tdah": "Trastorno por Déficit de Atención e Hiperactividad (TDAH)",
+        "tod": "Trastorno Negativista Desafiante (TND)",
+        "di": "Discapacidad Intelectual",
+        "ah_sd": "Altas Capacidades / Superdotación",
+        "down": "Síndrome de Down",
+        "dyslexia": "Dislexia",
+        "dysgraphia": "Disgrafía",
+        "dysorthography": "Disortografía",
+        "dyscalculia": "Discalculia",
+        "low_vision": "Baja Visión",
+        "monocular": "Monocular",
+        "blindness": "Ceguera",
+        "tpac": "Trastorno del Procesamiento Auditivo (TPA)",
+        "low_hearing": "Hipoacusia",
+        "unilateral_deafness": "Sordera Unilateral",
+        "deafness": "Sordera",
+        "motor_disability": "Discapacidad Motora",
+        "tootip_hyperfocus": "El hiperfoco es un estado de concentración intensa y prolongada en un interés o actividad específica."
+    },
+    "school_years": {
+        "nursery_1": "Guardería 1",
+        "nursery_2": "Guardería 2",
+        "maternal_1": "Maternal 1",
+        "maternal_2": "Maternal 2",
+        "pre_1": "Preescolar 1",
+        "pre_2": "Preescolar 2",
+        "grade_1": "1º Grado",
+        "grade_2": "2º Grado",
+        "grade_3": "3º Grado",
+        "grade_4": "4º Grado",
+        "grade_5": "5º Grado",
+        "grade_6": "6º Grado",
+        "grade_7": "7º Grado",
+        "grade_8": "8º Grado",
+        "grade_9": "9º Grado"
+    },
+    "speech_types": {
+        "functional": "Tiene habla funcional (con intención de comunicar)",
+        "repeats": "Solo repite palabras y/o sonidos (sin función)",
+        "alternative": "No habla, pero se comunica a través de figuras, escritura, gestos, etc.",
+        "none": "No habla y no se comunica"
+    },
+    "kinship": {
+        "father": "Padre",
+        "mother": "Madre",
+        "brothers": "Hermano(s)",
+        "sisters": "Hermana(s)",
+        "uncles": "Tío(s)",
+        "aunts": "Tía(s)",
+        "cousins": "Primo(s)",
+        "grandfather": "Abuelo",
+        "grandmother": "Abuela"
+    },
+    "pif_tab": {
+        "create_fip": "Crear PIF",
+        "fip_list": "PIFs",
+        "fip_development": "Desarrollo"
+    },
+    "pif_form": {
+        "main_title": "Nuevo Plan de Intervención Familiar",
+        "credits": "Créditos disponibles",
+        "select_child": "Elegir Niño",
+        "child_details": "Datos del Niño: {{name}}",
+        "labels": {
+            "name": "Nombre",
+            "birth": "Nacimiento",
+            "communication": "Comunicación",
+            "caregiver": "Cuidador Principal",
+            "diagnosis": "Diagnósticos/Hipótesis",
+            "hyperfocus": "Hiperfoco",
+            "difficulty": "Dificultad del Cuidador",
+            "priority": "Prioridad de Desarrollo"
+        },
+        "not_informed": "No informado",
+        "locked": {
+            "next_available": "Próxima evaluación disponible en:",
+            "wait_message": "Un nuevo PIF solo puede generarse 30 días después del anterior.",
+            "view_previous": "Ver PIFs Anteriores"
+        },
+        "draft_loaded_msg": "Estás continuando un borrador guardado anteriormente.",
+        "save_draft": "Guardar Borrador",
+        "saving_step": "Guardando...",
+        "draft_restored": "Borrador recuperado",
+        "back": "Atrás",
+        "next": "Siguiente",
+        "generate_button": "Generar Plan de Intervención",
+        "producing": "Produciendo...",
+        "success_title": "Plan de Intervención Familiar Generado",
+        "copy_text": "Copiar Texto",
+        "download_pdf": "Descargar PDF",
+        "new_plan": "Generar Nuevo Plan",
+        "instruction_text": "Para que la Inteligencia Artificial cree el mejor plan para su hijo(a), necesitamos un retrato fiel de su realidad. Siga estas 7 reglas de oro:\n\n1. Observe el día a día: Evalúe al niño(a) en su rutina natural, sin forzar pruebas.\n2. Una acción a la vez: Cada opción evalúa una habilidad aislada. Concéntrese solo en lo que está escrito.\n3. La regla de '3 de 5': Solo marque la opción si el niño(a) puede realizar la acción SOLO (sin pistas verbales ni ayuda física) en al menos 3 de cada 5 intentos.\n4. Lo que ya hizo, está hecho: Marque las habilidades que el niño(a) hace hoy o que ha realizado en el pasado, como balbucear, rodar, gatear, etc., incluso si ha dejado de hacerlas.\n5. Sea 100% sincero: Omitir o enmascarar dificultades perjudica directamente el resultado del Plan de Intervención. Responda con la realidad actual, no con las expectativas.\n6. En caso de duda, no marque: Si el niño(a) solo lo hace con mucha ayuda o no está absolutamente seguro, déjelo sin marcar. Es mejor centrarse en lo que ya está garantizado.\n7. Si este no es el primer PIF del niño(a), observe si ha perdido alguna habilidad esencial (hablar, caminar, jugar con otros niños, etc.). Si esto ocurre, desmarque la opción en el formulario.\n\n⚠️ AVISO IMPORTANTE: Cognacare estructura el Plan de Intervención basándose exclusivamente en sus respuestas. Si la información proporcionada es inexacta, incompleta o irreal, el plan generado será ineficaz. La responsabilidad de la exactitud de los datos recae íntegramente en la persona que llena el formulario.",
+        "dont_show_again": "No mostrar de nuevo",
+        "how_to_fill": "¿Cómo llenar?",
+        "instruction_title": "Orientación de Llenado",
+        "caregiver_disp": "Disponibilidad del Cuidador",
+        "caregiver_time": "1. ¿El cuidador principal tiene disponibilidad para dedicarse al menos 1 hora todos los días a las actividades propuestas?",
+        "how_many_days": "2. ¿Cuántos días a la semana puede dedicar?",
+        "min_max_days": "Mínimo 1, Máximo 7 días",
+        "how_many_hours": "¿Cuántas horas por día (en los días disponibles)?",
+        "30_min": "30 minutos",
+        "1hour": "1 hora",
+        "1hour30min": "1 hora y 30 minutos",
+        "2hours": "2 horas",
+        "2hours30min": "2 horas y 30 minutos",
+        "3hours": "3 horas",
+        "morning": "Mañana",
+        "evening": "Tarde",
+        "night": "Noche",
+        "timeout_message": "## ⏳ ¡El PIF se está finalizando!\n\nEl proceso de creación del Plan de Intervención Familiar es complejo y está tomando más tiempo de lo normal para garantizar la mejor calidad.\n\n**¡No te preocupes!** El sistema sigue trabajando en segundo plano.\n\n1.  **Espera unos minutos** (cerca de 2 a 5 minutos).\n2.  Accede al menú **\"PIFs\"**.\n3.  Tu nuevo plan aparecerá allí tan pronto como la Inteligencia Artificial termine de escribirlo.\n4.  Recuerda: ¡También recibirás una copia por correo electrónico!",
+        "errors": {
+            "load_children": "No se pudo cargar la lista de niños.",
+            "load_data": "Error al cargar datos del niño.",
+            "save_draft": "No se pudo guardar el borrador en este momento.",
+            "generate_pif": "Ocurrió un error al generar el plan.",
+            "copy": "Error al copiar.",
+            "download": "Error al descargar PDF.",
+            "insufficient_credits": "Créditos insuficientes. Compra más créditos en el área \"Financiero\"."
+        },
+        "dialogs": {
+            "generating_title": "Generando tu Plan de Intervención",
+            "generating_text": "Este proceso puede tardar un poco. Por favor, no cierres ni recargues esta página.",
+            "confirm_title": "¿Confirmar Generación del PIF?",
+            "confirm_text_1": "Estás a punto de generar un Plan de Intervención Familiar para",
+            "selected_child": "el niño seleccionado",
+            "confirm_text_2": "Esta acción consumirá <strong>1 crédito</strong> de tu saldo.",
+            "confirm_text_3": "Recuerda: un nuevo PIF para este mismo niño solo podrá generarse después de 30 días.",
+            "confirm_button": "Confirmar y Generar PIF",
+            "success_title": "¡PIF Generado y Enviado!",
+            "success_text": "Se ha enviado una copia del Plan de Intervención Familiar a su dirección de correo electrónico registrado. También puede consultar el Plan de Intervención Familiar generado haciendo clic en \"PIFs\" en el menú."
+        },
+        "snackbars": {
+            "draft_saved": "¡Borrador guardado con éxito! Puedes continuar más tarde.",
+            "copied": "¡PIF copiado al portapapeles!"
+        },
+        "kids": {
+            "sensorial": "Perfil Sensorial",
+            "perception": "Marca cómo el niño percibe el mundo. Esto nos ayuda a decidir si sugerir \"abrazo\" o \"distanciamiento\" en una crisis."
+        },
+        "availability": {
+            "period_question": "¿En qué período del día prefieres realizar las actividades?"
+        }
+    },
+    "pif_steps": {
+        "available": "Disponibilidad",
+        "progress": "Progreso del llenado",
+        "play": "Etapas del Juego",
+        "language": "Desarrollo del Lenguaje",
+        "cognition": "Desarrollo de la Cognición",
+        "social_emotional": "Desarrollo Socioemocional",
+        "motor": "Desarrollo Motor",
+        "avd": "Actividades de la Vida Diaria (AVD)",
+        "error": "Error al guardar el borrador automático."
+    },
+    "pif_registros": {
+        "title": "Mis Planes de Intervención Familiar",
+        "filter_label": "Filtrar por nombre del niño",
+        "generated_at": "Generado el",
+        "no_name": "Niño sin nombre",
+        "empty_list": "No se encontraron planes generados.",
+        "modal_title": "Ver Plan de Intervención",
+        "errors": {
+            "load_list": "Error al cargar la lista de Planes de Intervención.",
+            "load_content": "Error al cargar el contenido del Plan.",
+            "download": "Error al descargar el PDF.",
+            "copy": "No se pudo copiar el texto."
+        }
+    },
+    "milestones": {
+        "2m": "2 meses",
+        "4m": "4 meses",
+        "6m": "6 meses",
+        "9m": "9 meses",
+        "12m": "12 meses / 1 año",
+        "18m": "1 año y 6 meses",
+        "2y": "2 años",
+        "30m": "2 años y 6 meses",
+        "3y": "3 años",
+        "4y": "4 años",
+        "5y": "5 años",
+        "6y": "6 años"
+    },
+    "play_options": {
+        "never": "Nunca",
+        "sometimes": "A veces",
+        "often": "Casi siempre",
+        "always": "Siempre"
+    },
+    "play_levels": {
+        "exploratory": "Nivel 1: Exploratorio",
+        "functional": "Nivel 2: Funcional",
+        "pre_symbolic": "Nivel 3: Pre-simbólico",
+        "symbolic": "Nivel 4: Simbólico",
+        "games_rules": "Nivel 5: Juegos y Reglas"
+    },
+    "play_questions": {
+        "exploratory_1": "El niño se lleva a menudo los dedos o manos a la boca (ej: se chupa el dedo, la mano o cualquier objeto pequeño que agarra)",
+        "exploratory_2": "El niño interactúa con un adulto durante el juego (ej: el adulto se tapa la cara y reaparece, el niño mira, sonríe o intenta hacer lo mismo)",
+        "exploratory_3": "El niño mira un objeto cuando el adulto lo señala con el dedo",
+        "exploratory_4": "El niño señala con el dedo, extiende los brazos o tira de la mano del adulto para indicar que quiere seguir jugando",
+        "exploratory_5": "El niño tira juguetes u objetos al suelo y espera que el adulto los recoja y se los devuelva (repite esto varias veces)",
+        "exploratory_6": "El niño toma un juguete y lo observa mirándolo, agitándolo o llevándoselo a la boca (ej: toma un sonajero y se lo lleva a la boca)",
+        "exploratory_7": "El niño busca o intenta agarrar objetos que se caen o ruedan por el suelo (ej: ve caer algo y se mueve para intentar atraparlo)",
+        "exploratory_8": "El niño hace algo diferente con un juguete (ej: golpea en lugar de agitar) y mira al adulto para ver su reacción",
+        "exploratory_9": "El niño realiza acciones repetidas para escuchar sonidos (ej: agita un sonajero, aprieta una pelota que chilla, tira cosas al suelo, etc.)",
+        "functional_1": "El niño hace rodar una pelota por una rampa o empuja un carrito de juguete (usa el juguete para su propósito)",
+        "functional_2": "El niño realiza acciones simples y claras con los juguetes (ej: abre y cierra una caja, pone y saca piezas, encaja piezas)",
+        "functional_3": "El niño apila bloques de diferentes formas (ej: hace una torre apilando uno sobre otro, coloca lado a lado en secuencia, crea un puente)",
+        "functional_4": "El niño patea una pelota apuntando a golpear algo (ej: intenta que la pelota vaya hacia un objetivo o en cierta dirección)",
+        "functional_5": "El niño separa partes de juguetes que se unen (ej: quita discos de una varilla, desconecta bloques de conexión que están unidos)",
+        "functional_6": "El niño coloca piezas pequeñas exactamente donde encajan (ej: pone monedas en una alcancía, encaja piezas en agujeros específicos)",
+        "functional_7": "El niño imita acciones simples que ve hacer a un adulto con juguetes (ej: ve al adulto golpear con un martillo e intenta hacer lo mismo)",
+        "functional_8": "El niño repite a propósito la misma acción varias veces con un juguete (ej: encaja y quita una pieza repetidamente, abre y cierra una caja varias veces)",
+        "functional_9": "El niño intenta usar el juguete de diferentes maneras para probar diferentes resultados (ej: golpea con un lado del martillo, luego con el otro lado)",
+        "functional_10": "El niño usa correctamente objetos por su función (ej: se lleva un cepillo de dientes a la boca y un cepillo de pelo a la cabeza; pone un coche en una rampa para que baje)",
+        "pre_symbolic_1": "El niño junta varios objetos porque combinan (ej: pone platos, vasos y cubiertos juntos en la mesa de juego)",
+        "pre_symbolic_2": "El niño usa bloques para construir algo específico (ej: hace una casa, un coche o un tren) y luego muestra o dice lo que construyó",
+        "pre_symbolic_3": "El niño pone los juguetes en los lugares correctos (ej: pone los muebles de juguete en las habitaciones correctas de la casa de muñecas)",
+        "pre_symbolic_4": "El niño hace movimientos con una muñeca como si le diera de comer (pone juguete en la boca de la muñeca), la bañara (finge echar agua) o la pusiera a dormir (acuesta a la muñeca y la tapa)",
+        "pre_symbolic_5": "El niño simula el acto de cocinar (toma comida de juguete, hace movimientos de cortar, pone en una olla y revuelve como si cocinara)",
+        "pre_symbolic_6": "El niño explica en voz alta lo que está haciendo mientras juega (ej: 'ahora voy a cosechar', 'estoy conduciendo')",
+        "pre_symbolic_7": "El niño dice lo que dibujó cuando le preguntas (pueden ser solo garabatos, pero sabe señalar y describir)",
+        "pre_symbolic_8": "El niño pone un cochecito en una pista, hace ruido de motor (aunque sea tosco) y finge estar corriendo (ej: mueve el coche en la pista mientras hace sonido)",
+        "pre_symbolic_9": "El niño toma ropa o zapatos reales (de un adulto) y finge vestirse para una actividad (ej: se pone un sombrero y dice 'me voy al trabajo')",
+        "symbolic_1": "El niño fingió que un objeto es algo completamente diferente (ej: un lápiz se convierte en varita mágica, un palo en cuchara, se sienta en una silla y dice que conduce un coche)",
+        "symbolic_2": "El niño usa cosas invisibles (imaginarias) en el juego como si fueran reales (ej: hace movimientos de lavarse el pelo con champú inexistente, o finge girar una llave para arrancar un coche invisible)",
+        "symbolic_3": "El niño crea una secuencia de acciones que tienen sentido y se conectan lógicamente (ej: primero pone la muñeca en la cama, luego la tapa con la manta, luego apaga la luz)",
+        "symbolic_4": "El niño cambia el tono y la forma de hablar para representar diferentes personajes (ej: habla con voz grave para un personaje y voz aguda para otro)",
+        "symbolic_5": "El niño hace que las muñecas realicen acciones (ej: la muñeca cocina, baña a un animal de juguete, conduce un coche)",
+        "symbolic_6": "El niño fingió ser un personaje y representa sus acciones usando juguetes (ej: 'yo soy la maestra' y usa muñecas como alumnos)",
+        "symbolic_7": "Cuando le preguntas, el niño sabe decir qué hará el personaje a continuación (ej: preguntas '¿y ahora?' y continúa la historia diciendo la siguiente acción)",
+        "symbolic_8": "El niño sigue la historia que otro adulto o niño está inventando y continúa la historia de una manera que combina (ej: empiezas un escenario y él agrega cosas que tienen sentido)",
+        "symbolic_9": "El niño sugiere ideas nuevas y diferentes para las historias de fantasía (ej: 'ahora podemos ir al parque' o '¿y si fuera un castillo?')",
+        "games_rules_1": "El niño entiende que tiene que esperar su turno y espera cuando le toca a otro jugar (ej: en un juego, mira mientras otro juega y luego juega cuando es su turno)",
+        "games_rules_2": "El niño renuncia a lo que quiere hacer para no estropear el juego y mantener la amistad (ej: quiere tomar una pieza, pero ve que no puede porque no es la regla del juego)",
+        "games_rules_3": "El niño puede seguir varias órdenes que no se conectan entre sí (ej: en un juego: tirar dado, mover pieza número indicado de casillas, luego sacar una carta)",
+        "games_rules_4": "El niño sabe a quién le toca y mantiene la atención en el juego hasta el final (ej: observa quién jugó último y sabe que le toca a él)",
+        "games_rules_5": "El niño trabaja junto con otro jugador para alcanzar un objetivo común (ej: en un juego cooperativo, realiza una acción que ayuda al otro a ganar)",
+        "games_rules_6": "El niño no hace cosas que solo lo beneficien a él y perjudiquen a otros jugadores (ej: en un juego con piezas ocultas, no da pistas para que un jugador gane)",
+        "games_rules_7": "El niño ayuda a organizar y preparar el juego antes de comenzar (ej: arregla el tablero en el medio, distribuye cartas a cada jugador o coloca piezas en el lugar correcto)",
+        "games_rules_8": "El niño piensa en la mejor estrategia para ganar el juego (ej: elige qué carta jugar porque aumenta sus posibilidades de ganar)",
+        "games_rules_9": "El niño entiende que una acción genera una consecuencia predecible (ej: dice 'si juego esta carta, gano la ronda' o 'si hago esto, él ganará')",
+        "games_rules_10": "El niño puede pensar en lo que otro jugador podría estar planeando o queriendo hacer para tomar una decisión de jugada (ej: piensa 'él quiere tomar esa pieza, así que la tomaré yo primero')"
+    },
+    "language_abilities": {
+        "2m_1": "El niño sonríe cuando le sonríes",
+        "2m_2": "El niño mira atentamente las caras de las personas",
+        "2m_3": "El niño llora de diferentes maneras (llanto diferente cuando tiene hambre, cuando quiere cariño, cuando quiere dormir)",
+        "4m_1": "El niño intenta imitar sonidos que haces con la boca (ej: haces 'pa pa', él intenta hacer lo mismo)",
+        "4m_2": "El niño mira con interés los sonidos del ambiente (gira hacia el sonido)",
+        "6m_1": "El niño interrumpe lo que está haciendo y mira cuando lo llamas por su nombre (aunque sea brevemente)",
+        "9m_1": "El niño cambia el tono de voz para mostrar diferentes emociones (voz feliz, voz asustada, voz enojada)",
+        "9m_2": "El niño entiende la palabra 'NO' y momentáneamente deja de hacer lo que está haciendo",
+        "9m_3": "El niño realiza acciones simples e imitaciones cuando le pides (ej: aplaude, manda beso, parpadea cuando se le solicita)",
+        "9m_4": "El niño señala con el dedo para mostrar objetos que le gustan o quiere",
+        "12m_1": "El niño hace sonidos de animales al ver un animal (ej: 'guau guau' para perro, 'miau' para gato)",
+        "12m_2": "El niño señala objetos y personas cuando le preguntas (ej: '¿dónde está mamá?')",
+        "12m_3": "El niño realiza acciones simples cuando le pides (ej: dices 'ven aquí' y él viene)",
+        "12m_4": "El niño dice una o más palabras que la mayoría de la gente puede entender (ejemplo: 'papá', 'mamá', 'agua')",
+        "18m_1": "El niño usa palabras simples para señalar cosas (ej: dice 'esto' o 'eso' mientras señala)",
+        "18m_2": "El niño muestra interés en saber los nombres de las cosas (señala y pregunta)",
+        "18m_3": "El niño repite palabras que acabas de decir (copia tu habla inmediatamente)",
+        "18m_4": "El niño entiende unas 30 palabras diferentes",
+        "18m_5": "El niño dice al menos 20 palabras que la mayoría de la gente puede entender",
+        "2y_1": "El niño usa palabras para hablar sobre ubicación (ej: 'arriba', 'abajo', 'debajo')",
+        "2y_2": "El niño usa artículos en oraciones (ej: 'un coche', 'el juguete')",
+        "2y_3": "El niño dice palabras en plural (ej: 'gatos', 'pelotas')",
+        "2y_4": "Al ver imágenes en libros, el niño puede señalar y nombrar (ej: ve una vaca y hace '¡muuu!')",
+        "2y_5": "El niño puede nombrar a personas que conoce al ver sus fotos",
+        "2y_6": "El niño sabe su propio nombre y responde cuando le preguntas '¿cómo te llamas?'",
+        "2y_7": "El niño puede contar historias muy simples sobre lo que hizo (ej: 'fui al parque')",
+        "30m_1": "El niño usa expresiones faciales y gestos al hablar para dejar más claro lo que quiere",
+        "30m_2": "Al niño le encanta la música, canta partes de canciones que escucha",
+        "30m_3": "El niño entiende y sigue órdenes con hasta 3 acciones (ej: 'toma el juguete, dáselo a mamá y vuelve aquí')",
+        "3y_1": "El niño usa preposiciones al hablar (ej: 'en', 'para', 'con')",
+        "3y_2": "El niño usa sujeto, verbo y objeto en oraciones (frases más completas)",
+        "3y_3": "El niño conoce algunos conceptos de opuestos (grande/pequeño, caliente/frío)",
+        "3y_4": "El niño narra su juego para organizar su pensamiento (dice lo que está pensando hacer)",
+        "4y_1": "Al relatar eventos, el niño usa lenguaje hablado y gestos de manera muy expresiva",
+        "4y_2": "El niño hace preguntas todo el tiempo (por qué, cómo, cuándo)",
+        "4y_3": "El niño puede responder preguntas simples sobre lo que le gusta y lo que pasó",
+        "4y_4": "Al niño le encanta cantar y usa la voz y expresiones para comunicarse",
+        "5y_1": "El niño puede contar una historia que inventó, sin libro ni pistas, con inicio, medio y fin que tenga sentido",
+        "5y_2": "El niño es muy comunicativo y le gusta contar sus experiencias",
+        "5y_3": "El niño hace comparaciones entre objetos (ej: 'este coche es como el nuestro, pero rojo')",
+        "5y_4": "Al niño le encantan las rimas e inventar palabras y trabalenguas",
+        "5y_5": "El niño puede memorizar y decir su dirección y número de teléfono de los padres cuando se le pregunta",
+        "6y_1": "El niño juega juegos de rimas con palabras",
+        "6y_2": "El niño puede reconocer símbolos en carteles (ej: señal de tráfico)",
+        "6y_3": "El niño puede volver a contar historias que escuchó antes, con muchos detalles (incluyendo emociones de los personajes)",
+        "6y_4": "El niño usa gestos y expresiones faciales para dramatizar (representar con el cuerpo) lo que está contando"
+    },
+    "cognition_abilities": {
+        "2m_1": "El niño reconoce la voz de la madre o cuidador principal (gira hacia la voz)",
+        "2m_2": "Al niño le encantan los objetos coloridos (mira con interés)",
+        "2m_3": "El niño sigue cosas en movimiento con los ojos",
+        "2m_4": "El niño hace sonidos cuando quiere participar en actividades divertidas (como cosquillas)",
+        "4m_1": "El niño observa y mueve sus propias manos frente a la cara como si jugara con ellas",
+        "4m_2": "El niño se lleva objetos a la boca para explorar y conocer",
+        "4m_3": "El niño observa movimientos de personas y cosas a su alrededor",
+        "4m_4": "El niño intenta agarrar objetos que ve cerca de él, extendiendo el brazo",
+        "6m_1": "El niño se interesa por explorar objetos nuevos y coloridos",
+        "6m_2": "El niño puede seguir con los ojos un objeto moviéndose de arriba a abajo",
+        "6m_3": "El niño explora más las cosas con las manos",
+        "9m_1": "El niño puede imitarte haciendo una acción que hiciste (aprender observando)",
+        "9m_2": "El niño puede resolver problemas simples, como mover un obstáculo para obtener un juguete deseado o arrastrar una silla para alcanzar algo alto, por ejemplo.",
+        "9m_3": "El niño se interesa mucho por las caras de las personas",
+        "9m_4": "El niño puede poner objetos pequeños dentro de una caja",
+        "12m_1": "El niño puede diferenciar conceptos simples (grande vs pequeño, cerca vs lejos)",
+        "12m_2": "Al niño le encanta escuchar canciones infantiles e historias, bailando o señalando imágenes",
+        "18m_1": "El niño puede reconocer y señalar partes del cuerpo cuando preguntas (ej: '¿dónde está la nariz?')",
+        "18m_2": "Al niño le gusta lanzar pelota a otra persona y quiere que la persona se la devuelva",
+        "18m_3": "Al niño le gusta poner objetos dentro de recipientes (ollas, cajas) y sacarlos de nuevo",
+        "18m_4": "El niño puede armar un rompecabezas muy simple de 2 piezas",
+        "2y_1": "El niño puede guardar sus juguetes cuando se lo pides",
+        "2y_2": "El niño esconde algo y lo busca después de un tiempo (muestra que recuerda haber escondido algo)",
+        "30m_1": "El niño puede mantenerse atento en una actividad durante unos 5 minutos",
+        "30m_2": "El niño puede hacer dos cosas al mismo tiempo, como escuchar una historia mientras dibuja",
+        "30m_3": "El niño conoce conceptos de cantidad (uno, muchos, pocos, ninguno)",
+        "30m_4": "El niño puede armar un rompecabezas de hasta 4 piezas",
+        "30m_5": "El niño puede reconocer al menos 2 colores",
+        "30m_6": "El niño recuerda instrucciones simples dadas por personas conocidas",
+        "3y_1": "El niño puede representar eventos de días anteriores (cuenta lo que hizo y juega sobre eso también)",
+        "4y_1": "El niño puede construir una torre con hasta 12 bloques y hacer un puente",
+        "4y_2": "El niño puede colorear mejor dentro de las líneas (se sale menos)",
+        "4y_3": "El niño puede dibujar un círculo y un cuadrado copiándote",
+        "4y_4": "El niño dibuja una figura humana con más detalles (puede tener cabeza, ojos, nariz, boca)",
+        "4y_5": "El niño puede hacer varias formas con plastilina",
+        "4y_6": "El niño puede doblar papel por la mitad y rasgar con movimiento de pinza",
+        "4y_7": "El niño puede decir cuántos años tiene (puede mostrar con los dedos)",
+        "4y_8": "El niño puede reconocer cuando una línea es más larga que otra",
+        "4y_9": "El niño puede separar objetos en grupos por tamaño (grande, mediano y pequeño)",
+        "4y_10": "El niño puede contar hasta 3 objetos y nombrar al menos 8 colores",
+        "5y_1": "El niño puede explicar para qué sirve un objeto (vaso para beber, vela para iluminar)",
+        "5y_2": "El niño puede mezclar colores para hacer nuevos colores",
+        "5y_3": "El niño puede planear una actividad antes de hacerla (dice 'voy a dibujar antes de cortar')",
+        "5y_4": "El niño puede mantener la atención en una actividad durante unos 10 minutos fácilmente",
+        "5y_5": "El niño puede armar rompecabezas de hasta 20 piezas",
+        "5y_6": "El niño puede sostener el lápiz con la mano en posición de pinza firme y hace trazos definidos",
+        "6y_1": "Al niño le gusta hacer experimentos para entender cómo funcionan las cosas",
+        "6y_2": "El niño puede recordar el orden de objetos que mostraste antes",
+        "6y_3": "El niño puede seguir 4 o más instrucciones diferentes sin que necesites recordar (no necesita repetir)",
+        "6y_4": "El niño puede contar hasta 10 objetos y entender qué número es menor o mayor hasta 10",
+        "6y_5": "El niño ha adquirido el concepto de tiempo (sabe qué es antes, después, hoy, mañana, ayer)",
+        "6y_6": "El niño puede diferenciar izquierda de derecha"
+    },
+    "social_emotional_abilities": {
+        "2m_1": "El niño sonríe cuando alguien juega con él",
+        "2m_2": "El niño busca a los padres con la mirada (quita los ojos de algo para buscar a los padres)",
+        "4m_1": "Al niño le encanta ver su imagen en el espejo, hace sonidos y se emociona (mostrando alegría)",
+        "4m_2": "El niño sonríe sin que tengas que hacer nada especial (sonrisa natural)",
+        "4m_3": "El niño hace sonidos mostrando alegría, disgusto o frustración diferentes entre sí",
+        "4m_4": "El niño duerme toda la noche si estableces una rutina de sueño",
+        "6m_1": "El niño busca a los padres con la mirada y gestos cuando está asustado o inseguro",
+        "6m_2": "El niño llora cuando le quitas un juguete que le gusta",
+        "6m_3": "La mayor parte del tiempo, el niño está feliz y sonríe fácilmente",
+        "9m_1": "Al niño le encantan los juegos sociales como 'cucú-tras' (cuando escondes la cara y apareces)",
+        "9m_2": "El niño empieza a decir 'adiós' con la mano cuando se lo pides",
+        "12m_1": "El niño interrumpe lo que está haciendo cuando dices 'no', muestra desagrado, pero puede volver a hacerlo después",
+        "12m_2": "El niño prefiere jugar con cuidadores o niños mayores que estar solo",
+        "12m_3": "El niño juega con muñecos haciendo acciones repetidas (abraza, da comida, pone a dormir)",
+        "18m_1": "El niño se enoja cuando el adulto le impide explorar el ambiente (quiere investigar cosas)",
+        "18m_2": "El niño puede ser cariñoso con otros niños (abraza, toca)",
+        "18m_3": "El niño puede morder o tirar del pelo de otros niños durante el juego",
+        "18m_4": "El niño tiene acciones contradictorias con personas conocidas (se pone feliz y luego irritado sin motivo claro)",
+        "2y_1": "Al niño le encanta estar cerca de otros niños (aunque no juegue junto a ellos todavía)",
+        "2y_2": "Al niño le gustan los juegos sociales como correr y el escondite",
+        "2y_3": "El niño quiere que un adulto u otro niño juegue con él (no juega solo)",
+        "2y_4": "Al niño le gusta mostrar a las personas que conoce cosas que le gustan (señala o trae para que el adulto vea)",
+        "2y_5": "El niño es desafiante (cuando pides no hacer algo, sigue haciéndolo, mirándote a la cara para probar límites)",
+        "30m_1": "El niño juega a fingir de forma más avanzada (ej: finge ser otra persona)",
+        "30m_2": "El niño puede expresar emociones y deseos a través del juego de fantasía",
+        "30m_3": "Cuando no consigue algo que quiere, el niño se queja o insiste mucho",
+        "30m_4": "El niño hace berrinches y llora cuando se frustra",
+        "3y_1": "El niño tiene dificultad para adaptarse a cambios de rutina (puede llorar o resistirse)",
+        "3y_2": "El niño saluda a otras personas al verlas, por iniciativa propia (no necesitas pedirle)",
+        "3y_3": "El niño expresa emociones claramente (salta y grita cuando está feliz, llora cuando está triste)",
+        "4y_1": "Al niño le encanta jugar con otros niños de la misma edad",
+        "4y_2": "El niño hace amigos fácilmente y tiene un mejor amigo",
+        "4y_3": "El niño tiene control emocional, pero aún puede tener arrebatos de ira",
+        "4y_4": "El niño puede actuar como bebé para llamar la atención (quiere que hagas lo que él quiere)",
+        "5y_1": "El niño puede ser exigente (quiere las cosas a su manera)",
+        "5y_2": "Con ayuda de un adulto, el niño puede entender una situación y seguir órdenes mejor",
+        "5y_3": "El niño empieza a jugar con otros niños en juegos que tienen reglas",
+        "5y_4": "El niño puede diferenciar fantasía de realidad (sabe que Papá Noel es de mentira)",
+        "6y_1": "El niño puede entender reglas sociales y comportarse correctamente en lugares públicos",
+        "6y_2": "El niño tira la basura en el lugar correcto y no rompe cosas que no son suyas",
+        "6y_3": "El niño tiene cuidado al usar objetos que son prestados",
+        "6y_4": "El niño tiene miedos comunes (miedo a la oscuridad, monstruos, aunque le guste ver películas de miedo)"
+    },
+    "motor_abilities": {
+        "2m_1": "El niño levanta la cabeza unos centímetros cuando está acostado boca abajo (prono)",
+        "4m_1": "El niño puede mover brazos y piernas al mismo tiempo (movimientos coordinados)",
+        "4m_2": "El niño puede sostener la cabeza cuando está acostado boca abajo apoyándose en los codos",
+        "4m_3": "El niño se gira hacia un lado o boca abajo cuando está acostado boca arriba",
+        "6m_1": "El niño puede agarrar objetos con toda la palma de la mano (forma de garra)",
+        "6m_2": "Al niño le encanta aplaudir y golpear las manos contra muebles o juguetes",
+        "6m_3": "El niño puede mantener la cabeza firme cuando lo tiras de acostado a sentado",
+        "6m_4": "El niño puede apoyarse en las piernas y dar pequeños saltos cuando lo sostienes por las axilas",
+        "9m_1": "El niño puede golpear un objeto contra otro en la línea media del cuerpo",
+        "9m_2": "El niño puede tomar objetos pequeños (como monedas) con el dedo índice y pulgar (pinza)",
+        "9m_3": "El niño puede tomar una galleta y llevársela a la boca",
+        "12m_1": "El niño puede poner objetos pequeños dentro de agujeros (como una moneda en una alcancía)",
+        "12m_2": "El niño garabatea en papel por voluntad propia (no dibuja, solo garabatea)",
+        "12m_3": "El niño puede beber de un vaso abierto, sosteniéndolo con ambas manos",
+        "12m_4": "El niño puede apilar al menos 3 bloques uno encima del otro (hace una torre)",
+        "12m_5": "El niño puede masticar alimentos",
+        "12m_6": "El niño puede ponerse de pie, agacharse e intentar subir a sofás y sillas",
+        "18m_1": "El niño puede beber agua de un vaso abierto sin derramar mucho",
+        "18m_2": "El niño puede llevar la cuchara a la boca para alimentarse (puede derramar, pero logra llevarla)",
+        "18m_3": "El niño hace garabatos en el papel con trazos horizontales cuando le muestras cómo",
+        "18m_4": "El niño puede poner formas simples (círculo, cuadrado) en recortes",
+        "18m_5": "El niño puede apilar hasta 4 cubos pequeños",
+        "18m_6": "El niño puede voltear un pote para sacar el objeto",
+        "18m_7": "El niño puede abotonar y desabotonar botones grandes",
+        "18m_8": "El niño puede pasar las páginas de un libro (aunque pase varias a la vez)",
+        "2y_1": "El niño puede caminar hacia atrás con destreza",
+        "2y_2": "El niño puede saltar con los dos pies en el mismo lugar",
+        "2y_3": "El niño puede lanzar y patear una pelota manteniendo el equilibrio",
+        "2y_4": "El niño puede mantenerse apoyado en un solo pie (con ayuda)",
+        "2y_5": "El niño puede abrir y cerrar puertas girando la manija",
+        "2y_6": "El niño puede jugar agachado sin caerse",
+        "2y_7": "El niño puede correr sin caerse (pero aún no puede parar cuando se lo pides)",
+        "30m_1": "El niño puede caminar de puntillas manteniendo el equilibrio",
+        "30m_2": "El niño puede saltar con los dos pies hasta 30 centímetros de distancia",
+        "30m_3": "El niño puede caminar en línea recta, un pie delante del otro",
+        "30m_4": "El niño puede correr y cambiar de dirección (hace curvas)",
+        "30m_5": "El niño intenta pedalear (aunque no lo logre realmente todavía)",
+        "30m_6": "El niño puede jugar en equipos del parque con un adulto mirando",
+        "3y_1": "El niño puede caminar en línea recta manteniendo el equilibrio",
+        "3y_2": "El niño puede saltar con dos pies bajando de un escalón",
+        "3y_3": "El niño puede subir y bajar escaleras, un pie en cada escalón, sosteniéndose del pasamanos o pared",
+        "3y_4": "El niño puede saltar en un solo pie",
+        "3y_5": "El niño puede pedalear un triciclo o bicicleta pequeña",
+        "4y_1": "El niño puede moverse con coordinación y equilibrio en el juego",
+        "5y_1": "El niño puede mantenerse en un pie, balanceando el otro en el aire, sin ayuda",
+        "5y_2": "El niño puede bailar y seguir bien el ritmo de la música",
+        "6y_1": "El niño puede saltar la cuerda manteniendo el ritmo",
+        "6y_2": "El niño puede caminar sobre una barra manteniendo el equilibrio",
+        "6y_3": "El niño puede atrapar una pelota lanzada desde una distancia de al menos 3 metros",
+        "6y_4": "El niño puede dar volteretas bien",
+        "6y_5": "Al niño le gusta bailar y puede seguir el ritmo de la música e imitar movimientos complejos"
+    },
+    "avd_category": {
+        "personal_care": "Cuidado Personal",
+        "domestic": "Cuidado Doméstico",
+        "recreation": "Trabajo y Recreación",
+        "money": "Compras y Dinero",
+        "locomotion": "Locomoción",
+        "communication": "Comunicación"
+    },
+    "avd": {
+        "feeding_title": "A - ALIMENTACIÓN",
+        "feeding_1": "La persona es capaz de llevar la cuchara o tenedor a la boca y comer sola (sin que alguien ayude con la mano)",
+        "feeding_2": "La persona es capaz de cortar alimentos en trozos pequeños usando un cuchillo",
+        "feeding_3": "La persona es capaz de servirse comida en el plato desde una olla o fuente",
+        "feeding_4": "La persona es capaz de comer sin derramar comida en la ropa o mesa (la mayoría de las veces)",
+        "dressing_title": "B - VESTIMENTA",
+        "dressing_1": "La persona es capaz de elegir qué ropa quiere usar (tiene preferencia y elige)",
+        "dressing_2": "La persona es capaz de ponerse una prenda de ropa (camisa, pantalón) sola en las extremidades correctas",
+        "dressing_3": "La persona es capaz de abotonar los botones de una prenda",
+        "dressing_4": "La persona es capaz de cerrar una cremallera de una prenda",
+        "dressing_5": "La persona es capaz de atarse los zapatos o cerrar el velcro correctamente",
+        "bathing_title": "C - BAÑO",
+        "bathing_1": "La persona es capaz de entrar y salir de la ducha o bañera sola sin ayuda (logra pasar el borde)",
+        "bathing_2": "La persona es capaz de abrir la llave y controlar la temperatura del agua",
+        "bathing_3": "La persona es capaz de lavarse todo el cuerpo (brazos, piernas, espalda, partes íntimas)",
+        "bathing_4": "La persona es capaz de secarse todo el cuerpo después del baño",
+        "bathing_5": "La persona se baña cuando quiere, sin necesidad de recordárselo",
+        "toileting_title": "D - USO DEL INODORO",
+        "toileting_1": "La persona va al baño sola cuando lo necesita (reconoce la necesidad y va)",
+        "toileting_2": "La persona es capaz de ir al baño sola cuando alguien le dice que vaya",
+        "toileting_3": "La persona es capaz de sentarse en el inodoro y quedarse hasta terminar",
+        "toileting_4": "La persona es capaz de limpiarse con papel higiénico después de usar el baño",
+        "toileting_5": "La persona es capaz de tirar de la cadena",
+        "toileting_6": "La persona es capaz de volver a ponerse la ropa (abotonar, subir cremallera, subir ropa interior)",
+        "toileting_7": "La persona es capaz de lavarse las manos después de usar el baño",
+        "appearance_title": "E - APARIENCIA PERSONAL",
+        "appearance_1": "La persona es capaz de cepillarse los dientes sola",
+        "appearance_2": "La persona es capaz de peinarse el pelo sola",
+        "appearance_3": "La persona es capaz de lavarse la cara con agua y jabón",
+        "appearance_4": "La persona cuida su apariencia todos los días, sin necesidad de recordárselo",
+        "cooking_title": "A - PREPARACIÓN DE COMIDA",
+        "cooking_1": "La persona es capaz de planear comidas (decide qué comer en el día)",
+        "cooking_2": "La persona es capaz de usar la estufa para cocinar o calentar comida",
+        "cooking_3": "La persona es capaz de usar el horno para cocinar o calentar comida",
+        "cooking_4": "La persona es capaz de usar el microondas para calentar comida",
+        "cooking_5": "La persona solo es capaz de preparar alimentos muy simples (leche, pan, fruta, etc)",
+        "table_title": "B - PONER LA MESA",
+        "table_1": "La persona es capaz de de recoger platos, vasos y cubiertos limpios y llevarlos a la mesa.",
+        "table_2": "La persona es capaz de colocar platos, vasos y cubiertos en los lugares correctos de la mesa",
+        "table_3": "La persona es capaz de colocar servilletas u otros artículos en la mesa",
+        "cleaning_title": "C - TAREAS DOMÉSTICAS",
+        "cleaning_1": "La persona es capaz de barrer el suelo",
+        "cleaning_2": "La persona es capaz de limpiar mesas y muebles (polvo)",
+        "cleaning_3": "La persona es capaz de lavar los platos (platos, vasos, cubiertos)",
+        "cleaning_4": "La persona es capaz de guardar los platos en los armarios después de lavarlos",
+        "cleaning_5": "La persona es capaz de hacer la cama (arreglar las sábanas, la manta, la almohada) sin ayuda",
+        "cleaning_6": "La persona es capaz de tender la ropa para secar",
+        "cleaning_7": "La persona es capaz de guardar la ropa en armarios o cajones",
+        "cleaning_8": "La persona ocasionalmente hace pequeñas tareas domésticas",
+        "recreation_title": "A - RECREACIÓN Y OCIO",
+        "recreation_1": "La persona ve televisión regularmente",
+        "recreation_2": "La persona lee libros o revistas regularmente",
+        "recreation_3": "La persona juega juegos (juegos de mesa, cartas)",
+        "recreation_4": "La persona juega videojuegos",
+        "recreation_5": "La persona sale con amigos o familiares para divertirse",
+        "recreation_6": "La persona busca actividades de diversión y ocio por su cuenta",
+        "transport_title": "A - TRANSPORTE PÚBLICO",
+        "transport_1": "La persona es capaz de subir y bajar del transporte público (autobús, metro, tren, etc.) sin ayuda",
+        "transport_2": "La persona es capaz de subir y bajar de un metro o tren correctamente",
+        "transport_3": "La persona es capaz de pagar la tarifa del transporte público",
+        "transport_4": "La persona es capaz de reconocer cuando llegó a su destino",
+        "mobility_title": "B - MOVILIDAD EN EL VECINDARIO",
+        "mobility_1": "La persona puede caminar acompañada a lugares cercanos a casa (panadería, vecinos, parque, etc.)",
+        "mobility_2": "La persona puede cruzar una calle mirando a ambos lados",
+        "mobility_3": "La persona es capaz de reconocer el camino de vuelta a casa",
+        "mobility_4": "La persona sale de casa sola para ir a lugares cercanos",
+        "comm_general_title": "A - COMUNICACIÓN GENERAL",
+        "comm_general_1": "La persona es capaz de hacerse entender al hablar",
+        "comm_general_2": "La persona conoce solo algunas palabras (vocabulario limitado)",
+        "comm_general_3": "La persona señala con el dedo para indicar lo que quiere en lugar de usar palabras",
+        "phone_title": "B - USO DEL TELÉFONO",
+        "phone_1": "Una persona es capaz de realizar una llamada telefónica a cualquier número.",
+        "phone_2": "La persona es capaz de mantener una conversación por teléfono",
+        "phone_3": "La persona es capaz de contestar y colgar el teléfono correctamente",
+        "phone_4": "La persona solo es capaz de realizar llamadas a números de teléfono que conoce bien.",
+        "conversation_title": "C - CONVERSACIONES",
+        "conversation_1": "La persona es capaz de conversar naturalmente con otra persona",
+        "conversation_2": "La persona es capaz de participar en conversaciones largas (más de 5 minutos)",
+        "conversation_3": "La persona es capaz de recordar las palabras correctas al hablar",
+        "conversation_4": "La persona habla claramente para que la mayoría pueda entender",
+        "comprehension_title": "D - COMPRENSIÓN (ENTENDER LO QUE DICEN LAS PERSONAS)",
+        "comprehension_1": "La persona entiende todo lo que la gente le dice",
+        "comprehension_2": "La persona es capaz de seguir instrucciones habladas",
+        "comprehension_3": "A veces la persona pide a los demás que repitan lo que dijo"
+    },
+    "logbook": {
+        "dom": "Dom",
+        "seg": "Lun",
+        "ter": "Mar",
+        "qua": "Mié",
+        "qui": "Jue",
+        "sex": "Vie",
+        "sab": "Sáb",
+        "title": "Diario de Bordo y Calendario",
+        "subtitle": "Acompaña y registra la evolución diaria del niño.",
+        "no_child": "Ningún niño registrado para el diario.",
+        "switch_child": "Cambiar Niño",
+        "select_date": "Selecciona una fecha:",
+        "day_mood": "Estado de Ánimo del día",
+        "moods": {
+            "1": "Difícil",
+            "2": "Desafiante",
+            "3": "Neutro",
+            "4": "Bueno",
+            "5": "Excelente"
+        },
+        "compass": {
+            "title": "🧭 Brújula del Cuidador",
+            "intro": "El Diario de Bordo es tu herramienta de estrategia.",
+            "tip1_title": "Límite de texto:",
+            "tip1_desc": "Sé directo al registrar los eventos.",
+            "tip2_title": "Detalla la Crisis:",
+            "tip2_desc": "Entender el \"Antes\", \"Durante\" y \"Después\" es la clave para cambiar comportamientos.",
+            "tip3_title": "Edición:",
+            "tip3_desc": "Solo puedes editar registros del día actual."
+        },
+        "dialog": {
+            "title_prefix": "Diario",
+            "read_only": "(Solo Lectura)",
+            "save": "Guardar",
+            "of": "de"
+        },
+        "form": {
+            "management": "Gestión diaria:",
+            "save": "Guardar registro",
+            "schedule": "Programación y terapias",
+            "no_schedule": "No hay citas programadas para este día.",
+            "finished": "Marcar como completado",
+            "justify": "Cancelar con justificación",
+            "delete": "Eliminar permanentemente",
+            "blocked": "Libro de registro bloqueado",
+            "blocked_text": "El Diario de Bordo se puede completar el día del evento o posteriormente. Utilice esta pantalla únicamente para planificar la agenda mencionada anteriormente.",
+            "reason": "Razón:",
+            "report": "Informe del día",
+            "mood_question": "¿Cómo fue el día en general?",
+            "section1_title": "1. Actividades del Día",
+            "activities_general": "Actividades Generales",
+            "activities_pif": "Actividades del PIF",
+            "section2_title": "2. Comportamiento y Regulación",
+            "behavior_general": "Comportamiento General",
+            "crisis_question": "¿Hubo crisis o berrinche intenso hoy?",
+            "crisis_before": "¿Qué pasó antes?",
+            "crisis_during": "¿Qué pasó durante?",
+            "crisis_after": "¿Qué pasó después?",
+            "crisis_time": "Duración aproximada",
+            "section3_title": "3. Rutinas Básicas",
+            "food": "Alimentación",
+            "sleep": "Sueño",
+            "visual_resources": "Recursos Visuales usados hoy:",
+            "resource_routine": "Cuadro de Rutina",
+            "resource_clues": "Pistas Visuales",
+            "resource_stories": "Historias Sociales",
+            "section4_title": "4. Desarrollo",
+            "communication": "Comunicación",
+            "socialization": "Socialización",
+            "sensorial": "Sensorial",
+            "section5_title": "5. Habilidades Específicas",
+            "motor": "Motoras",
+            "cognitive": "Cognitivas",
+            "adaptive": "Adaptativas",
+            "section6_title": "🌟 Destacados del Día (Momentos Clave)",
+            "highlights_placeholder": "Describe desafíos superados, grandes éxitos, descubrimientos o emociones que marcaron el día...",
+            "new_schedule": "Nueva cita",
+            "category": "Categoría",
+            "title": "Título (Ej.: Terapia con la Dra. Ana)",
+            "end": "Fin",
+            "repeat": "¿Repetir el evento?",
+            "unique": "Evento único",
+            "weekly": "Semanalmente",
+            "quinze": "Cada 15 dias",
+            "monthly": "Mensualmente"
+        },
+        "placeholders": {
+            "activities_general": "Ej: Fue a la escuela, jugó en el parque, fue a casa de la abuela, tuvo sesión de fono...",
+            "activities_pif": "Ej: Entrenamos contacto visual por 5 minutos; Jugamos a 'mi turno, tu turno'...",
+            "behavior_general": "Ej: Estaba agitado por la mañana, pero se concentró bien en los juguetes por la tarde. Lloró para bañarse...",
+            "crisis_before": "Ej: ¿Tenía hambre? ¿Sueño? ¿Escuchó un 'no'? ¿Cambió la rutina de repente?",
+            "crisis_during": "Ej: ¿Se tiró al suelo? ¿Gritó? ¿Intentó morder? ¿Tiró objetos?",
+            "crisis_after": "Ej: ¿Se calmó solo? ¿Necesitó un abrazo? ¿Se cansó y durmió?",
+            "crisis_time": "Ej: 10 minutos",
+            "food": "Ej: Rechazó el almuerzo, probó una fruta nueva, comió solo...",
+            "sleep": "Ej: Tardó en dormirse, se despertó asustado, no quiso tomar la siesta...",
+            "communication": "Ej: Dijo una palabra nueva, señaló lo que quería, usó gestos...",
+            "socialization": "Ej: Jugó con el hermano, prestó el juguete, se aisló en el recreo...",
+            "sensorial": "Ej: Se tapó los oídos con el ruido, le molestó la etiqueta de la ropa, buscó abrazo fuerte...",
+            "motor": "Ej: Corrió sin caerse, logró abotonar la camisa, sostuvo el lápiz correctamente...",
+            "cognitive": "Ej: Armó un rompecabezas, contó hasta 5, reconoció los colores...",
+            "adaptive": "Ej: Se cepilló los dientes solo, ayudó a guardar los juguetes, se vistió..."
+        },
+        "helpers": {
+            "activities_general": "Resume la rutina y lugares donde estuvo el niño.",
+            "activities_pif": "¿Qué metas del Plan Familiar practicaron hoy?",
+            "behavior_general": "Describe el estado de ánimo, atención y cooperación del niño.",
+            "crisis_before": "Intenta identificar el desencadenante (el motivo) que inició el comportamiento.",
+            "crisis_during": "Describe la acción del niño sin juicios.",
+            "crisis_after": "¿Cómo terminó la crisis y cómo reaccionaron ustedes?",
+            "food": "¿Cómo estuvo el apetito y la aceptación de texturas/sabores?",
+            "sleep": "Calidad del sueño nocturno y de las siestas.",
+            "communication": "¿Cómo expresó deseos y sentimientos hoy?",
+            "socialization": "Interacción con adultos y otros niños.",
+            "sensorial": "Reacciones a luces, sonidos, toques, texturas o movimientos.",
+            "motor": "Equilibrio, fuerza y uso de las manos.",
+            "cognitive": "Aprendizaje, memoria y resolución de problemas.",
+            "adaptive": "Autonomía en el día a día (baño, vestirse, comer)."
+        },
+        "alerts": {
+            "save_error": "Error al guardar el diario. Verifica tu conexión.",
+            "save_error_2": "Error al guardar el diario. Verifica los campos.",
+            "error_update": "Error al actualizar la cita.",
+            "delete": "¿De verdad quieres cancelar esta cita de forma permanente?",
+            "delete_error": "Error al eliminar la cita.",
+            "register": "Registre a su hijo para ver el Diario de Bordo.",
+            "locked_title": "Edición Bloqueada",
+            "locked_text": "Este registro ya fue guardado y pertenece a una fecha anterior. Para garantizar la integridad del historial, las modificaciones solo se permiten en el día actual.",
+            "future_title": "¡Aún no llegamos!",
+            "future_text": "Seleccionaste una fecha futura. El Diario de Bordo sirve para registrar lo que ya sucedió. Por favor, espera a que llegue ese día para hacer tu registro.",
+            "wait_btn": "Ok, voy a esperar",
+            "understood_btn": "Entendido"
+        }
+    },
+    "affiliates_landing": {
+        "hero_title": "Conviértete en Socio Cognacare",
+        "hero_desc": "Ayuda a familias atípicas a encontrar apoyo. Nuestro programa es exclusivo para quienes viven o trabajan con la neurodiversidad. Envía tu solicitud y crece con nosotros.",
+        "benefits": {
+            "commission_title": "Comisión Atractiva",
+            "commission_desc": "Recibe un 20% de comisión por cada suscripción o compra realizada a través de tu enlace exclusivo.",
+            "community_title": "Ayuda a la Comunidad",
+            "community_desc": "Lleva herramientas de desarrollo infantil a familias que necesitan apoyo.",
+            "discount_val": "10%",
+            "discount_title": "Descuento para Seguidores",
+            "discount_desc": "Crea tu cupón personalizado y ofrece un 10% de descuento inmediato a tu audiencia."
+        },
+        "cta_button": "Quiero postularme",
+        "pending_message": "Tu solicitud de asociación está en análisis. ¡Te avisaremos por correo electrónico!"
+    },
+    "partner_pix": {
+        "title": "Configuración del Socio",
+        "description": "Crea tu cupón de descuento exclusivo y registra tu clave PIX para recibir tus comisiones.",
+        "coupon_label": "Nombre de tu Cupón",
+        "coupon_placeholder": "Ej: MINOMBRE10",
+        "coupon_helper": "No uses la palabra 'COGNACARE'. Solo letras y números.",
+        "key_type_label": "Tipo de Clave PIX",
+        "pix_key_label": "Tu Clave PIX",
+        "pix_key_placeholder": "Ej: tu@email.com",
+        "pix_key_helper": "Asegúrate de que la clave sea correcta.",
+        "saving": "Guardando...",
+        "save_btn": "Guardar Configuración",
+        "success_msg": "¡Configuraciones guardadas con éxito!",
+        "error_msg": "Error al guardar. Intenta nuevamente.",
+        "types": {
+            "cpf": "CPF",
+            "cnpj": "CNPJ",
+            "email": "Email",
+            "phone": "Teléfono",
+            "random": "Clave Aleatoria"
+        }
+    },
+    "partner_panel": {
+        "title": "Panel del Socio",
+        "subtitle": "Acompaña tu desempeño, comisiones y configura tus cobros.",
+        "stats": {
+            "available_balance": "Saldo Disponible",
+            "ready_withdrawal": "Listo para retiro",
+            "pending_balance": "Saldo Pendiente",
+            "awaiting_release": "Esperando liberación",
+            "sales_made": "Ventas Realizadas",
+            "total_received": "Total recibido",
+            "link_clicks": "Clics en el Enlace",
+            "coming_soon": "Próximamente"
+        },
+        "transactions": {
+            "title": "Últimas Transacciones",
+            "date": "Fecha",
+            "client": "Cliente",
+            "sale_value": "Valor Venta",
+            "commission": "Tu Comisión",
+            "status": "Estado",
+            "confirmed": "Confirmado",
+            "empty": "Ninguna venta registrada aún. ¡Comparte tu enlace!"
+        },
+        "referral": {
+            "title": "Tu Enlace de Indicación",
+            "desc": "Envía este enlace a tus contactos. ¡Si compran, ganas comisión!",
+            "copy": "Copiar",
+            "copied": "¡Copiado!",
+            "active_coupon": "Tu cupón activo:",
+            "loading_coupon": "Cargando..."
+        },
+        "loading_error": "Error al cargar panel de socio."
+    },
+    "affiliate_terms": {
+        "title": "Acuerdo de Asociación y Términos del Programa de Afiliados - Cognacare",
+        "last_updated": "Última actualización: {{date}}",
+        "intro": "Este Acuerdo regula la participación en el Programa de Afiliados de {{razaoSocial}}, persona jurídica debidamente constituida bajo las leyes brasileñas, inscrita en el CNPJ bajo el nº {{cnpj}} (\"Cognacare\"). Al solicitar la participación, el Afiliado declara que ha leído, comprendido y acepta íntegramente estos Términos.",
+        "section1_title": "1. Naturaleza Jurídica de la Relación",
+        "section1_text": "La relación entre Cognacare y el Afiliado es estrictamente comercial, autónoma y no exclusiva, no existiendo vínculo laboral, societario, de representación, agencia o cualquier forma de subordinación jurídica. El Afiliado actuará por su cuenta y riesgo, siendo íntegramente responsable de sus obligaciones fiscales, de seguridad social y tributarias, incluso ante la Receita Federal y demás órganos competentes.",
+        "section2_title": "2. Elegibilidad y Proceso de Aprobación",
+        "section2_text": "La participación está restringida a personas mayores de 18 años que tengan relación directa o indirecta con la causa de las familias atípicas, tales como profesionales de las áreas de salud y educación, familiares de personas neurodivergentes o personas neurodivergentes. Cognacare podrá analizar perfiles públicos en redes sociales y demás información proporcionada por el candidato para verificar el alineamiento con los valores institucionales y con el propósito del Programa, quedando prohibida cualquier forma de discriminación por razón de raza, color, género, orientación sexual, religión o condición socioeconómica. La aprobación es exclusiva y discrecional de Cognacare, pudiendo ser denegada o revocada en cualquier momento en caso de incumplimiento de estos Términos, sospecha de fraude, conducta incompatible con los valores de la marca o exigencia legal o regulatoria. En caso de revocación, las comisiones ya adeudadas y vinculadas a ventas válidas y no sujetas a cancelación serán pagadas normalmente, observando las condiciones de la Cláusula 5.",
+        "section3_title": "3. Uso de Marca y Propiedad Intelectual",
+        "section3_text": "El Afiliado recibe una autorización limitada, no exclusiva, intransferible y revocable para utilizar la marca \"Cognacare\" y los materiales oficiales exclusivamente para fines de divulgación del Programa y de los servicios ofrecidos por la plataforma, en los términos y límites definidos por Cognacare. Queda estrictamente prohibido registrar dominios, perfiles en redes sociales, cuentas de anuncios o cualquier identificador que reproduzca o imite la marca, así como alterar, adaptar o crear materiales derivados de los contenidos oficiales sin autorización previa y por escrito.",
+        "section4_title": "4. Reglas de Publicidad y Conducta",
+        "section4_intro": "Las siguientes prácticas constituyen una infracción grave, susceptibles de suspensión o expulsión inmediata del Programa y de cancelación de las comisiones relacionadas con operaciones irregulares:",
+        "section4_list": {
+            "item1": "Realizar promesas de cura, garantías terapéuticas o afirmaciones médicas no comprobadas, en desacuerdo con la legislación aplicable y con las mejores prácticas en salud.",
+            "item2": "Realizar SPAM o envío de mensajes no solicitados e invasivos, incluyendo envíos masivos en aplicaciones de mensajería, correos electrónicos o comentarios en publicaciones de terceros.",
+            "item3": "Comprar palabras clave relacionadas con la marca \"Cognacare\" o con términos que puedan inducir al consumidor a creer que se trata de un canal oficial de la empresa, salvo autorización expresa.",
+            "item4": "Presentarse como empleado, representante legal, socio o agente de Cognacare, u omitir la condición de Afiliado cuando esto pueda inducir a error al consumidor.",
+            "item5": "AUTOAFILIACIÓN Y FRAUDE DE RED: Queda estrictamente prohibido utilizar el propio enlace o cupón para compras personales o para terceros con la intención de obtener descuentos indebidos. El sistema considerará fraude y retendrá las comisiones si las compras indicadas comparten el mismo CPF/CNPJ, el mismo titular de tarjeta de crédito, la misma cuenta de origen de PIX o la misma dirección IP de red del Afiliado."
+        },
+        "section5_title": "5. Comisiones y Pagos",
+        "section5_text": "El Afiliado tendrá derecho a una comisión del 20% sobre el valor financiero real (Pix o Tarjeta) efectivamente transaccionado y recibido por Cognacare en cada venta atribuida a su enlace. La comisión no incidirá, bajo ninguna circunstancia, sobre las partes de la compra que hayan sido descontadas con saldo de Bonos, Cashback o cupones promocionales. El pago se realizará vía PIX el día 1 hábil de cada mes, siempre que: (i) la venta esté confirmada y sin solicitud de reembolso; (ii) haya transcurrido un plazo mínimo de 30 días desde el pago; (iii) el Afiliado posea un saldo mínimo acumulado de R$ 50,00; y (iv) haya realizado ventas a por lo menos 3 (tres) clientes con CPFs y orígenes de pago distintos. Los valores por debajo del mínimo permanecerán acumulados.",
+        "section6_title": "6. Estornos, Cancelaciones y Chargebacks",
+        "section6_text": "En caso de cancelación, reembolso, fraude, uso indebido de cupón o chargeback, la comisión correspondiente será automáticamente deducida de los valores adeudados. Si Cognacare identifica un volumen atípico de ventas, sospecha de fraude con tarjetas de crédito o una tasa de chargeback/estorno superior al 5% en las indicaciones del Afiliado, el pago de todas las comisiones será bloqueado preventivamente por hasta 90 días para auditoría, pudiendo darse por terminada la asociación de forma sumaria y cancelarse las comisiones si el fraude es confirmado por los operadores de pago.",
+        "section7_title": "7. Responsabilidad e Indemnización",
+        "section7_text": "El Afiliado es íntegramente responsable del contenido que divulgue, así como de sus interacciones con clientes potenciales y terceros. En caso de que Cognacare sufra cualquier daño, perjuicio, sanción administrativa o reclamación judicial derivada, directa o indirectamente, de la conducta del Afiliado o del incumplimiento de estos Términos, el Afiliado deberá indemnizar íntegramente a la empresa, incluyendo costas, gastos y honorarios de abogados.",
+        "section8_title": "8. Tratamiento de Datos (LGPD)",
+        "section8_text": "Cognacare actuará, por regla general, como controladora de los datos personales de los clientes finales y de los datos de registro de los Afiliados, tratando dicha información para fines de ejecución de este Acuerdo, cumplimiento de obligaciones legales e interés legítimo, en los términos de la Ley nº 13.709/2018 (LGPD). El Afiliado se compromete a respetar íntegramente la LGPD y demás normas de protección de datos en la prospección de clientes, absteniéndose de recopilar, almacenar o compartir datos personales de forma excesiva, sin base legal o en desacuerdo con las directrices de Cognacare. Las partes se comprometen a cooperar en caso de incidentes de seguridad que puedan afectar datos personales relacionados con el Programa y a viabilizar el ejercicio de los derechos de los titulares, cuando proceda.",
+        "section9_title": "9. Confidencialidad",
+        "section9_text": "El Afiliado acepta mantener en absoluto secreto la información no pública de Cognacare a la que tenga acceso con motivo de este Acuerdo, incluyendo estrategias comerciales, tasas de conversión, condiciones especiales, informes de rendimiento y datos de clientes. El deber de confidencialidad subsistirá por 5 (cinco) años tras la finalización de la relación, salvo cuando exista obligación legal de divulgación.",
+        "section10_title": "10. No Garantía de Ganancias",
+        "section10_text": "Cognacare no garantiza ningún volumen mínimo de ventas, tráfico, leads, conversiones o ingresos financieros al Afiliado. El rendimiento dependerá de factores ajenos al control de Cognacare, como la actuación del propio Afiliado, las condiciones del mercado y el interés del público.",
+        "section11_title": "11. Vigencia, Suspensión y Rescisión",
+        "section11_text": "El presente Acuerdo estará vigente por tiempo indefinido y podrá ser rescindido por cualquiera de las partes en cualquier momento, mediante simple notificación electrónica, sin derecho a indemnización. Cognacare podrá suspender o dar por terminada inmediatamente la participación del Afiliado en caso de violación de estos Términos, sospecha de fraude, práctica de actos ilícitos o conducta que pueda perjudicar la imagen de la empresa, sin perjuicio de la adopción de las medidas legales oportunas. En caso de rescisión, las comisiones ya adeudadas por ventas válidas y no sujetas a cancelación serán calculadas y pagadas en el ciclo siguiente, respetando los plazos y condiciones de la Cláusula 5.",
+        "section12_title": "12. Fuero",
+        "section12_text": "Las partes harán sus mejores esfuerzos para resolver de forma amistosa cualquier controversia derivada de este Acuerdo. De persistir el conflicto, queda elegido el fuero de la comarca de la sede de Cognacare, con renuncia a cualquier otro, por más privilegiado que sea, para dirimir posibles controversias derivadas del mismo.",
+        "form_social_title": "¿Dónde podemos seguir tu trabajo?",
+        "where_find": "Selecciona la plataforma e ingresa tu usuario/@.",
+        "form_social_desc": "Indica los enlaces de tus redes sociales (Instagram, TikTok, YouTube, Facebook):",
+        "other": "Otro (Sitio Web/Blog)",
+        "form_social_placeholder": "Ej: instagram.com/tu.perfil",
+        "form_cause_title": "Tu relación con la causa de las familias atípicas",
+        "form_cause_placeholder": "Cuéntanos brevemente: ¿Eres psicopedagogo/a? ¿Madre atípica? ¿Terapeuta?",
+        "accept_a": "Declaro que he leído, comprendido y acepto íntegramente los ",
+        "accept_b": "Términos del Programa",
+        "public_doc": "Documento para consulta pública.",
+        "join_button": "Enviar Solicitud de Asociación",
+        "processing": "Enviando tus datos...",
+        "profile": "Perfil del Socio",
+        "success_msg": "¡Tu solicitud ha sido enviada! Analizaremos el perfil y recibirás el resultado por correo electrónico.",
+        "error": "Por favor, añade al menos una red social válida y describe tu relación con la causa de las familias atípicas."
+    },
+    "privacy_policy": {
+        "title": "Política de Privacidad",
+        "last_updated": "Última actualización: {{date}}",
+        "intro": "Bienvenido(a) a la plataforma del Plan de Intervención Familiar (PIF) de Cognacare ({{siteUrl}}). Su privacidad es importante para nosotros. Esta Política de Privacidad explica cómo recopilamos, usamos, compartimos y protegemos su información personal y la información de los niños registrados en la plataforma, en cumplimiento de la Ley General de Protección de Datos (LGPD - Ley N° 13.709/2018), GDPR y demás normativas aplicables.",
+        "section1_title": "1. Responsable del Tratamiento y Alcance",
+        "section1_text": "{{razaoSocial}}, registrada con el CNPJ N° {{cnpj}} (\"Cognacare\"), es la responsable del tratamiento de los datos personales procesados a través de la plataforma. Esta Política se aplica a los usuarios que son tutores legales de los niños, profesionales invitados, afiliados y otros visitantes que utilizan nuestros servicios digitales.",
+        "section2_title": "2. Información que Recopilamos",
+        "section2_intro": "Recopilamos diferentes tipos de información para proporcionar y mejorar nuestros servicios:",
+        "section2_list": {
+            "user_info": "<strong>Información de Registro del Usuario:</strong> Nombre, dirección de correo electrónico, CPF (cuando sea necesario para fines fiscales), teléfono opcional y contraseña (almacenada de forma encriptada) al crear una cuenta.",
+            "child_info": "<strong>Información del Niño:</strong> Datos proporcionados voluntariamente por usted, como nombre, fecha de nacimiento, diagnósticos y características de desarrollo, esenciales para personalizar el servicio de apoyo educativo y rutina familiar, los cuales no tienen carácter de diagnóstico médico. El tratamiento de estos datos se realiza siempre en el mejor interés del niño y con el consentimiento específico del tutor legal.",
+            "pif_data": "<strong>Datos del Formulario PIF:</strong> Respuestas detalladas sobre el desarrollo del niño y el contexto familiar, utilizadas para generar documentos personalizados.",
+            "chat_history": "<strong>Historial de Chat:</strong> Contenido de las interacciones con el Asistente de IA, utilizado para mejorar la experiencia y contextualizar la atención.",
+            "financial": "<strong>Información Financiera:</strong> Historial de transacciones, planes contratados, créditos y saldos. Los datos completos de la tarjeta de crédito son procesados exclusivamente por una pasarela de pago segura (Efi Pay) y no son almacenados por Cognacare.",
+            "usage": "<strong>Información de Uso:</strong> Datos técnicos como dirección IP, identificadores de dispositivos, registros de acceso, cookies y datos de navegación, recopilados con fines de seguridad, prevención de fraudes y mejora de la experiencia.",
+            "affiliate": "<strong>Datos de Afiliados:</strong> Nombre, correo electrónico, CPF o CNPJ (cuando corresponda), clave PIX, datos bancarios necesarios para el pago, historial de ventas atribuidas a su enlace o cupón, métricas de rendimiento e información de perfiles públicos en redes sociales utilizada en el proceso de evaluación."
+        },
+        "section3_title": "3. Bases Legales y Finalidades del Tratamiento",
+        "section3_intro": "Tratamos sus datos basándonos en diferentes fundamentos legales, según la finalidad específica:",
+        "section3_list": {
+            "provide_service": "<strong>Ejecución de Contrato:</strong> Operar la plataforma, crear y administrar su cuenta, generar Planes de Intervención Familiar (PIF), registrar sesiones de chat y administrar créditos, suscripciones y pagos.",
+            "legal_obligation": "<strong>Cumplimiento de Obligaciones Legales:</strong> Emisión de documentos fiscales, mantenimiento de registros con fines contables y cumplimiento de los plazos legales de retención.",
+            "legitimate_interest": "<strong>Interés Legítimo:</strong> Monitorear el uso de la plataforma, prevenir fraudes, mejorar funcionalidades, realizar análisis estadísticos y administrar el Programa de Afiliados, respetando siempre sus derechos y libertades fundamentales.",
+            "consent_child": "<strong>Consentimiento:</strong> Tratamiento de datos personales de niños, mediante el consentimiento específico y destacado del tutor legal, siempre en el mejor interés del menor.",
+            "communication": "<strong>Comunicaciones:</strong> Enviar documentos generados, avisos importantes sobre la cuenta, planes y cambios contractuales. Los mensajes promocionales se enviarán solo cuando lo permita la legislación aplicable, con opción de exclusión voluntaria (opt-out)."
+        },
+        "section4_title": "4. Intercambio de Información",
+        "section4_intro": "No vendemos sus datos personales. Compartimos información solo con terceros estrictamente necesarios para el funcionamiento del servicio o el cumplimiento de obligaciones legales:",
+        "section4_list": {
+            "providers": "<strong>Proveedores de Servicios:</strong> Proveedores de tecnología de IA, pasarelas de pago, servicios de alojamiento, envío de correos electrónicos y herramientas de análisis, que actúan como encargados del tratamiento y están sujetos a obligaciones contractuales de confidencialidad y seguridad.",
+            "affiliates": "<strong>Programa de Afiliados:</strong> Podemos compartir información agregada y no identificable sobre el rendimiento de las campañas. Los datos personales de los clientes no se comparten con los afiliados, excepto cuando es estrictamente necesario y en un formato minimizado, con el fin de atribuir comisiones.",
+            "legal": "<strong>Obligaciones Legales y Ejercicio de Derechos:</strong> Compartir información con autoridades públicas, organismos reguladores o terceros cuando lo exija la ley, orden judicial o para defender los derechos de Cognacare en procesos administrativos, arbitrales o judiciales."
+        },
+        "section5_title": "5. Tratamiento de Datos de Niños",
+        "section5_text": "El registro y uso de la plataforma deben ser realizados por el tutor legal del niño o por un profesional debidamente autorizado por dicho tutor. El tratamiento de los datos personales de los niños se realiza con el consentimiento específico de al menos uno de los padres o tutor legal, con información clara sobre los tipos de datos recopilados, la forma de uso y los procedimientos para ejercer los derechos. Siempre actuamos basándonos en el principio del mejor interés del niño.",
+        "section6_title": "6. Seguridad de la Información",
+        "section6_text": "Implementamos medidas de seguridad técnicas y administrativas adecuadas para proteger sus datos, considerando la naturaleza y sensibilidad de la información procesada, incluyendo encriptación (HTTPS/TLS), controles de acceso, registros de auditoría y prácticas de seguridad alineadas con las recomendaciones del mercado. Sin embargo, ningún sistema es totalmente inmune a los riesgos, y recomendamos el uso de contraseñas seguras y no compartirlas con terceros.",
+        "section7_title": "7. Retención y Eliminación de Datos",
+        "section7_text": "Mantenemos sus datos personales solo durante el tiempo necesario para cumplir con los fines descritos en esta Política, incluso para el cumplimiento de obligaciones legales, contractuales y el ejercicio regular de derechos. Después de este período, los datos podrán ser anonimizados para fines estadísticos o eliminados de forma segura. Puede solicitar la eliminación de su cuenta y de sus datos en cualquier momento directamente a través de la aplicación o poniéndose en contacto con nuestro soporte; en estos casos, ciertos datos pueden permanecer almacenados por el período legal o para salvaguardar los derechos de Cognacare.",
+        "section8_title": "8. Derechos del Titular (LGPD/GDPR)",
+        "section8_text": "Usted tiene derecho a acceder, corregir, actualizar, portar y solicitar la eliminación de sus datos personales, así como a obtener información sobre el uso que hacemos de ellos, revocar el consentimiento y solicitar la revisión de decisiones automatizadas, cuando corresponda. Para ejercer sus derechos, póngase en contacto a través de los canales indicados al final de esta Política. En el caso de datos de niños, el ejercicio de los derechos lo realiza el tutor legal.",
+        "section9_title": "9. Cookies y Tecnologías Similares",
+        "section9_text": "Utilizamos cookies y tecnologías similares para autenticar usuarios, recordar preferencias, mejorar la experiencia de navegación y realizar análisis de uso. Puede administrar las cookies directamente en la configuración de su navegador, teniendo en cuenta que algunas funcionalidades pueden verse afectadas.",
+        "section10_title": "10. Afiliados y Datos Personales",
+        "section10_text": "Cuando se registra en el Programa de Afiliados de Cognacare, procesamos sus datos personales con fines de análisis de elegibilidad, gestión de comisiones, prevención de fraudes y cumplimiento de obligaciones legales. Los datos procesados pueden incluir, entre otros, nombre completo, correo electrónico, CPF o CNPJ, clave PIX, datos bancarios necesarios para el pago, historial de ventas atribuidas a su enlace o cupón, métricas de rendimiento e información de perfiles públicos en redes sociales. El tratamiento se realiza en base a la ejecución del contrato de afiliación, cumplimiento de obligaciones legales (incluidas fiscales) y el interés legítimo de Cognacare en operar y mejorar el Programa. Al finalizar su participación, mantendremos sus datos durante el tiempo necesario para cumplir con las obligaciones legales.",
+        "section11_title": "11. Cambios en esta Política",
+        "section11_text": "Podemos actualizar esta Política de Privacidad periódicamente para reflejar cambios en la legislación, en nuestros servicios o en las prácticas internas de tratamiento de datos. La versión más reciente siempre estará disponible en esta página, con indicación de la fecha de la última actualización.",
+        "contact_title": "12. Contacto y Encargado de Protección de Datos (DPO)",
+        "contact_general": "Si tiene preguntas sobre esta Política, sobre el tratamiento de sus datos o para ejercer sus derechos como titular, póngase en contacto por correo electrónico:",
+        "contact_support": "Para soporte técnico o cuestiones relacionadas con el uso de la plataforma:"
+    },
+    "terms_of_use": {
+        "title": "Términos de Uso",
+        "last_updated": "Última actualización: {{date}}",
+        "intro": "Estos Términos de Uso rigen su acceso y uso de la plataforma Cognacare. Al utilizar el servicio, usted declara que ha leído, comprendido y acepta estos Términos y la Política de Privacidad aplicable.",
+        "section1_title": "1. Descripción del Servicio",
+        "section1_text": "La plataforma ofrece herramientas de apoyo parental basadas en IA, incluyendo la generación de Planes de Intervención Familiar (PIF), recursos de organización y seguimiento, y un Asistente Virtual para apoyo educativo y conductual.",
+        "section1_disclaimer": "<strong>Importante:</strong> Nuestros servicios son herramientas educativas y de apoyo. <strong>No sustituyen</strong> diagnósticos, tratamientos médicos, seguimiento terapéutico profesional u orientación individualizada de profesionales habilitados.",
+        "section2_title": "2. Cuenta, Registro y Acceso",
+        "section2_text": "Para utilizar las funcionalidades de la plataforma, debe crear una cuenta, proporcionando información verdadera, completa y actualizada, así como mantener la confidencialidad de su contraseña. Usted es responsable de todas las actividades realizadas en su cuenta y debe informarnos inmediatamente en caso de uso no autorizado o sospecha de violación de seguridad. El uso de la plataforma por parte de tutores legales en nombre de menores debe cumplir con la legislación aplicable y los términos de la Política de Privacidad.",
+        "section3_title": "3. Créditos, Suscripciones y Planes",
+        "section3_intro": "El servicio opera a través de créditos individuales y planes de suscripción, como se describe a continuación:",
+        "section3_pif_title": "A. Créditos PIF",
+        "section3_pif_text": "Utilizados para generar documentos personalizados del Plan de Intervención Familiar (PIF). Los créditos PIF no tienen fecha de caducidad y nunca expiran, permaneciendo disponibles en la cuenta del usuario independientemente de la vigencia de las suscripciones.",
+        "section3_chat_title": "B. Créditos de Chat",
+        "section3_chat_text": "Utilizados para el intercambio de mensajes con la IA. Su validez está estrictamente vinculada al ciclo de facturación del plan contratado (ej. 30 días para el plan mensual, 6 meses para el semestral y 1 año para el anual). Al finalizar exactamente el ciclo vigente, los créditos no utilizados expirarán de manera indefectible.",
+        "section3_bonus_title": "C. Bonos y Expiración",
+        "section3_bonus_text": "Todos los créditos de chat expirados se convierten automática y obligatoriamente en saldo de bonos, por un valor fijo de {{cashbackValue}} por crédito. Los bonos no expiran, no generan derecho a retiro o reembolso en efectivo bajo ninguna circunstancia, y deben ser utilizados exclusivamente dentro de la plataforma Cognacare para descontar hasta un límite del 50% del valor total de nuevas compras o renovaciones de planes elegibles.",
+        "section3_founder_title": "D. Condiciones Especiales: Miembro Fundador",
+        "section3_founder_text": "El estado de \"Miembro Fundador\" garantiza un precio promocional fijo en las renovaciones anuales, mientras esta modalidad esté disponible. Esta condición es válida siempre y cuando la suscripción se renueve ininterrumpidamente. En caso de cancelación voluntaria, falla de pago no resuelta o solicitud de reembolso, el usuario pierde el estado de Fundador y, en caso de desear regresar a la plataforma, estará sujeto a los valores vigentes en la tabla pública actual.",
+        "section4_title": "4. Cancelación, Renovación y Reembolso",
+        "section4_text": "Puede cancelar la renovación automática de su suscripción en cualquier momento a través de la configuración de la cuenta. Para compras digitales realizadas a través de la plataforma, se garantiza el derecho de desistimiento en un plazo de 7 (siete) días naturales a partir de la confirmación de la compra, de conformidad con el Código de Defensa del Consumidor, siempre y cuando el usuario no haya caracterizado un uso sustancial de la plataforma. Se considera uso sustancial, que anula el derecho de desistimiento por configurar el consumo inmediato del producto digital, la generación de 1 (uno) o más PIFs, o la utilización de más del 10% de los créditos de chat disponibles en el plan. Transcurrido este plazo o comprobado el uso sustancial, no habrá lugar a reembolsos.",
+        "section5_title": "5. Uso Aceptable y Conducta",
+        "section5_text": "Está prohibido utilizar la plataforma para fines ilícitos, para violar derechos de terceros o para difundir contenidos discriminatorios, ofensivos o contrarios a la legislación vigente. El Asistente de IA no debe utilizarse para emergencias médicas, situaciones de crisis aguda o decisiones críticas de salud, debiendo el usuario buscar inmediatamente servicios de salud o profesionales capacitados. Cognacare podrá suspender o cancelar el acceso del usuario en caso de uso indebido, sospecha de fraude o violación de estos Términos.",
+        "section6_title": "6. Propiedad Intelectual y Licencia de Uso",
+        "section6_text": "La plataforma, su código fuente, interfaces, marcas, logotipos, textos, ilustraciones y demás contenidos son propiedad de Cognacare o le han sido licenciados, estando protegidos por la legislación de propiedad intelectual. Al contratar los servicios, el usuario recibe una licencia limitada, no exclusiva e intransferible para el uso personal de los recursos de la plataforma. Los documentos generados para su familia, incluyendo el PIF, están destinados para uso personal y no pueden ser comercializados, reproducidos públicamente o redistribuidos sin autorización expresa.",
+        "section7_title": "7. Programa de Afiliados (Visión General)",
+        "section7_text": "La participación en el Programa de Afiliados es opcional y se rige por un Acuerdo de Asociación y Términos del Programa de Afiliados específicos, que establecen reglas sobre elegibilidad, comisiones, pagos, conducta y uso de marca. En caso de conflicto entre estos Términos de Uso y el Acuerdo de Afiliados, prevalecerá el instrumento específico para asuntos relacionados con el Programa de Afiliados.",
+        "section8_title": "8. Afiliados y Tratamiento de Datos Personales",
+        "section8_text": "Los usuarios que opten por participar en el Programa de Afiliados tendrán sus datos personales tratados de manera adicional para viabilizar el análisis de elegibilidad, la creación de enlaces o cupones personalizados, el seguimiento de ventas y el pago de comisiones, conforme a lo previsto en el Acuerdo de Asociación y Términos del Programa de Afiliados. Al adherirse al Programa, el Afiliado autoriza a Cognacare a utilizar datos como nombre, correo electrónico, CPF o CNPJ, clave PIX, historial de indicaciones y métricas de rendimiento para la ejecución del contrato, prevención de fraude, mejora del Programa y cumplimiento de obligaciones legales y regulatorias. El Afiliado se compromete, además, a tratar con confidencialidad cualquier información no pública a la que acceda y a cumplir íntegramente con la LGPD al prospectar clientes, absteniéndose de utilizar listas de contactos o datos de terceros obtenidos de forma irregular o sin una base legal adecuada. Demás detalles sobre el tratamiento de datos de Afiliados están descritos en la Política de Privacidad y en el Acuerdo de Afiliados, que forman parte de estos Términos.",
+        "section9_title": "9. Limitación de Responsabilidad y Responsabilidad Técnica",
+        "section9_text": "Los algoritmos, formularios y flujos de Inteligencia Artificial de Cognacare fueron diseñados y supervisados bajo la responsabilidad técnica de una profesional cualificada en Neuropsicopedagogía. Sin embargo, en la máxima medida permitida por la legislación aplicable, Cognacare no se responsabiliza por las decisiones tomadas exclusivamente en base a los contenidos generados por la plataforma. El uso de la plataforma no exime del seguimiento profesional; el usuario es responsable de evaluar, junto a especialistas médicos y educativos, la adecuación de las actividades propuestas a la realidad del menor.",
+        "section9_disclaimer": "<strong>Importante:</strong> La precisión, seguridad y eficacia del Plan de Intervención Familiar (PIF) dependen integralmente de la exactitud y veracidad de las respuestas proporcionadas en el formulario de evaluación. Cognacare proporciona la infraestructura tecnológica para estructurar el documento, pero se exime de cualquier responsabilidad por planes ineficaces o inadecuados resultantes de información omitida, incorrecta o irreal introducida por el usuario.",
+        "section10_title": "10. Privacidad y Protección de Datos",
+        "section10_text": "El tratamiento de datos personales en la plataforma Cognacare se rige por la Política de Privacidad, que integra estos Términos de Uso. Al utilizar el servicio, usted acepta el tratamiento de sus datos personales y de los datos de los menores bajo su responsabilidad, tal como se describe en la Política de Privacidad, incluyendo el almacenamiento, compartición y medidas de seguridad adoptadas.",
+        "section11_title": "11. Modificaciones de los Términos",
+        "section11_text": "Podemos actualizar estos Términos de Uso periódicamente para reflejar cambios en nuestros servicios, en la legislación o en nuestras prácticas internas. La versión más reciente estará siempre disponible en esta página, con indicación de la fecha de la última actualización. En caso de cambios relevantes, podremos notificarle por correo electrónico o dentro de la propia plataforma. El uso continuado del servicio tras la actualización constituye la aceptación de los nuevos términos.",
+        "contact_title": "12. Contacto",
+        "contact_general": "Para dudas generales sobre estos Términos de Uso:",
+        "contact_support": "Para soporte técnico o cuestiones sobre su cuenta, créditos o suscripciones:",
+        "contact_sales": "Para asuntos comerciales y planes corporativos:"
+    },
+    "social_media": {
+        "title": "Mis Redes Sociales",
+        "desc": "Mantén actualizados tus enlaces de redes sociales para que nuestro equipo pueda seguir tu trabajo.",
+        "edit": "Editar",
+        "save": "Guardar",
+        "saving": "Guardando...",
+        "success": "¡Redes sociales actualizadas!",
+        "error": "Error al actualizar las redes sociales."
+    },
+    "footer": {
+        "tagline": "Tecnología que guía su atención.",
+        "quick_links": "Navegación",
+        "social_media": "Redes Sociales",
+        "legal": "Legal",
+        "doubt": "Haz tus Preguntas",
+        "rights_reserved": "Todos los derechos reservados.",
+        "made_with_love": "Hecho con amor para familias extraordinarias.",
+        "current_lang": "Español",
+        "affiliate_terms_link": ""
+    },
+    "not_found": {
+        "err404": "404 - Página No Encontrada",
+        "back_home": "Volver a la Página de Inicio",
+        "back_previous": "Volver a la Página Anterior"
+    },
+    "faq": {
+        "title": "Preguntas Frecuentes",
+        "subtitle": "Todo lo que necesitas saber sobre Cognacare, PIFs y nuestra Inteligencia Artificial.",
+        "items": [
+            {
+                "question": "¿Qué es Cognacare?",
+                "answer": "Cognacare es una plataforma impulsada por Inteligencia Artificial diseñada para apoyar a familias atípicas y profesionales de la salud. Nuestra herramienta ayuda a estructurar rutinas, adaptar juegos y crear Planes de Intervención Familiar (PIF) personalizados según el perfil sensorial y el diagnóstico de cada niño."
+            },
+            {
+                "question": "¿Cognacare reemplaza las terapias o la orientación médica?",
+                "answer": "No. Cognacare es una herramienta de APOYO parental y educativo. Las sugerencias generadas por nuestra Inteligencia Artificial no reemplazan diagnósticos, tratamientos médicos ni el seguimiento de profesionales capacitados (neurólogos, terapeutas ocupacionales, fonoaudiólogos, psicólogos, etc.). Valide siempre las actividades sugeridas con el equipo terapéutico del niño."
+            },
+            {
+                "question": "¿Qué es un PIF?",
+                "answer": "PIF significa Plan de Intervención Familiar. Es un documento generado por nuestra IA que traduce las necesidades de desarrollo en actividades prácticas y lúdicas para realizar en casa. Tiene en cuenta el hiperfoco del niño, sus desencadenantes, restricciones alimentarias y perfil sensorial para garantizar que el juego sea acogedor y funcional."
+            },
+            {
+                "question": "¿Cómo funciona el sistema de Créditos y Chat?",
+                "answer": "Cognacare funciona con un sistema de saldos. Utilizas 'Créditos PIF' para generar nuevos planes completos y 'Créditos de Chat' para conversar con el Asistente de IA (cada mensaje enviado y recibido consume créditos). Puedes adquirir paquetes adicionales o suscribirte a uno de nuestros Planes Premium para recargas automáticas y beneficios exclusivos."
+            },
+            {
+                "question": "¿Puedo registrar a más de un niño en la misma cuenta?",
+                "answer": "¡Sí! Puedes crear perfiles separados para diferentes niños en tu cuenta. Nuestra Inteligencia Artificial tratará cada perfil de forma independiente, garantizando que el PIF y las interacciones en el Chat estén 100% enfocados en las características individuales de ese niño en particular."
+            },
+            {
+                "question": "¿Cómo funciona el programa de Afiliados?",
+                "answer": "Los usuarios seleccionados pueden convertirse en Afiliados de Cognacare. Al compartir tu enlace o cupón exclusivo, ofreces descuentos a nuevas familias y ganas una comisión por cada suscripción o paquete de créditos vendido. Puedes realizar un seguimiento de tus ventas y ganancias directamente desde tu panel."
+            },
+            {
+                "question": "¿Están seguros mis datos y los de mi hijo?",
+                "answer": "La seguridad y privacidad de tu familia son nuestra máxima prioridad. Los datos ingresados (como edad, diagnóstico y perfil sensorial) son utilizados exclusivamente por el motor de IA para personalizar tu experiencia durante la generación. No vendemos ni compartimos datos confidenciales con terceros."
+            }
+        ],
+        "still_have_questions": "¿Aún tienes dudas?",
+        "contact_prompt": "¡Contáctanos a través de nuestro Formulario de Contacto y pregunta lo que quieras saber!",
+        "contact_button": "Ir al Formulario"
+    },
+    "tutorials": {
+        "sidebar": "Tutoriales",
+        "title": "Tutoriales en Video",
+        "subtitle": "Aprende a usar todas las funciones de Cognacare paso a paso.",
+        "search_label": "Buscar o seleccionar tutorial...",
+        "no_options": "No se encontraron tutoriales",
+        "select_prompt": "Selecciona un video de la lista de arriba para empezar a verlo."
+    },
+    "glossary": {
+        "title": "Glosario",
+        "subtitle": "Traduce el 'lenguaje terapéutico' al español. Entiende los términos técnicos y siglas del desarrollo infantil atípico.",
+        "search_placeholder": "Buscar término, sigla o terapia...",
+        "no_results": "No se encontraron términos con esta palabra.",
+        "terms": [
+            {
+                "term": "ABA (Análisis de Comportamiento Aplicado)",
+                "definition": "Una ciencia que estudia el comportamiento humano. En las terapias infantiles, se utiliza para enseñar habilidades útiles (como hablar, jugar e interactuar) y reducir comportamientos perjudiciales, siempre enfocándose en cómo el ambiente influye en el niño.",
+                "tags": [
+                    "Terapia",
+                    "Comportamiento"
+                ]
+            },
+            {
+                "term": "Mando",
+                "definition": "En el vocabulario ABA, un 'mando' es simplemente el acto de PEDIR algo que el niño quiere o necesita (ej: decir 'agua' cuando tiene sed, o señalar un juguete).",
+                "tags": [
+                    "ABA",
+                    "Lenguaje"
+                ]
+            },
+            {
+                "term": "Tacto",
+                "definition": "En el vocabulario ABA, un 'tacto' es el acto de NOMBRAR o comentar sobre algo que el niño ve, oye o siente (ej: ver un perro en la calle y decir '¡perro!', sin querer agarrar al perro).",
+                "tags": [
+                    "ABA",
+                    "Lenguaje"
+                ]
+            },
+            {
+                "term": "Ecoico",
+                "definition": "La habilidad de repetir exactamente lo que la otra persona acaba de decir, como un eco.",
+                "tags": [
+                    "ABA",
+                    "Lenguaje"
+                ]
+            },
+            {
+                "term": "Refuerzo Positivo",
+                "definition": "Una consecuencia buena (una recompensa, un elogio, una sonrisa, un juguete) que ocurre justo después de que el niño hace algo esperado, lo cual aumenta las posibilidades de que repita ese buen comportamiento en el futuro.",
+                "tags": [
+                    "ABA",
+                    "Psicología"
+                ]
+            },
+            {
+                "term": "Extinción",
+                "definition": "Estrategia terapéutica que consiste en dejar de prestar atención o dar recompensa a un comportamiento inadecuado, con el objetivo de hacer que ese comportamiento deje de ocurrir.",
+                "tags": [
+                    "ABA",
+                    "Comportamiento"
+                ]
+            },
+            {
+                "term": "Emparejamiento (Rapport / Vinculación)",
+                "definition": "El proceso de crear un vínculo de confianza con el niño. El adulto se asocia a sí mismo con las cosas que más le gustan al niño, demostrando que su presencia es divertida y segura, antes de empezar a exigir cualquier tarea.",
+                "tags": [
+                    "Terapia",
+                    "Comportamiento"
+                ]
+            },
+            {
+                "term": "Regulación Emocional",
+                "definition": "La capacidad del niño (o adulto) de reconocer, manejar y responder a una emoción fuerte (como ira, frustración o alegría excesiva) de forma adecuada y saludable.",
+                "tags": [
+                    "Socioemocional",
+                    "Psicología"
+                ]
+            },
+            {
+                "term": "Meltdown (Crisis Explosiva)",
+                "definition": "Una crisis intensa causada por sobrecarga sensorial o emocional. No es un 'berrinche' para conseguir algo, sino una pérdida total de control del cerebro debido al exceso de estímulos. El niño no puede detenerse aunque quiera.",
+                "tags": [
+                    "Crisis",
+                    "TEA",
+                    "Sensorial"
+                ]
+            },
+            {
+                "term": "Shutdown (Crisis Retraída)",
+                "definition": "Lo opuesto al Meltdown. Ante una sobrecarga sensorial o emocional, el cerebro del niño 'se apaga'. Se retrae, deja de hablar, no reacciona a los estímulos y se aísla física y mentalmente.",
+                "tags": [
+                    "Crisis",
+                    "TEA",
+                    "Sensorial"
+                ]
+            },
+            {
+                "term": "Funciones Ejecutivas",
+                "definition": "Un conjunto de habilidades del cerebro que funciona como el 'director de una orquesta'. Involucra la capacidad de planificar tareas, mantener el enfoque, recordar instrucciones, controlar impulsos y hacer transiciones de una actividad a otra.",
+                "tags": [
+                    "Neurología",
+                    "Cognición"
+                ]
+            },
+            {
+                "term": "Ecolalia",
+                "definition": "Repetición de sonidos, palabras o frases que el niño escuchó (de personas, dibujos animados o canciones). Puede ocurrir inmediatamente después de escuchar o días después. A menudo el niño la usa para calmarse o intentar comunicarse.",
+                "tags": [
+                    "Lenguaje",
+                    "TEA"
+                ]
+            },
+            {
+                "term": "Estereotipia (Stimming / Autoestimulación)",
+                "definition": "Movimientos corporales o sonidos repetitivos (como aletear las manos, caminar de puntillas, balancear el tronco o emitir sonidos con la boca). Se usan principalmente para la autorregulación emocional o sensorial.",
+                "tags": [
+                    "Comportamiento",
+                    "Sensorial"
+                ]
+            },
+            {
+                "term": "Integración Sensorial",
+                "definition": "La forma en que el cerebro recibe, organiza e interpreta la información que proviene de los sentidos (vista, oído, tacto, olfato, gusto, además del equilibrio y la conciencia del propio cuerpo).",
+                "tags": [
+                    "Terapia Ocupacional",
+                    "Sensorial"
+                ]
+            },
+            {
+                "term": "AVD (Actividades de la Vida Diaria)",
+                "definition": "Tareas básicas de autocuidado necesarias para la independencia en el día a día, como bañarse, vestirse, usar el baño, cepillarse los dientes y comer solo.",
+                "tags": [
+                    "Terapia Ocupacional",
+                    "Autonomía"
+                ]
+            },
+            {
+                "term": "CAA (Comunicación Aumentativa y Alternativa)",
+                "definition": "El uso de recursos (como tableros de imágenes, tabletas con aplicaciones de voz o lenguaje de señas) para ayudar a personas que no hablan o que tienen dificultades en el habla a expresarse y ser comprendidas.",
+                "tags": [
+                    "Fonoaudiología",
+                    "Comunicación"
+                ]
+            },
+            {
+                "term": "Hiperfoco (Interés Especial)",
+                "definition": "Un interés extremadamente intenso y prolongado por un tema, objeto o actividad específica (ej: dinosaurios, ventiladores, letras). El niño concentra gran parte de su atención en ello.",
+                "tags": [
+                    "Cognición",
+                    "TEA"
+                ]
+            },
+            {
+                "term": "TPAC (Trastorno del Procesamiento Auditivo Central)",
+                "definition": "El niño tiene una audición perfecta en el oído, pero el cerebro tiene dificultades para interpretar y entender lo que se escuchó, especialmente en entornos ruidosos.",
+                "tags": [
+                    "Diagnóstico",
+                    "Fonoaudiología"
+                ]
+            },
+            {
+                "term": "AHI (Apraxia del Habla Infantil)",
+                "definition": "Un trastorno neurológico motor del habla. El niño sabe lo que quiere decir, pero el cerebro tiene dificultades para planificar y coordinar los movimientos exactos de los labios, la lengua y la mandíbula necesarios para producir el sonido de la palabra.",
+                "tags": [
+                    "Diagnóstico",
+                    "Fonoaudiología"
+                ]
+            },
+            {
+                "term": "TND (Trastorno Negativista Desafiante)",
+                "definition": "Trastorno del comportamiento caracterizado por un patrón persistente de irritabilidad, terquedad, discusiones frecuentes y desafío a las figuras de autoridad (padres, maestros).",
+                "tags": [
+                    "Diagnóstico",
+                    "Psiquiatría"
+                ]
+            },
+            {
+                "term": "TEA (Trastorno del Espectro Autista)",
+                "definition": "Condición del neurodesarrollo caracterizada por diferencias en la comunicación social, interacciones y por la presencia de comportamentos, intereses o actividades restringidas y repetitivas. Se llama 'espectro' porque afecta a cada persona de manera única.",
+                "tags": [
+                    "Diagnóstico",
+                    "Neurología"
+                ]
+            },
+            {
+                "term": "Niveles de Apoyo (Autismo)",
+                "definition": "Clasificación clínica actual para el TEA (Nivel 1, 2 o 3). Reemplaza términos antiguos como 'Asperger' o 'Autismo Leve/Severo'. Indica la cantidad de ayuda y adaptación que la persona necesita para las actividades del día a día.",
+                "tags": [
+                    "Diagnóstico",
+                    "TEA"
+                ]
+            },
+            {
+                "term": "TDAH (Trastorno por Déficit de Atención e Hiperactividad)",
+                "definition": "Trastorno neurobiológico que incluye inatención, hiperactividad e impulsividad. El niño puede tener dificultad para mantener el enfoque en tareas que no sean de su interés extremo o actuar sin pensar en las consecuencias.",
+                "tags": [
+                    "Diagnóstico",
+                    "Psiquiatría"
+                ]
+            },
+            {
+                "term": "TPS (Trastorno del Procesamiento Sensorial)",
+                "definition": "Dificultad del cerebro para recibir y responder a la información que entra por los sentidos. El niño puede ser hipersensible (siente dolor con ruidos o texturas comunes) o hiposensible (busca constantemente impacto, saltos o abrazos fuertes).",
+                "tags": [
+                    "Diagnóstico",
+                    "Sensorial"
+                ]
+            },
+            {
+                "term": "RGD (Retraso Global del Desarrollo)",
+                "definition": "Diagnóstico temporal dado a niños menores de 5 años que no alcanzan los hitos de desarrollo esperados en varias áreas (habla, motor, social), pero aún son muy pequeños para un diagnóstico definitivo como TEA o Discapacidad Intelectual.",
+                "tags": [
+                    "Diagnóstico",
+                    "Pediatría"
+                ]
+            },
+            {
+                "term": "Dislexia",
+                "definition": "Trastorno específico del aprendizaje que afecta la capacidad de leer y reconocer palabras con fluidez, independientemente de la inteligencia del niño.",
+                "tags": [
+                    "Diagnóstico",
+                    "Cognición",
+                    "Educación"
+                ]
+            },
+            {
+                "term": "Dispraxia (Trastorno del Desarrollo de la Coordinación)",
+                "definition": "Afecta la planificación motora y la coordinación, haciendo que el niño parezca 'torpe' al correr, escribir, usar cubiertos o atarse los zapatos.",
+                "tags": [
+                    "Diagnóstico",
+                    "Motricidad"
+                ]
+            },
+            {
+                "term": "ADOS-2 y ADI-R",
+                "definition": "Son considerados el 'patrón oro' de las evaluaciones para el diagnóstico de Autismo. El ADOS-2 es una observación jugando con el niño, y el ADI-R es una entrevista profunda realizada a los padres.",
+                "tags": [
+                    "Evaluación",
+                    "TEA"
+                ]
+            },
+            {
+                "term": "VB-MAPP",
+                "definition": "Una de las evaluaciones más famosas en la terapia ABA. Mide los hitos del desarrollo del lenguaje e identifica 'barreras' (lo que impide que el niño aprenda, como comportamientos disruptivos o fallas en la percepción visual).",
+                "tags": [
+                    "Evaluación",
+                    "ABA"
+                ]
+            },
+            {
+                "term": "Evaluación Neuropsicológica",
+                "definition": "Un mapeo detallado del cerebro realizado por un psicólogo especializado. A través de pruebas y juegos, mide la inteligencia (CI), memoria, atención, razonamiento y funciones ejecutivas para ayudar a confirmar un diagnóstico.",
+                "tags": [
+                    "Evaluación",
+                    "Psicología"
+                ]
+            },
+            {
+                "term": "PEI (Plan Educativo Individualizado)",
+                "definition": "Documento escolar obligatorio por ley para niños de inclusión. Es una guía creada por la escuela (muchas veces en conjunto con terapeutas) que adapta el currículo, las pruebas y las formas de enseñanza a la realidad de ese niño.",
+                "tags": [
+                    "Educación",
+                    "Inclusión"
+                ]
+            },
+            {
+                "term": "ESDM (Modelo Denver de Intervención Temprana)",
+                "definition": "Una terapia enfocada en niños muy pequeños (de 1 a 4 años) con autismo. Une los principios de la ciencia ABA con juegos naturales, aplicándose de forma extremadamente lúdica y enfocada en la relación.",
+                "tags": [
+                    "Terapia",
+                    "Estudios"
+                ]
+            },
+            {
+                "term": "PECS (Sistema de Comunicación por Intercambio de Imágenes)",
+                "definition": "Un protocolo específico de comunicación alternativa. Se enseña al niño a tomar la foto de lo que desea y entregarla en la mano del adulto para obtener el objeto, incentivando la iniciativa de comunicación.",
+                "tags": [
+                    "Terapia",
+                    "Fonoaudiología",
+                    "Comunicación"
+                ]
+            },
+            {
+                "term": "Método Padovan",
+                "definition": "Enfoque terapéutico que repite las fases naturales del desarrollo neuropsicomotor del bebé (como rodar, arrastrarse y gatear) para intentar reorganizar el sistema nervioso y mejorar el habla, la masticación y el movimiento.",
+                "tags": [
+                    "Terapia",
+                    "Motricidad"
+                ]
+            },
+            {
+                "term": "Concepto Bobath",
+                "definition": "Terapia muy utilizada en la fisioterapia y fonoaudiología para la rehabilitación neurológica. Se enfoca en inhibir patrones de movimiento anormales y facilitar posturas correctas, muy común en casos de Parálisis Cerebral.",
+                "tags": [
+                    "Terapia",
+                    "Fisioterapia"
+                ]
+            },
+            {
+                "term": "TEACCH",
+                "definition": "Programa educativo que se enfoca en la organización visual del ambiente. Usa tableros, colores y separación física del espacio para ayudar a personas con autismo a entender rutinas y ganar independencia en el trabajo o la escuela.",
+                "tags": [
+                    "Terapia",
+                    "Educación"
+                ]
+            },
+            {
+                "term": "Neurotípico",
+                "definition": "Persona cuyo desarrollo neurológico y cognitivo sigue el patrón esperado y mayoritario de la población. Es lo opuesto a neurodivergente.",
+                "tags": [
+                    "Expresión Común",
+                    "Sociedad"
+                ]
+            },
+            {
+                "term": "Neurodivergente",
+                "definition": "Término que engloba a personas cuyo cerebro funciona, aprende y procesa información de forma diferente a lo típico (incluye a personas con Autismo, TDAH, Dislexia, Altas Capacidades, entre otros).",
+                "tags": [
+                    "Expresión Comum",
+                    "Sociedad"
+                ]
+            },
+            {
+                "term": "Atención Conjunta",
+                "definition": "Un hito vital del desarrollo. Es cuando el niño y otra persona enfocan la atención en la misma cosa a propósito (ej: el niño señala un avión en el cielo y mira a la madre para ver si ella también lo está mirando). Las fallas aquí son señales de alerta temprana para el TEA.",
+                "tags": [
+                    "Expresión Común",
+                    "Cognición"
+                ]
+            },
+            {
+                "term": "Prompt (Instigación / Nivel de Ayuda)",
+                "definition": "La ayuda que da el adulto para asegurar que el niño acierte. Puede ser ayuda total física (tomar de la mano y hacerlo juntos), visual (señalar), vocal (dar la primera sílaba) o gestual. El objetivo es evitar que el niño se equivoque y se frustre.",
+                "tags": [
+                    "Expresión Común",
+                    "ABA",
+                    "Pedagogía"
+                ]
+            },
+            {
+                "term": "Fading (Desvanecimiento de la Ayuda)",
+                "definition": "El arte de retirar la ayuda poco a poco para que el niño no se vuelva dependiente del adulto. Por ejemplo, pasar de sostener la mano (ayuda física) a solo señalar (ayuda visual), hasta que el niño lo haga solo.",
+                "tags": [
+                    "Expresión Común",
+                    "ABA"
+                ]
+            },
+            {
+                "term": "Generalización",
+                "definition": "La capacidad del niño de usar una habilidad que aprendió en la clínica en el mundo real. Si aprende a usar el baño de la clínica con la terapeuta, pero no puede usarlo en la escuela, aún no ha generalizado la habilidad.",
+                "tags": [
+                    "Expresión Común",
+                    "Aprendizaje"
+                ]
+            },
+            {
+                "term": "Neuroplasticidad",
+                "definition": "La capacidad del cerebro para cambiar, adaptarse y crear nuevas conexiones. Es la razón por la cual la intervención temprana (comenzar terapias lo antes posible) tiene un impacto tan grande en el futuro del niño.",
+                "tags": [
+                    "Expresión Común",
+                    "Neurología"
+                ]
+            },
+            {
+                "term": "Comportamiento Disruptivo",
+                "definition": "Acciones que interrumpen el aprendizaje o la rutina, y que pueden poner al niño o a otros en riesgo (como gritar muy fuerte, arrojar objetos, golpear a otros o lastimarse a sí mismo).",
+                "tags": [
+                    "Expresión Común",
+                    "Comportamiento"
+                ]
+            },
+            {
+                "term": "ABC del Comportamiento",
+                "definition": "Sigla para Antecedente (lo que sucedió inmediatamente antes), Comportamiento (lo que hizo el niño) y Consecuencia (lo que sucedió justo después). Utilizado por terapeutas para descubrir el motivo por el cual el niño está teniendo un comportamiento difícil.",
+                "tags": [
+                    "Expresión Común",
+                    "Comportamiento",
+                    "ABA"
+                ]
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contáctanos",
+        "subtitle": "¿Tienes alguna duda, sugerencia o propuesta de asociación? ¡Envíanos un mensaje!",
+        "name": "Tu Nombre",
+        "email": "Tu Correo Electrónico",
+        "subject": "Asunto",
+        "message": "Mensaje",
+        "send_button": "Enviar Mensaje",
+        "sending": "Enviando...",
+        "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto contigo lo antes posible.",
+        "error": "Ocurrió un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde."
+    },
+    "visual_routine": {
+        "menu_title": "Rutinas Visuales",
+        "title": "Generador de Rutina Visual",
+        "subtitle_ai": "Escribe una actividad (ej: 'Tomar Baño') y nuestra IA creará el paso a paso visual automáticamente.",
+        "input_topic_label": "¿Qué actividad deseas detallar?",
+        "generate_btn_ai": "Generar Rutina Automática",
+        "subtitle": "Crea cuadros de rutina personalizados con pictogramas para ayudar en la organización y autonomía del niño.",
+        "input_title_label": "Título de la Rutina",
+        "input_title_placeholder": "Ej: Rutina de la Mañana, Hora de Dormir...",
+        "task_list_title": "Lista de Tareas",
+        "add_task_btn": "Agregar Tarea",
+        "generate_btn": "Generar PDF Visual",
+        "generating": "Creando pictogramas...",
+        "placeholder_task": "Ej: Cepillar dientes",
+        "error_empty": "Agrega al menos una tarea.",
+        "error_title": "Dale un título a la rutina.",
+        "success_msg": "¡Rutina generada con éxito!"
+    },
+    "typing": "Analizando el PIF y escribiendo...",
+    "password": "Contraseña",
+    "enter": "Entrar",
+    "forgotpwd": "¿Olvidaste tu contraseña?",
+    "notsigned": "¿Aún no estás registrado?",
+    "signup": "Crear Cuenta",
+    "errorobo": "Por favor, confirma que no eres un robot.",
+    "errologin2": "Error al intentar iniciar sesión. Verifica tus credenciales.",
+    "name": "Nombre",
+    "confirmpwd": "Confirmar Contraseña",
+    "register": "Crear cuenta",
+    "alreadyregistered": "¿Ya estás registrado?",
+    "login": "Acceder a cuenta",
+    "errosenha": "Las contraseñas no coinciden.",
+    "errocad": "Error en el registro. Intenta nuevamente.",
+    "crediterror": "Error al buscar créditos:",
+    "verifiedemail": "¡Email verificado con éxito!",
+    "emailerror": "Error al verificar email",
+    "servererror": "Error al conectar con el servidor",
+    "notoken": "Falta token de verificación",
+    "sessionerror": "checkSession - Error al verificar sesión:",
+    "kidsearcherror": "Error al buscar niños:",
+    "credittopif": "Créditos que pueden usarse para producir PIFs (1 Crédito = 1 PIF).",
+    "credittochat": "Créditos que pueden usarse para enviar mensajes al asistente del PIF (1 Crédito = 1 Mensaje).",
+    "bonuscredit": "Cuando los 'Créditos CHAT' vencen (leer 'Términos de Uso') se convierten en BONO que puede usarse para comprar 'Créditos PIF', 'Créditos CHAT' o Suscripciones PIF Pro).",
+    "pifcredit": "Créditos PIF",
+    "chatcredit": "Créditos CHAT",
+    "home": "Inicio",
+    "kids": "Niños",
+    "pif": "PIF",
+    "pifassistant": "Asistente PIF",
+    "expectedfor": "Esperado para: ",
+    "errorpwdchange": "Ocurrió un error al cambiar la contraseña.",
+    "currentpwd": "Contraseña Actual",
+    "newpwd": "Nueva Contraseña",
+    "confirmnewpwd": "Confirmar Nueva Contraseña",
+    "savenewpwd": "Guardar Nueva Contraseña",
+    "lastpif": "El último PIF de este niño fue generado hace ",
+    "piflimit": " días. Para garantizar orientaciones actualizadas, el límite es de 90 días.",
+    "kidnopif": "Este niño aún no tiene un Plan de Intervención Familiar (PIF) registrado.",
+    "piferror": "Error al verificar PIF:",
+    "pifexperror": "Error al verificar la validez del PIF.",
+    "histerror": "Error al cargar historial.",
+    "chaterror": "Error en la comunicación con el chat.",
+    "errormsg": "Error al enviar mensaje.",
+    "kidtotalk": "Niño a asistir",
+    "choose": "Seleccione...",
+    "remainingmsg": "Mensajes restantes: ",
+    "startchat": "Elige un niño para iniciar el chat.",
+    "hello": "¡Hola! Soy tu asistente PIF.",
+    "readytotalk": "¡He analizado el PIF del niño elegido y estoy listo para ayudarte con él!",
+    "attention": "Atención:",
+    "prodpif": "PRODUCIR PIF",
+    "choosekid": "Elige un niño...",
+    "chatblock": "Chat bloqueado",
+    "typedoubt": "Escribe tu duda...",
+    "list": "Lista"
+}

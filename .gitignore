@@ -1,0 +1,60 @@
+# Dependências
+/node_modules
+/client/node_modules
+/server/node_modules
+/var-www-nginx
+/ngrok.exe
+/stripe.exe
+
+# Arquivos de ambiente de desenvolvimento
+docker-compose.dev.yml
+docker-compose.prod.yml
+docker-compose copy.yml
+.env.dev
+.env
+*.dev
+
+# Logs
+# /client/logs
+# /client/*.log
+# /client/npm-debug.log*
+# /client/yarn-debug.log*
+# /client/yarn-error.log*
+# /client/pnpm-debug.log*
+# /client/lerna-debug.log*
+*.log*
+
+/client/dist
+/client/dist-ssr
+/client/*.local
+/client/android/app/build
+
+# Editor directories and files
+/client/.vscode/*
+/client/!.vscode/extensions.json
+/client/.idea
+/client/.DS_Store
+/client/*.suo
+/client/*.ntvs*
+/client/*.njsproj
+/client/*.sln
+/client/*.sw?
+
+# Específicas do server
+/server/routes/EFI/certs  --> Substituído pelo .gitignore dentro da pasta
+generateHmac.js
+oauthInicial.js
+listWebhooks.js
+registerWebhook.js
+jwtGenerator.js
+validateJwt.js
+createCredentials.js
+/server/routes/hotmart/eventos-hotmart.json
+/server/routes/hotmart/hotmart.txt
+/server/index copy.js
+/server/routs/Stripe.md
+
+# Específicas do client
+/tutos
+*copy.*
+mysql*.*

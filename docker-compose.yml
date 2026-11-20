@@ -1,0 +1,163 @@
+# =================================================================
+# ARQUIVO BASE - COMUM A TODOS OS AMBIENTES
+# Projeto: pif
+# =================================================================
+
+services:
+  database:
+    image: postgres:16-alpine
+    container_name: pif_db_postgres
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:54320:5432"
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DATABASE}
+    volumes:
+      - /var/www/pif/data_pg:/var/lib/postgresql/data
+    networks:
+      - default
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER} -d ${PG_DATABASE}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # =================================================================
+  # REDIS (Motor de Filas para o Agente Autônomo / BullMQ)
+  # =================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: pif_redis
+    restart: unless-stopped
+    ports:
+      # Segurança: Expõe a porta apenas internamente no host
+      - "127.0.0.1:6379:6379"
+    volumes:
+      # Mapeamento físico para persistência da fila do agente
+      - ./data_redis:/data
+    networks:
+      - default # Comunicação exclusiva e interna com o backend (server)
+    # Garante que os dados em memória sejam gravados no disco em tempo real
+    command: redis-server --appendonly yes
+
+  # =================================================================
+  # BACKEND (API)
+  # =================================================================
+  server:
+    build:
+      context: ./
+      dockerfile: server/Dockerfile
+    container_name: pif_server
+    restart: unless-stopped
+    shm_size: '2gb' # Aumenta a memória compartilhada para 2 Gigabytes
+    ports:
+      - "3077:3000"
+    depends_on:
+      database:
+        condition: service_healthy
+      # O servidor Node agora deve aguardar o Redis subir também
+      redis:
+        condition: service_started
+    # Injeta segredos em tempo de execução (runtime), não de build.
+    env_file:
+      - .env
+    environment:
+      - PORT=3000
+      # - MYSQL_HOST=database
+      - PG_HOST=database
+      - PG_PORT=5432
+      - REDIS_HOST=redis # Nova variável apontando para o container Redis
+      - REDIS_PORT=6379
+      # Configuração interna do Mailserver
+      - EMAIL_HOST=fs_mailserver
+      - EMAIL_PORT=587
+    networks:
+      - default
+      - web-proxy # Conecta o servidor à rede do proxy
+    volumes:
+      # Mapeia a pasta física do servidor (Host) para a pasta interna do Container.
+      # - /var/www/pif/server/uploads:/app/uploads
+      - ./data_uploads:/app/uploads
+
+      # LADO ESQUERDO: O cofre seguro no servidor Linux
+      # LADO DIREITO: O caminho exato que o seu código Node.js espera
+      - /etc/cognacare_secrets/efi/producao-889273-Cognacare.p12:/home/nodeuser/app/routes/EFI/certs/producao-889273-Cognacare.p12:ro
+
+  # =================================================================
+  # FRONTEND (CLIENT)
+  # =================================================================
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: ${NODE_ENV}
+        GENERATE_SOURCEMAP: ${GENERATE_SOURCEMAP}
+        VITE_API_INICIO: ${VITE_API_INICIO}
+        VITE_API_SITE: ${VITE_API_SITE}
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL}
+        VITE_API_SOCKET: ${VITE_API_SOCKET}
+        VITE_API_SUCCESS_URL: ${VITE_API_SUCCESS_URL}
+        VITE_API_EFI_ENVIRONMENT: ${VITE_API_EFI_ENVIRONMENT}
+        VITE_API_EFI_ACCOUNT_ID: ${VITE_API_EFI_ACCOUNT_ID}
+        VITE_RECAPTCHA_SITE_KEY: ${VITE_RECAPTCHA_SITE_KEY}
+        VITE_CASHBACK_VALUE: ${VITE_CASHBACK_VALUE}
+        
+    container_name: pif_client
+    restart: unless-stopped
+    ports:
+      - "5077:80"
+    depends_on:
+      - server
+    networks:
+      - web-proxy
+
+  # =================================================================
+  # SERVIDOR DE E-MAIL (Poste.io)
+  # =================================================================
+  mailserver:
+    image: analogic/poste.io:latest
+    container_name: fs_mailserver
+    restart: always
+    hostname: mail.cognacare.com
+    mem_limit: 2g 
+    environment:
+      - TZ=America/Sao_Paulo
+      - HTTPS=OFF 
+      - DISABLE_CLAMAV=TRUE 
+    ports:
+      - "25:25"     # SMTP Entrada
+      - "110:110"   # POP3
+      - "143:143"   # IMAP
+      - "465:465"   # SMTPS
+      - "587:587"   # MSA
+      - "993:993"   # IMAPS
+      - "995:995"   # POP3S
+    volumes:
+      - ./mail-data:/data
+    networks:
+      - default   # Comunicação com o backend
+      - web-proxy # Comunicação com o Nginx (painel web)
+
+  # =================================================================
+  # Serviço dedicado de Antivírus para Uploads
+  # =================================================================
+  clamav:
+    image: clamav/clamav:latest
+    container_name: pif_clamav
+    restart: unless-stopped
+    # PORTA EXPOSTA REMOVIDA PARA SEGURANÇA. Acesso apenas interno pelo backend.
+    networks:
+      - default # Precisa estar na mesma rede do 'server'
+
+networks:
+  web-proxy:
+    external: true
+  default:
+    driver: bridge
+
+volumes:
+  pif-db-data:
+    name: pif-db-data

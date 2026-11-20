@@ -1,0 +1,13 @@
+{
+  "name": "pif-root",
+  "version": "1.2.0",
+  "scripts": {
+    "start": "concurrently \"npm:start:server\" \"npm:start:client\"",
+    "start:server": "cd server && npx nodemon --exec npx ts-node index.ts",
+    "start:client": "cd client && npm run dev",
+    "install:all": "npm install && (cd server && npm install) && (cd client && npm install)"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

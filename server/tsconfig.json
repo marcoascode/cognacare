@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "rootDir": "../",  /* <--- CORREÇÃO AQUI: Mudou de "./" para "../" */
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    
+    /* MÁGICA DA MIGRAÇÃO GRADUAL */
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+
+    /* Permite importar as tipagens da pasta shared */
+    "paths": {
+      "@shared/*": ["../Shared/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.js", "../Shared/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

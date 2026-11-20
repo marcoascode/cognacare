@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Cognacare</string>
+    <string name="title_activity_main">Cognacare</string>
+    <string name="package_name">com.cognacare.app</string>
+    <string name="custom_url_scheme">com.cognacare.app</string>
+</resources>
